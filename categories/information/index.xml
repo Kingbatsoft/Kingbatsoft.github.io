@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Posts on 清尘博客 - 静心</title>
-        <link>https://blog.kingbatsoft.top/post/</link>
-        <description>Recent content in Posts on 清尘博客 - 静心</description>
+        <title>Information on 清尘博客 - 静心</title>
+        <link>https://blog.kingbatsoft.top/categories/information/</link>
+        <description>Recent content in Information on 清尘博客 - 静心</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Kingbatsoft</copyright>
-        <lastBuildDate>Wed, 06 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.kingbatsoft.top/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 06 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.kingbatsoft.top/categories/information/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>CTF_show Web入门 信息收集writeup</title>
         <link>https://blog.kingbatsoft.top/p/ctfshow_web_informationcollect_write_up/</link>
         <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
@@ -191,55 +191,6 @@ HAHA YOU WIN
 &lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;mdb文件是早期asp+access构架的数据库文件，文件泄露相当于数据库被脱裤了。&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;根据提示搜索相关信息，可以搜到/db/db.mdb，尝试下载后使用access打开，虽然报了一堆错，但是最后还是找到了&lt;em&gt;flag&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;flag{ctfshow_old_database}&lt;/code&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>从BuildCTF开始——CTF的旅程</title>
-        <link>https://blog.kingbatsoft.top/p/build_ctf_write_up/</link>
-        <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://blog.kingbatsoft.top/p/build_ctf_write_up/</guid>
-        <description>&lt;img src="https://blog.kingbatsoft.top/p/build_ctf_write_up/poster.png" alt="Featured image of post 从BuildCTF开始——CTF的旅程" /&gt;&lt;p&gt;&lt;img src=&#34;https://blog.kingbatsoft.top/p/build_ctf_write_up/poster.png&#34;
-	width=&#34;2560&#34;
-	height=&#34;1440&#34;
-	srcset=&#34;https://blog.kingbatsoft.top/p/build_ctf_write_up/poster_hu2692263556991648001.png 480w, https://blog.kingbatsoft.top/p/build_ctf_write_up/poster_hu14507091553062642857.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;BuildCTF&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;177&#34;
-		data-flex-basis=&#34;426px&#34;
-	
-&gt;
-新人第一次比赛的writeup，可能写的有很啰嗦的地方，请高手们见谅呀QAQ&lt;/p&gt;
-&lt;p&gt;因为直接上传太大了，访问效果不佳，所以这里直接提供原始文档&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;YLU-YLU-Kingbatsoft.pdf&#34; &gt;点击此处查看&lt;/a&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>第一篇博客</title>
-        <link>https://blog.kingbatsoft.top/p/new_start_first_blog/</link>
-        <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://blog.kingbatsoft.top/p/new_start_first_blog/</guid>
-        <description>&lt;img src="https://blog.kingbatsoft.top/p/new_start_first_blog/newstart.jpg" alt="Featured image of post 第一篇博客" /&gt;&lt;p&gt;&lt;img src=&#34;https://blog.kingbatsoft.top/p/new_start_first_blog/newstart.jpg&#34;
-	width=&#34;1200&#34;
-	height=&#34;620&#34;
-	srcset=&#34;https://blog.kingbatsoft.top/p/new_start_first_blog/newstart_hu4777361991540455563.jpg 480w, https://blog.kingbatsoft.top/p/new_start_first_blog/newstart_hu2258294753146747403.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;newstart.png&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;193&#34;
-		data-flex-basis=&#34;464px&#34;
-	
-&gt;
-随着前两个博客分别因为 &lt;em&gt;没续费&lt;/em&gt;和&lt;em&gt;rm -rf&lt;/em&gt; 相继暴毙以后，第三个又双叒叕来啦！！&lt;br&gt;
-&lt;del&gt;嗯 有点不吉利&lt;/del&gt;&lt;/p&gt;
 </description>
         </item>
         
