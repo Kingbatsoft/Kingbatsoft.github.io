@@ -32,11 +32,11 @@ HAHA YOU WIN
 
 --&gt;
 &lt;h2 id=&#34;web1&#34;&gt;WEB1
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Tip:开发注释未及时删除&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;开发注释未及时删除&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;进入环境直接使用F12打开控制台即可找出&lt;em&gt;flag&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;&amp;lt;!-- ctfshow{4fd63d59-4831-49ff-9bd6-4ee34b8e70c4} --&amp;gt;&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;web2&#34;&gt;WEB2
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Tip:js前台拦截 === 无效操作&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;js前台拦截 === 无效操作&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;这道题进去以后发现F12按了没反应，右键也不行，但是可以直接通过浏览器界面打开开发者模式或者通过查看源代码绕过，&lt;em&gt;flag&lt;/em&gt;就在注释里&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;&amp;lt;!-- ctfshow{5f025258-4778-4833-95ff-1941f3ae0f6e} --&amp;gt;&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;web3&#34;&gt;WEB3
@@ -78,7 +78,7 @@ HAHA YOU WIN
 &lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;cookie 只是一块饼干，不能存放任何隐私数据&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;根据提示直接抓包获取cookie内存储的的&lt;em&gt;flag&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;web11&#34;&gt;WEB11
-&lt;/h2&gt;&lt;p&gt;*&lt;strong&gt;域名其实也可以隐藏信息，比如flag.ctfshow.com 就隐藏了一条信息&lt;/strong&gt;&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;域名其实也可以隐藏信息，比如flag.ctfshow.com 就隐藏了一条信息&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;用好几个网站查询都不行，不知道是什么问题，可能域名有问题，访问不了了，不过大概是考nslookup这种域名解析的知识&lt;/p&gt;
 &lt;h2 id=&#34;web12&#34;&gt;WEB12
 &lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;有时候网站上的公开信息，就是管理员常用密码&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
