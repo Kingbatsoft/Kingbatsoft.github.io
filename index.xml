@@ -14,8 +14,8 @@
         
         <guid>https://blog.kingbatsoft.top/p/ctfshow_web_explosion_write_up/</guid>
         <description>&lt;h1 id=&#34;ctfshow-web-爆破writeup&#34;&gt;CTFSHOW web 爆破WriteUP
-&lt;/h1&gt;&lt;h1 id=&#34;web21&#34;&gt;WEB21
-&lt;/h1&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;爆破什么的，都是基操&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/h1&gt;&lt;h2 id=&#34;web21&#34;&gt;WEB21
+&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;爆破什么的，都是基操&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;打开环境后发现登录，然后随便输入密码用burp抓包&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
