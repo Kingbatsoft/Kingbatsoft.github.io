@@ -314,6 +314,8 @@
     <li><a href="#web23">WEB23</a></li>
     <li><a href="#web24">WEB24</a></li>
     <li><a href="#web25">WEB25</a></li>
+    <li><a href="#web26">WEB26</a></li>
+    <li><a href="#web27">WEB27</a></li>
   </ol>
 </nav>
         </div>
@@ -880,6 +882,112 @@
 </div><p>最后get传参<code>?r=1164719300</code>，cookie使用Hackbar<code>token=1458369882</code>直接execute拿到<em>flag</em><code>ctfshow{87e05252-fe88-4767-85e1-c75fd6eb124b}</code></p>
 <p>然后<em><strong>不小心</strong></em>把容器销毁了，又要重做了呜呜呜</p>
 <p><em>不过这道题倒是做出来了</em></p>
+<h2 id="web26">WEB26
+</h2><p><em><strong>这个可以爆</strong></em></p>
+<p>这道题开始还以为是爆破，结果研究了半天发现要填入的项太多了不知道怎么做，后来直接填的空参数直接连接成功了，也是非常异或啊，直接用burp重放器发送请求即可看到flag</p>
+<h2 id="web27">WEB27
+</h2><p><em><strong>CTFshow菜鸡学院招生啦！</strong></em></p>
+<p>看到有录取名单列表，打开发现身份证被去掉了出生日期这一部分，使用下面的脚本便捷地生成生日字典</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">generate_birthday_dict</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    生成指定日期范围内的生日字典。
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Args:
+</span></span></span><span class="line"><span class="cl"><span class="s2">        start_date (str): 开始日期，格式为 &#34;YYYY-MM-DD&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        end_date (str): 结束日期，格式为 &#34;YYYY-MM-DD&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Returns:
+</span></span></span><span class="line"><span class="cl"><span class="s2">        dict: 生日字典，键为日期，值为空字符串（用于填写名字）
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">date_format</span> <span class="o">=</span> <span class="s2">&#34;%Y%m</span><span class="si">%d</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="n">date_format</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">end_date</span><span class="p">,</span> <span class="n">date_format</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">current</span> <span class="o">=</span> <span class="n">start</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">birthday_dict</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">current</span> <span class="o">&lt;=</span> <span class="n">end</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">birthday_dict</span><span class="p">[</span><span class="n">current</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">date_format</span><span class="p">)]</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">current</span> <span class="o">+=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">birthday_dict</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">save_birthday_dict_to_txt</span><span class="p">(</span><span class="n">birthday_dict</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&#34;birthdays.txt&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    将生日字典保存到 txt 文件中。
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Args:
+</span></span></span><span class="line"><span class="cl"><span class="s2">        birthday_dict (dict): 生日字典，键为日期，值为空字符串
+</span></span></span><span class="line"><span class="cl"><span class="s2">        filename (str): 输出文件名
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&#34;w&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">date</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">birthday_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">            <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;生日字典已保存到 </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 用户输入日期范围</span>
+</span></span><span class="line"><span class="cl"><span class="n">start_date</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;请输入开始日期 (YYYYMMDD): &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">end_date</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;请输入结束日期 (YYYYMMDD): &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 生成生日字典并保存</span>
+</span></span><span class="line"><span class="cl"><span class="n">birthday_dict</span> <span class="o">=</span> <span class="n">generate_birthday_dict</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">save_birthday_dict_to_txt</span><span class="p">(</span><span class="n">birthday_dict</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>生成一个1990-2010生日的字典，然后放到burp的重放器里跑一遍，发现</p>
+<p><code>a=%E5%B5%87%E5%BC%80%E6%A2%A6&amp;p=360730199110167653</code></p>
+<p>成功得出结果，不过是\u的字符，找个<a class="link" href="https://www.lddgo.net/convert/string-unicode"  target="_blank" rel="noopener"
+    >在线网站</a>解一下就可以了。解出账号和密码直接选择学生登录即可成功。</p>
 
 </section>
 
