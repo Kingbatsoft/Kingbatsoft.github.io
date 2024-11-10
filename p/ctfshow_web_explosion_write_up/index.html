@@ -10,7 +10,7 @@
 <meta property='og:description' content="CTFSHOW">
 <meta property='og:url' content='https://blog.kingbatsoft.top/p/ctfshow_web_explosion_write_up/'>
 <meta property='og:site_name' content='清尘博客 - 静心'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-11-07T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-11-07T00:00:00&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-11-07T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-11-10T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="CTF_show Web 爆破writeup">
 <meta name="twitter:description" content="CTFSHOW">
     </head>
@@ -316,6 +316,7 @@
     <li><a href="#web25">WEB25</a></li>
     <li><a href="#web26">WEB26</a></li>
     <li><a href="#web27">WEB27</a></li>
+    <li><a href="#web28">WEB28</a></li>
   </ol>
 </nav>
         </div>
@@ -988,6 +989,9 @@
 <p><code>a=%E5%B5%87%E5%BC%80%E6%A2%A6&amp;p=360730199110167653</code></p>
 <p>成功得出结果，不过是\u的字符，找个<a class="link" href="https://www.lddgo.net/convert/string-unicode"  target="_blank" rel="noopener"
     >在线网站</a>解一下就可以了。解出账号和密码直接选择学生登录即可成功。</p>
+<h2 id="web28">WEB28
+</h2><p><em><strong>大海捞针</strong></em></p>
+<p>这道题打开环境发现/0/1/2.txt，猜测是目录爆破，使用Burp的Intruder功能爆破，看提示后直接用/1-100/1-100扫描就可以了，不需要用别的复杂方法。</p>
 
 </section>
 
@@ -1007,7 +1011,19 @@
 
         <span>Licensed under CC BY-NC-SA 4.0</span>
     </section>
-    </footer>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 Nov 10, 2024 00:00 UTC
+        </span>
+    </section></footer>
 
 
     

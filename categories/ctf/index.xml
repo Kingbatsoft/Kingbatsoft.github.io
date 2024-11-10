@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Kingbatsoft</copyright>
-        <lastBuildDate>Thu, 07 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.kingbatsoft.top/categories/ctf/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 10 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.kingbatsoft.top/categories/ctf/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>CTF_show Web 爆破writeup</title>
         <link>https://blog.kingbatsoft.top/p/ctfshow_web_explosion_write_up/</link>
         <pubDate>Thu, 07 Nov 2024 00:00:00 +0000</pubDate>
@@ -586,6 +586,9 @@
 &lt;p&gt;&lt;code&gt;a=%E5%B5%87%E5%BC%80%E6%A2%A6&amp;amp;p=360730199110167653&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;成功得出结果，不过是\u的字符，找个&lt;a class=&#34;link&#34; href=&#34;https://www.lddgo.net/convert/string-unicode&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;在线网站&lt;/a&gt;解一下就可以了。解出账号和密码直接选择学生登录即可成功。&lt;/p&gt;
+&lt;h2 id=&#34;web28&#34;&gt;WEB28
+&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;大海捞针&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;这道题打开环境发现/0/1/2.txt，猜测是目录爆破，使用Burp的Intruder功能爆破，看提示后直接用/1-100/1-100扫描就可以了，不需要用别的复杂方法。&lt;/p&gt;
 </description>
         </item>
         <item>
