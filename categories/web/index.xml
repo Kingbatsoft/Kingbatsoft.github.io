@@ -319,9 +319,9 @@ url/?c=tac flag.php%26
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;del&gt;评价：杂鱼一条&lt;/del&gt;&lt;/p&gt;
-&lt;p&gt;不用多解释啥了，只是多了个过滤flag关键字而已，直接cp f* 1.txt 或者&amp;hellip;tac f*等等等等等都可以的
-难度曲线上升很平稳（确信）&lt;del&gt;（话说这是不是立flag&lt;/del&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;不用多解释啥了，只是多了个过滤flag关键字而已，直接cp f* 1.txt 或者&amp;hellip;tac f*等等等等等都可以的&lt;/p&gt;
+&lt;h2 id=&#34;web45&#34;&gt;WEB45
+&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;命令执行，需要严格的过滤&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 </description>
         </item>
         <item>

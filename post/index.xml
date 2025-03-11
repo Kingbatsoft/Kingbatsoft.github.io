@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Kingbatsoft</copyright>
-        <lastBuildDate>Wed, 27 Nov 2024 23:33:33 +0000</lastBuildDate><atom:link href="https://blog.kingbatsoft.top/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 23 Jan 2025 12:33:33 +0800</lastBuildDate><atom:link href="https://blog.kingbatsoft.top/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>CTF_show Web 命令执行writeup P2</title>
         <link>https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up_2/</link>
         <pubDate>Wed, 27 Nov 2024 00:00:00 +0000</pubDate>
@@ -319,9 +319,19 @@ url/?c=tac flag.php%26
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;del&gt;评价：杂鱼一条&lt;/del&gt;&lt;/p&gt;
-&lt;p&gt;不用多解释啥了，只是多了个过滤flag关键字而已，直接cp f* 1.txt 或者&amp;hellip;tac f*等等等等等都可以的
-难度曲线上升很平稳（确信）&lt;del&gt;（话说这是不是立flag&lt;/del&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;不用多解释啥了，只是多了个过滤flag关键字而已，直接cp f* 1.txt 或者&amp;hellip;tac f*等等等等等都可以的&lt;/p&gt;
+&lt;h2 id=&#34;web45&#34;&gt;WEB45
+&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;命令执行，需要严格的过滤&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>2025新年快乐~</title>
+        <link>https://blog.kingbatsoft.top/p/happy_new_year_2025/</link>
+        <pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.kingbatsoft.top/p/happy_new_year_2025/</guid>
+        <description>&lt;p&gt;新年快乐！&lt;/p&gt;
+&lt;p&gt;[点击此处查看][happyyear2025.png]&lt;/p&gt;
 </description>
         </item>
         <item>
