@@ -29,7 +29,7 @@
   }
 &lt;/style&gt;
 &lt;div class=&#34;gomoku-container&#34;&gt;
-  &lt;iframe src=&#34;./index.html&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;./chess.html&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;</description>
         </item>
         
