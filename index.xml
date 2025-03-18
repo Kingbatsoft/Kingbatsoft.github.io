@@ -16,22 +16,29 @@
         <description>&lt;p&gt;&lt;del&gt;&lt;em&gt;阿伟你又在打电动喔，休息一下吧，去看看书好不好&lt;/em&gt;&lt;/del&gt;&lt;/p&gt;
 &lt;style&gt;
   .gomoku-container {
-    position: relative;
     width: 100%;
-    padding-top: 80%;
+    position: relative;
   }
   .gomoku-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
     border: none;
   }
 &lt;/style&gt;
 &lt;div class=&#34;gomoku-container&#34;&gt;
-  &lt;iframe src=&#34;./chess.html&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;</description>
+  &lt;iframe id=&#34;gomokuFrame&#34; src=&#34;./chess.html&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;script&gt;
+  function resizeGame() {
+    let iframe = document.getElementById(&#34;gomokuFrame&#34;);
+    let width = window.innerWidth;
+    let height = Math.min(window.innerHeight, width * 0.8); // 保持 4:3 或 16:9
+    iframe.style.height = height + &#34;px&#34;;
+  }
+  window.addEventListener(&#34;resize&#34;, resizeGame);
+  window.addEventListener(&#34;load&#34;, resizeGame);
+&lt;/script&gt;
+</description>
         </item>
         <item>
         <title>CTF_show Web 命令执行writeup P2 WEB41-WEB50</title>

@@ -369,22 +369,29 @@
     <p><del><em>阿伟你又在打电动喔，休息一下吧，去看看书好不好</em></del></p>
 <style>
   .gomoku-container {
-    position: relative;
     width: 100%;
-    padding-top: 80%;
+    position: relative;
   }
   .gomoku-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
     border: none;
   }
 </style>
 <div class="gomoku-container">
-  <iframe src="./chess.html"></iframe>
+  <iframe id="gomokuFrame" src="./chess.html"></iframe>
 </div>
+<script>
+  function resizeGame() {
+    let iframe = document.getElementById("gomokuFrame");
+    let width = window.innerWidth;
+    let height = Math.min(window.innerHeight, width * 0.8); // 保持 4:3 或 16:9
+    iframe.style.height = height + "px";
+  }
+  window.addEventListener("resize", resizeGame);
+  window.addEventListener("load", resizeGame);
+</script>
+
 </section>
 
 
