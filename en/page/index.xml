@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pages on QingChen&#39;s Blog</title>
-        <link>https://blog.kingbatsoft.top/en/page/</link>
+        <link>http://localhost:1313/en/page/</link>
         <description>Recent content in Pages on QingChen&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Kingbatsoft</copyright>
-        <lastBuildDate>Fri, 09 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.kingbatsoft.top/en/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 09 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>About</title>
-        <link>https://blog.kingbatsoft.top/en/about/</link>
+        <link>http://localhost:1313/en/about/</link>
         <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/en/about/</guid>
+        <guid>http://localhost:1313/en/about/</guid>
         <description>&lt;p&gt;Qingchen Blog&lt;br&gt;
 I am Kingbatsoft, a person who loves ctf :D
 This blog will record some ctf notes, writeups and some of my daily life. In short, let&amp;rsquo;s make progress together!&lt;/p&gt;
@@ -21,10 +21,10 @@ This blog will record some ctf notes, writeups and some of my daily life. In sho
         </item>
         <item>
         <title>链接</title>
-        <link>https://blog.kingbatsoft.top/en/%E9%93%BE%E6%8E%A5/</link>
+        <link>http://localhost:1313/en/%E9%93%BE%E6%8E%A5/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/en/%E9%93%BE%E6%8E%A5/</guid>
+        <guid>http://localhost:1313/en/%E9%93%BE%E6%8E%A5/</guid>
         <description>&lt;p&gt;To use this feature, add &lt;code&gt;links&lt;/code&gt; section to frontmatter.&lt;/p&gt;
 &lt;p&gt;This page&amp;rsquo;s frontmatter:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

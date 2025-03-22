@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Explode on 清尘博客 - 静心</title>
-        <link>https://blog.kingbatsoft.top/categories/explode/</link>
+        <link>http://localhost:1313/categories/explode/</link>
         <description>Recent content in Explode on 清尘博客 - 静心</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Kingbatsoft</copyright>
-        <lastBuildDate>Sun, 10 Nov 2024 19:54:39 +0000</lastBuildDate><atom:link href="https://blog.kingbatsoft.top/categories/explode/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 10 Nov 2024 19:54:39 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/explode/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>CTF_show Web 爆破writeup WEB21-WEB28</title>
-        <link>https://blog.kingbatsoft.top/p/ctfshow_web_explosion_write_up/</link>
+        <link>http://localhost:1313/p/ctfshow_web_explosion_write_up/</link>
         <pubDate>Thu, 07 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/p/ctfshow_web_explosion_write_up/</guid>
+        <guid>http://localhost:1313/p/ctfshow_web_explosion_write_up/</guid>
         <description>&lt;h1 id=&#34;ctfshow-web-爆破writeup&#34;&gt;CTFSHOW web 爆破WriteUP
 &lt;/h1&gt;&lt;h2 id=&#34;web21&#34;&gt;WEB21
 &lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;爆破什么的，都是基操&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;

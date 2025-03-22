@@ -2,17 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>CommandExec on 清尘博客 - 静心</title>
-        <link>https://blog.kingbatsoft.top/categories/commandexec/</link>
+        <link>http://localhost:1313/categories/commandexec/</link>
         <description>Recent content in CommandExec on 清尘博客 - 静心</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Kingbatsoft</copyright>
-        <lastBuildDate>Mon, 17 Mar 2025 16:37:27 +0800</lastBuildDate><atom:link href="https://blog.kingbatsoft.top/categories/commandexec/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 18 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/commandexec/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>CTF_show Web 命令执行writeup P3 WEB51-WEB60</title>
+        <link>http://localhost:1313/p/ctfshow_web_command_write_up_3/</link>
+        <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/ctfshow_web_command_write_up_3/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>CTF_show Web 命令执行writeup P2 WEB41-WEB50</title>
-        <link>https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up_2/</link>
+        <link>http://localhost:1313/p/ctfshow_web_command_write_up_2/</link>
         <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up_2/</guid>
+        <guid>http://localhost:1313/p/ctfshow_web_command_write_up_2/</guid>
         <description>&lt;h1 id=&#34;ctfshow-web-命令执行writeup-part2&#34;&gt;CTFSHOW web 命令执行WriteUP Part2
 &lt;/h1&gt;&lt;h2 id=&#34;web41&#34;&gt;WEB41
 &lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;过滤不严，命令执行&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
@@ -984,10 +992,10 @@ url/?c=tac flag.php%26
         </item>
         <item>
         <title>CTF_show Web 命令执行writeup P1 WEB29-WEB40</title>
-        <link>https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up_1/</link>
+        <link>http://localhost:1313/p/ctfshow_web_command_write_up_1/</link>
         <pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up_1/</guid>
+        <guid>http://localhost:1313/p/ctfshow_web_command_write_up_1/</guid>
         <description>&lt;h1 id=&#34;ctfshow-web-命令执行writeup-part1-web29-web40&#34;&gt;CTFSHOW web 命令执行WriteUP Part1 WEB29-WEB40
 &lt;/h1&gt;&lt;h2 id=&#34;web29&#34;&gt;WEB29
 &lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;命令执行，需要严格的过滤&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;

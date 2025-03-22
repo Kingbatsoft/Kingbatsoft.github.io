@@ -2,17 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>清尘博客 - 静心</title>
-        <link>https://blog.kingbatsoft.top/</link>
+        <link>http://localhost:1313/</link>
         <description>Recent content on 清尘博客 - 静心</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Kingbatsoft</copyright>
-        <lastBuildDate>Tue, 18 Mar 2025 14:13:24 +0800</lastBuildDate><atom:link href="https://blog.kingbatsoft.top/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>五子棋</title>
-        <link>https://blog.kingbatsoft.top/p/fivechessv1/</link>
+        <lastBuildDate>Tue, 18 Mar 2025 14:13:24 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>CTF_show Web 命令执行writeup P3 WEB51-WEB60</title>
+        <link>http://localhost:1313/p/ctfshow_web_command_write_up_3/</link>
         <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/p/fivechessv1/</guid>
+        <guid>http://localhost:1313/p/ctfshow_web_command_write_up_3/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>五子棋</title>
+        <link>http://localhost:1313/p/fivechessv1/</link>
+        <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/fivechessv1/</guid>
         <description>&lt;p&gt;&lt;del&gt;&lt;em&gt;阿伟你又在打电动喔，休息一下吧，去看看书好不好&lt;/em&gt;&lt;/del&gt;&lt;/p&gt;
 &lt;style&gt;
   .gomoku-container {
@@ -37,10 +45,10 @@
         </item>
         <item>
         <title>CTF_show Web 命令执行writeup P2 WEB41-WEB50</title>
-        <link>https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up_2/</link>
+        <link>http://localhost:1313/p/ctfshow_web_command_write_up_2/</link>
         <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up_2/</guid>
+        <guid>http://localhost:1313/p/ctfshow_web_command_write_up_2/</guid>
         <description>&lt;h1 id=&#34;ctfshow-web-命令执行writeup-part2&#34;&gt;CTFSHOW web 命令执行WriteUP Part2
 &lt;/h1&gt;&lt;h2 id=&#34;web41&#34;&gt;WEB41
 &lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;过滤不严，命令执行&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
@@ -1012,15 +1020,15 @@ url/?c=tac flag.php%26
         </item>
         <item>
         <title>2025新年快乐~</title>
-        <link>https://blog.kingbatsoft.top/p/happy_new_year_2025/</link>
+        <link>http://localhost:1313/p/happy_new_year_2025/</link>
         <pubDate>Thu, 23 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/p/happy_new_year_2025/</guid>
+        <guid>http://localhost:1313/p/happy_new_year_2025/</guid>
         <description>&lt;p&gt;新年快乐！&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.kingbatsoft.top/p/happy_new_year_2025/happyyear2025.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/happy_new_year_2025/happyyear2025.jpg&#34;
 	width=&#34;1376&#34;
 	height=&#34;776&#34;
-	srcset=&#34;https://blog.kingbatsoft.top/p/happy_new_year_2025/happyyear2025_hu9839386089696600309.jpg 480w, https://blog.kingbatsoft.top/p/happy_new_year_2025/happyyear2025_hu14271218650894328092.jpg 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/happy_new_year_2025/happyyear2025_hu9839386089696600309.jpg 480w, http://localhost:1313/p/happy_new_year_2025/happyyear2025_hu14271218650894328092.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;新年贺图&#34;
@@ -1035,10 +1043,10 @@ url/?c=tac flag.php%26
         </item>
         <item>
         <title>CTF_show Web 命令执行writeup P1 WEB29-WEB40</title>
-        <link>https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up_1/</link>
+        <link>http://localhost:1313/p/ctfshow_web_command_write_up_1/</link>
         <pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up_1/</guid>
+        <guid>http://localhost:1313/p/ctfshow_web_command_write_up_1/</guid>
         <description>&lt;h1 id=&#34;ctfshow-web-命令执行writeup-part1-web29-web40&#34;&gt;CTFSHOW web 命令执行WriteUP Part1 WEB29-WEB40
 &lt;/h1&gt;&lt;h2 id=&#34;web29&#34;&gt;WEB29
 &lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;命令执行，需要严格的过滤&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
@@ -1683,10 +1691,10 @@ url/?c=tac flag.php%26
         </item>
         <item>
         <title>CTF_show Web 爆破writeup WEB21-WEB28</title>
-        <link>https://blog.kingbatsoft.top/p/ctfshow_web_explosion_write_up/</link>
+        <link>http://localhost:1313/p/ctfshow_web_explosion_write_up/</link>
         <pubDate>Thu, 07 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/p/ctfshow_web_explosion_write_up/</guid>
+        <guid>http://localhost:1313/p/ctfshow_web_explosion_write_up/</guid>
         <description>&lt;h1 id=&#34;ctfshow-web-爆破writeup&#34;&gt;CTFSHOW web 爆破WriteUP
 &lt;/h1&gt;&lt;h2 id=&#34;web21&#34;&gt;WEB21
 &lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;爆破什么的，都是基操&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
@@ -2267,26 +2275,22 @@ url/?c=tac flag.php%26
         </item>
         <item>
         <title>CTF_show Web入门 信息收集writeup WEB1-WEB20</title>
-        <link>https://blog.kingbatsoft.top/p/ctfshow_web_informationcollect_write_up/</link>
+        <link>http://localhost:1313/p/ctfshow_web_informationcollect_write_up/</link>
         <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/p/ctfshow_web_informationcollect_write_up/</guid>
+        <guid>http://localhost:1313/p/ctfshow_web_informationcollect_write_up/</guid>
         <description>&lt;h1 id=&#34;ctfshow-web入门-信息收集writeup&#34;&gt;CTFSHOW web入门 信息收集WriteUP
 &lt;/h1&gt;&lt;p&gt;&lt;code&gt;2&lt;/code&gt; &lt;code&gt;3&lt;/code&gt; &lt;code&gt;3&lt;/code&gt; &lt;code&gt;C&lt;/code&gt; &lt;code&gt;T&lt;/code&gt; &lt;code&gt;F&lt;/code&gt; &lt;code&gt;S&lt;/code&gt; &lt;code&gt;H&lt;/code&gt; &lt;code&gt;O&lt;/code&gt; &lt;code&gt;W&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;因为放图后国内网络问题导致加载速度很慢效果不佳所以从这个开始就尽量不放图片了&lt;/strong&gt;&lt;/p&gt;
 &lt;!--
- ________      _________    ________  ________       ___  ___      ________      ___       __      
-|\   ____\    |\___   ___\ |\  _____\|\   ____\     |\  \|\  \    |\   __  \    |\  \     |\  \    
-\ \  \___|    \|___ \  \_| \ \  \__/ \ \  \___|_    \ \  \\\  \   \ \  \|\  \   \ \  \    \ \  \   
- \ \  \            \ \  \   \ \   __\ \ \_____  \    \ \   __  \   \ \  \\\  \   \ \  \  __\ \  \  
-  \ \  \____        \ \  \   \ \  \_|  \|____|\  \    \ \  \ \  \   \ \  \\\  \   \ \  \|\__\_\  \ 
-   \ \_______\       \ \__\   \ \__\     ____\_\  \    \ \__\ \__\   \ \_______\   \ \____________\
-    \|_______|        \|__|    \|__|    |\_________\    \|__|\|__|    \|_______|    \|____________|
-                                        \|_________|                                               
-                                                                                                   
-ctfshow{b10g_K1nGB@t3oFt_t0p}
+ __  ___  ___  __        __       
+/  `  |  |__  /__` |__| /  \ |  | 
+\__,  |  |    .__/ |  | \__/ |/\| 
+                                                                                               
+Kingbatsoft{b10g_K1nGB@t3oFt_t0p}
 
-HAHA YOU WIN
+HAHA YOU GOT ME
+
 --&gt;
 &lt;h2 id=&#34;web1&#34;&gt;WEB1
 &lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;开发注释未及时删除&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
@@ -2452,10 +2456,10 @@ HAHA YOU WIN
         </item>
         <item>
         <title>从BuildCTF开始——CTF的旅程</title>
-        <link>https://blog.kingbatsoft.top/p/build_ctf_write_up/</link>
+        <link>http://localhost:1313/p/build_ctf_write_up/</link>
         <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/p/build_ctf_write_up/</guid>
+        <guid>http://localhost:1313/p/build_ctf_write_up/</guid>
         <description>&lt;p&gt;新人第一次比赛的writeup，可能写的有很啰嗦的地方，请高手们见谅呀QAQ&lt;/p&gt;
 &lt;p&gt;因为直接上传太大了，访问效果不佳，所以这里直接提供原始文档&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;poster.png&#34; &gt;BuildCTF官方图片&lt;/a&gt;
@@ -2464,14 +2468,14 @@ HAHA YOU WIN
         </item>
         <item>
         <title>第一篇博客</title>
-        <link>https://blog.kingbatsoft.top/p/new_start_first_blog/</link>
+        <link>http://localhost:1313/p/new_start_first_blog/</link>
         <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/p/new_start_first_blog/</guid>
-        <description>&lt;p&gt;&lt;img src=&#34;https://blog.kingbatsoft.top/p/new_start_first_blog/newstart.jpg&#34;
+        <guid>http://localhost:1313/p/new_start_first_blog/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/new_start_first_blog/newstart.jpg&#34;
 	width=&#34;1200&#34;
 	height=&#34;620&#34;
-	srcset=&#34;https://blog.kingbatsoft.top/p/new_start_first_blog/newstart_hu4777361991540455563.jpg 480w, https://blog.kingbatsoft.top/p/new_start_first_blog/newstart_hu2258294753146747403.jpg 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/new_start_first_blog/newstart_hu4777361991540455563.jpg 480w, http://localhost:1313/p/new_start_first_blog/newstart_hu2258294753146747403.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;newstart.png&#34;
@@ -2488,39 +2492,40 @@ HAHA YOU WIN
         </item>
         <item>
         <title>关于</title>
-        <link>https://blog.kingbatsoft.top/%E5%85%B3%E4%BA%8E/</link>
+        <link>http://localhost:1313/%E5%85%B3%E4%BA%8E/</link>
         <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/%E5%85%B3%E4%BA%8E/</guid>
+        <guid>http://localhost:1313/%E5%85%B3%E4%BA%8E/</guid>
         <description>&lt;p&gt;清尘博客&lt;br&gt;
-我是Kingbatsoft，一个热爱ctf的人 :D
+我是Kingbatsoft，一个ctfer :D
 本博客会记录一些ctf的笔记，writeup和一些我的日常，总之——一起进步吧！&lt;/p&gt;
-&lt;p&gt;written by &lt;em&gt;Kinbatsoft&lt;/em&gt; 2024.10.31&lt;/p&gt;
+&lt;p&gt;written by &lt;em&gt;Kinbatsoft&lt;/em&gt;
+2024.10.31&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>归档内容</title>
-        <link>https://blog.kingbatsoft.top/archives/</link>
+        <link>http://localhost:1313/archives/</link>
         <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/archives/</guid>
+        <guid>http://localhost:1313/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>工具网站</title>
-        <link>https://blog.kingbatsoft.top/%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/</link>
+        <link>http://localhost:1313/%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/</guid>
+        <guid>http://localhost:1313/%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/</guid>
         <description>&lt;p&gt;这里是一些我收集到的 &lt;code&gt;有趣&lt;/code&gt; 妙妙网站&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>搜索</title>
-        <link>https://blog.kingbatsoft.top/search/</link>
+        <link>http://localhost:1313/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/search/</guid>
+        <guid>http://localhost:1313/search/</guid>
         <description></description>
         </item>
         

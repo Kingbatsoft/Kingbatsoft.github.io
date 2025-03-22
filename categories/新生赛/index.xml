@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>新生赛 on 清尘博客 - 静心</title>
-        <link>https://blog.kingbatsoft.top/categories/%E6%96%B0%E7%94%9F%E8%B5%9B/</link>
+        <link>http://localhost:1313/categories/%E6%96%B0%E7%94%9F%E8%B5%9B/</link>
         <description>Recent content in 新生赛 on 清尘博客 - 静心</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Kingbatsoft</copyright>
-        <lastBuildDate>Thu, 31 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.kingbatsoft.top/categories/%E6%96%B0%E7%94%9F%E8%B5%9B/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 31 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E6%96%B0%E7%94%9F%E8%B5%9B/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>从BuildCTF开始——CTF的旅程</title>
-        <link>https://blog.kingbatsoft.top/p/build_ctf_write_up/</link>
+        <link>http://localhost:1313/p/build_ctf_write_up/</link>
         <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/p/build_ctf_write_up/</guid>
+        <guid>http://localhost:1313/p/build_ctf_write_up/</guid>
         <description>&lt;p&gt;新人第一次比赛的writeup，可能写的有很啰嗦的地方，请高手们见谅呀QAQ&lt;/p&gt;
 &lt;p&gt;因为直接上传太大了，访问效果不佳，所以这里直接提供原始文档&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;poster.png&#34; &gt;BuildCTF官方图片&lt;/a&gt;

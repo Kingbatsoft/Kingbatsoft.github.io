@@ -2,146 +2,138 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on 清尘博客 - 静心</title>
-        <link>https://blog.kingbatsoft.top/categories/</link>
+        <link>http://localhost:1313/categories/</link>
         <description>Recent content in Categories on 清尘博客 - 静心</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Kingbatsoft</copyright>
-        <lastBuildDate>Tue, 18 Mar 2025 14:13:24 +0800</lastBuildDate><atom:link href="https://blog.kingbatsoft.top/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Games</title>
-        <link>https://blog.kingbatsoft.top/categories/games/</link>
-        <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://blog.kingbatsoft.top/categories/games/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Online</title>
-        <link>https://blog.kingbatsoft.top/categories/online/</link>
-        <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://blog.kingbatsoft.top/categories/online/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>随笔</title>
-        <link>https://blog.kingbatsoft.top/categories/%E9%9A%8F%E7%AC%94/</link>
-        <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://blog.kingbatsoft.top/categories/%E9%9A%8F%E7%AC%94/</guid>
-        <description></description>
-        </item>
-        <item>
+        <lastBuildDate>Tue, 18 Mar 2025 14:13:24 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>CommandExec</title>
-        <link>https://blog.kingbatsoft.top/categories/commandexec/</link>
-        <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
+        <link>http://localhost:1313/categories/commandexec/</link>
+        <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/categories/commandexec/</guid>
+        <guid>http://localhost:1313/categories/commandexec/</guid>
         <description></description>
         </item>
         <item>
         <title>CTF</title>
-        <link>https://blog.kingbatsoft.top/categories/ctf/</link>
-        <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
+        <link>http://localhost:1313/categories/ctf/</link>
+        <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/categories/ctf/</guid>
+        <guid>http://localhost:1313/categories/ctf/</guid>
         <description></description>
         </item>
         <item>
         <title>CTF_Show</title>
-        <link>https://blog.kingbatsoft.top/categories/ctf_show/</link>
-        <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
+        <link>http://localhost:1313/categories/ctf_show/</link>
+        <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/categories/ctf_show/</guid>
+        <guid>http://localhost:1313/categories/ctf_show/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Games</title>
+        <link>http://localhost:1313/categories/games/</link>
+        <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/games/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Online</title>
+        <link>http://localhost:1313/categories/online/</link>
+        <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/online/</guid>
         <description></description>
         </item>
         <item>
         <title>Web</title>
-        <link>https://blog.kingbatsoft.top/categories/web/</link>
-        <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
+        <link>http://localhost:1313/categories/web/</link>
+        <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/categories/web/</guid>
+        <guid>http://localhost:1313/categories/web/</guid>
         <description></description>
         </item>
         <item>
         <title>WrtieUp</title>
-        <link>https://blog.kingbatsoft.top/categories/wrtieup/</link>
-        <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
+        <link>http://localhost:1313/categories/wrtieup/</link>
+        <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/categories/wrtieup/</guid>
+        <guid>http://localhost:1313/categories/wrtieup/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>随笔</title>
+        <link>http://localhost:1313/categories/%E9%9A%8F%E7%AC%94/</link>
+        <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/%E9%9A%8F%E7%AC%94/</guid>
         <description></description>
         </item>
         <item>
         <title>2025</title>
-        <link>https://blog.kingbatsoft.top/categories/2025/</link>
+        <link>http://localhost:1313/categories/2025/</link>
         <pubDate>Thu, 23 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/categories/2025/</guid>
+        <guid>http://localhost:1313/categories/2025/</guid>
         <description></description>
         </item>
         <item>
         <title>Bestwishes</title>
-        <link>https://blog.kingbatsoft.top/categories/bestwishes/</link>
+        <link>http://localhost:1313/categories/bestwishes/</link>
         <pubDate>Thu, 23 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/categories/bestwishes/</guid>
+        <guid>http://localhost:1313/categories/bestwishes/</guid>
         <description></description>
         </item>
         <item>
         <title>Happynewyear</title>
-        <link>https://blog.kingbatsoft.top/categories/happynewyear/</link>
+        <link>http://localhost:1313/categories/happynewyear/</link>
         <pubDate>Thu, 23 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/categories/happynewyear/</guid>
+        <guid>http://localhost:1313/categories/happynewyear/</guid>
         <description></description>
         </item>
         <item>
         <title>Explode</title>
-        <link>https://blog.kingbatsoft.top/categories/explode/</link>
+        <link>http://localhost:1313/categories/explode/</link>
         <pubDate>Thu, 07 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/categories/explode/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Information</title>
-        <link>https://blog.kingbatsoft.top/categories/information/</link>
-        <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://blog.kingbatsoft.top/categories/information/</guid>
+        <guid>http://localhost:1313/categories/explode/</guid>
         <description></description>
         </item>
         <item>
         <title>Misc</title>
-        <link>https://blog.kingbatsoft.top/categories/misc/</link>
+        <link>http://localhost:1313/categories/misc/</link>
         <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/categories/misc/</guid>
+        <guid>http://localhost:1313/categories/misc/</guid>
         <description></description>
         </item>
         <item>
         <title>新生赛</title>
-        <link>https://blog.kingbatsoft.top/categories/%E6%96%B0%E7%94%9F%E8%B5%9B/</link>
+        <link>http://localhost:1313/categories/%E6%96%B0%E7%94%9F%E8%B5%9B/</link>
         <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/categories/%E6%96%B0%E7%94%9F%E8%B5%9B/</guid>
+        <guid>http://localhost:1313/categories/%E6%96%B0%E7%94%9F%E8%B5%9B/</guid>
         <description></description>
         </item>
         <item>
         <title>重要文档</title>
-        <link>https://blog.kingbatsoft.top/categories/%E9%87%8D%E8%A6%81%E6%96%87%E6%A1%A3/</link>
+        <link>http://localhost:1313/categories/%E9%87%8D%E8%A6%81%E6%96%87%E6%A1%A3/</link>
         <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/categories/%E9%87%8D%E8%A6%81%E6%96%87%E6%A1%A3/</guid>
+        <guid>http://localhost:1313/categories/%E9%87%8D%E8%A6%81%E6%96%87%E6%A1%A3/</guid>
         <description></description>
         </item>
         <item>
         <title>Test</title>
-        <link>https://blog.kingbatsoft.top/categories/test/</link>
+        <link>http://localhost:1313/categories/test/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/categories/test/</guid>
-        <description>&lt;img src="https://blog.kingbatsoft.top/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
+        <guid>http://localhost:1313/categories/test/</guid>
+        <description>&lt;img src="http://localhost:1313/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
         </item>
         
     </channel>

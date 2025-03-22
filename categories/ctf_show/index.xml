@@ -2,17 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>CTF_Show on 清尘博客 - 静心</title>
-        <link>https://blog.kingbatsoft.top/categories/ctf_show/</link>
+        <link>http://localhost:1313/categories/ctf_show/</link>
         <description>Recent content in CTF_Show on 清尘博客 - 静心</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Kingbatsoft</copyright>
-        <lastBuildDate>Mon, 17 Mar 2025 16:37:27 +0800</lastBuildDate><atom:link href="https://blog.kingbatsoft.top/categories/ctf_show/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 18 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/ctf_show/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>CTF_show Web 命令执行writeup P3 WEB51-WEB60</title>
+        <link>http://localhost:1313/p/ctfshow_web_command_write_up_3/</link>
+        <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/ctfshow_web_command_write_up_3/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>CTF_show Web 命令执行writeup P2 WEB41-WEB50</title>
-        <link>https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up_2/</link>
+        <link>http://localhost:1313/p/ctfshow_web_command_write_up_2/</link>
         <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up_2/</guid>
+        <guid>http://localhost:1313/p/ctfshow_web_command_write_up_2/</guid>
         <description>&lt;h1 id=&#34;ctfshow-web-命令执行writeup-part2&#34;&gt;CTFSHOW web 命令执行WriteUP Part2
 &lt;/h1&gt;&lt;h2 id=&#34;web41&#34;&gt;WEB41
 &lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;过滤不严，命令执行&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
@@ -984,10 +992,10 @@ url/?c=tac flag.php%26
         </item>
         <item>
         <title>CTF_show Web 命令执行writeup P1 WEB29-WEB40</title>
-        <link>https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up_1/</link>
+        <link>http://localhost:1313/p/ctfshow_web_command_write_up_1/</link>
         <pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up_1/</guid>
+        <guid>http://localhost:1313/p/ctfshow_web_command_write_up_1/</guid>
         <description>&lt;h1 id=&#34;ctfshow-web-命令执行writeup-part1-web29-web40&#34;&gt;CTFSHOW web 命令执行WriteUP Part1 WEB29-WEB40
 &lt;/h1&gt;&lt;h2 id=&#34;web29&#34;&gt;WEB29
 &lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;命令执行，需要严格的过滤&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
@@ -1632,10 +1640,10 @@ url/?c=tac flag.php%26
         </item>
         <item>
         <title>CTF_show Web 爆破writeup WEB21-WEB28</title>
-        <link>https://blog.kingbatsoft.top/p/ctfshow_web_explosion_write_up/</link>
+        <link>http://localhost:1313/p/ctfshow_web_explosion_write_up/</link>
         <pubDate>Thu, 07 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/p/ctfshow_web_explosion_write_up/</guid>
+        <guid>http://localhost:1313/p/ctfshow_web_explosion_write_up/</guid>
         <description>&lt;h1 id=&#34;ctfshow-web-爆破writeup&#34;&gt;CTFSHOW web 爆破WriteUP
 &lt;/h1&gt;&lt;h2 id=&#34;web21&#34;&gt;WEB21
 &lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;爆破什么的，都是基操&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
@@ -2212,191 +2220,6 @@ url/?c=tac flag.php%26
 &lt;h2 id=&#34;web28&#34;&gt;WEB28
 &lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;大海捞针&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;这道题打开环境发现/0/1/2.txt，猜测是目录爆破，使用Burp的Intruder功能爆破，看提示后直接用/1-100/1-100扫描就可以了，不需要用别的复杂方法。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>CTF_show Web入门 信息收集writeup WEB1-WEB20</title>
-        <link>https://blog.kingbatsoft.top/p/ctfshow_web_informationcollect_write_up/</link>
-        <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://blog.kingbatsoft.top/p/ctfshow_web_informationcollect_write_up/</guid>
-        <description>&lt;h1 id=&#34;ctfshow-web入门-信息收集writeup&#34;&gt;CTFSHOW web入门 信息收集WriteUP
-&lt;/h1&gt;&lt;p&gt;&lt;code&gt;2&lt;/code&gt; &lt;code&gt;3&lt;/code&gt; &lt;code&gt;3&lt;/code&gt; &lt;code&gt;C&lt;/code&gt; &lt;code&gt;T&lt;/code&gt; &lt;code&gt;F&lt;/code&gt; &lt;code&gt;S&lt;/code&gt; &lt;code&gt;H&lt;/code&gt; &lt;code&gt;O&lt;/code&gt; &lt;code&gt;W&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;因为放图后国内网络问题导致加载速度很慢效果不佳所以从这个开始就尽量不放图片了&lt;/strong&gt;&lt;/p&gt;
-&lt;!--
- ________      _________    ________  ________       ___  ___      ________      ___       __      
-|\   ____\    |\___   ___\ |\  _____\|\   ____\     |\  \|\  \    |\   __  \    |\  \     |\  \    
-\ \  \___|    \|___ \  \_| \ \  \__/ \ \  \___|_    \ \  \\\  \   \ \  \|\  \   \ \  \    \ \  \   
- \ \  \            \ \  \   \ \   __\ \ \_____  \    \ \   __  \   \ \  \\\  \   \ \  \  __\ \  \  
-  \ \  \____        \ \  \   \ \  \_|  \|____|\  \    \ \  \ \  \   \ \  \\\  \   \ \  \|\__\_\  \ 
-   \ \_______\       \ \__\   \ \__\     ____\_\  \    \ \__\ \__\   \ \_______\   \ \____________\
-    \|_______|        \|__|    \|__|    |\_________\    \|__|\|__|    \|_______|    \|____________|
-                                        \|_________|                                               
-                                                                                                   
-ctfshow{b10g_K1nGB@t3oFt_t0p}
-
-HAHA YOU WIN
---&gt;
-&lt;h2 id=&#34;web1&#34;&gt;WEB1
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;开发注释未及时删除&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;进入环境直接使用F12打开控制台即可找出&lt;em&gt;flag&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;&amp;lt;!-- ctfshow{4fd63d59-4831-49ff-9bd6-4ee34b8e70c4} --&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;web2&#34;&gt;WEB2
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;js前台拦截 === 无效操作&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;这道题进去以后发现F12按了没反应，右键也不行，但是可以直接通过浏览器界面打开开发者模式或者通过查看源代码绕过，&lt;em&gt;flag&lt;/em&gt;就在注释里&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;&amp;lt;!-- ctfshow{5f025258-4778-4833-95ff-1941f3ae0f6e} --&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;web3&#34;&gt;WEB3
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;没思路的时候抓个包看看，可能会有意外收获&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;根据提示从请求头直接抓取到&lt;em&gt;flag&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Flag: ctfshow{c9e9eea4-5293-47d2-8f13-219856f7d61e}&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;web4&#34;&gt;WEB4
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;总有人把后台地址写入robots，帮黑阔大佬们引路。&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;这道题根据提示直接访问robots.txt，获取到&lt;em&gt;flag&lt;/em&gt;文件地址，访问即可得到&lt;em&gt;flag&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&#34;web5&#34;&gt;WEB5
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;phps源码泄露有时候能帮上忙&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;这道题一开始没有思路，但是看到phps文件尝试访问index.phps下载到主页的源码后直接在注释里得到&lt;em&gt;flag&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;//ctfshow{2b127e88-8378-410e-abe0-1f215357d8ac}&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;web6&#34;&gt;WEB6
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;解压源码到当前目录，测试正常，收工&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;这道题是站长太粗心直接把网站源码遗留在生产环境中，扫描目录发现www.zip，下载即可直接获得&lt;em&gt;flag&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&#34;web7&#34;&gt;WEB7
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;版本控制很重要，但不要部署到生产环境更重要。&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;这道题根据提示可以猜到是版本文件泄露，尝试访问/.git直接获取&lt;em&gt;flag&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&#34;web8&#34;&gt;WEB8
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;版本控制很重要，但不要部署到生产环境更重要。&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;嗯？难道我看错题了？不过测试发现.git这次不行了，经过搜索发现.svn也是常用的开发版本文件，尝试访问发现直接获取&lt;em&gt;flag&lt;/em&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;NOTE&lt;/span&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;常见文件泄露目录格式&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;git&lt;/span&gt;  &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;svn&lt;/span&gt;  &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;DS_store&lt;/span&gt;  &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;hg&lt;/span&gt;  &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CVS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/*&lt;/span&gt;  &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;bzr&lt;/span&gt;   &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;filename&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;swp&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;phpinfo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;php&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;web9&#34;&gt;WEB9
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;发现网页有个错别字？赶紧在生产环境vim改下，不好，死机了&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;这题似乎也没啥思路，不过上一题查过vim的缓存文件 .filename.swp 尝试访问index.php.swp直接获取到了&lt;em&gt;flag&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&#34;web10&#34;&gt;WEB10
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;cookie 只是一块饼干，不能存放任何隐私数据&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;根据提示直接抓包获取cookie内存储的的&lt;em&gt;flag&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&#34;web11&#34;&gt;WEB11
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;域名其实也可以隐藏信息，比如flag.ctfshow.com 就隐藏了一条信息&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;用好几个网站查询都不行，不知道是什么问题，可能域名有问题，访问不了了，不过大概是考nslookup这种域名解析的知识&lt;/p&gt;
-&lt;h2 id=&#34;web12&#34;&gt;WEB12
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;有时候网站上的公开信息，就是管理员常用密码&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;网站底下的帮助热线就是密码，直接使用admin账号即可登录&lt;/p&gt;
-&lt;h2 id=&#34;web13&#34;&gt;WEB13
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;技术文档里面不要出现敏感信息，部署到生产环境后及时修改默认密码&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;在网站顶部看到document，点进去后看到默认密码，尝试登录直接成功&lt;/p&gt;
-&lt;h2 id=&#34;web14&#34;&gt;WEB14
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;有时候源码里面就能不经意间泄露重要(editor)的信息,默认配置害死人&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;这道题一开始也没思路，点提示后才发现/editor是个能访问的插入编辑器，选择上传文件发现有个文件浏览，一看直接连传马都不需要了，直接找到&lt;em&gt;flag&lt;/em&gt;所在文件打开即可&lt;/p&gt;
-&lt;h2 id=&#34;web15&#34;&gt;WEB15
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;公开的信息比如邮箱，可能造成信息泄露，产生严重后果&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;根据提示找到一个QQ邮箱，尝试/admin发现后台管理界面，尝试邮箱失败，不过发现有重置密码界面，点进去发现是我所在的城市？根据QQ邮箱的QQ直接搜到这个人是在西安，尝试后直接改掉了密码进入后台&lt;/p&gt;
-&lt;h2 id=&#34;web16&#34;&gt;WEB16
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;对于测试用的探针，使用完毕后要及时删除，可能会造成信息泄露&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;直接访问tz.php找phpinfo信息，然后直接搜索到作为&lt;em&gt;flag&lt;/em&gt;的环境变量&lt;/p&gt;
-&lt;h2 id=&#34;web17&#34;&gt;WEB17
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;备份的sql文件会泄露敏感信息&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;直接下载backup.sql获得&lt;em&gt;flag&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&#34;web18&#34;&gt;WEB18
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;不要着急，休息，休息一会儿，玩101分给你flag&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;这道题是个很难的Flappy bird，玩了一会发现根本不可能过，所以F12找到js文件的通过条件的js&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;result&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;window&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;confirm&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;\u4f60\u8d62\u4e86\uff0c\u53bb\u5e7a\u5e7a\u96f6\u70b9\u76ae\u7231\u5403\u76ae\u770b\u770b&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;直接复制到控制台，弹出提示：你赢了，去幺幺零点皮爱吃皮看看&lt;/p&gt;
-&lt;p&gt;根据谐音访问110.php直接获取&lt;em&gt;flag&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&#34;web19&#34;&gt;WEB19
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;密钥什么的，就不要放在前端了&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;这道题密钥前端验证，可以直接从前端找到判断的js代码&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;checkForm&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(){&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;0000000372619038&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;iv&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;ilove36dverymuch&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;pazzword&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;#pazzword&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;val&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nx&#34;&gt;pazzword&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;encrypt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;pazzword&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;iv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;#pazzword&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;val&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;pazzword&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;#loginForm&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;submit&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;encrypt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;iv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//key,iv：16位的字符串
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;key1&lt;/span&gt;  &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;CryptoJS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;enc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Latin1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;parse&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;iv1&lt;/span&gt;   &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;CryptoJS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;enc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Latin1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;parse&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;iv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;CryptoJS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;AES&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;encrypt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;key1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nx&#34;&gt;iv&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;iv1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nx&#34;&gt;mode&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;CryptoJS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;mode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;CBC&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nx&#34;&gt;padding&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;CryptoJS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;pad&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ZeroPadding&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;}).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;toString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;还给了验证的密钥&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;error_reporting&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;$flag&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;fakeflag&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;$u&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;$_POST&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;username&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;$p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;$_POST&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;pazzword&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;isset&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;isset&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)){&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;$u&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;===&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;admin&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;$p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;===&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;a599ac85a73384ee3219fa684296eaa62667238d608efa81837030bd1ce1bf04&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nx&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;$flag&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;根据收集到的信息搜索AES加密，使用&lt;a class=&#34;link&#34; href=&#34;[https://]%28https://www.mklab.cn/utils/aes%29&#34; &gt;这个网站&lt;/a&gt;，从上面前端的JS中找到相关方法：&lt;code&gt;CBC&lt;/code&gt; &lt;code&gt;ZeroPadding&lt;/code&gt;，再根据密文解密出密码：&lt;em&gt;&lt;strong&gt;i_want_a_36d_girl&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;直接提交账号和密码&lt;code&gt;admin&lt;/code&gt; &lt;code&gt;i_want_a_36d_girl&lt;/code&gt;获取&lt;em&gt;flag&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&#34;web20&#34;&gt;WEB20
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;mdb文件是早期asp+access构架的数据库文件，文件泄露相当于数据库被脱裤了。&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;根据提示搜索相关信息，可以搜到/db/db.mdb，尝试下载后使用access打开，虽然报了一堆错，但是最后还是找到了&lt;em&gt;flag&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;flag{ctfshow_old_database}&lt;/code&gt;&lt;/p&gt;
 </description>
         </item>
         

@@ -2,79 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.kingbatsoft.top/en/</loc>
+    <loc>http://localhost:1313/en/</loc>
     <lastmod>2020-10-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.kingbatsoft.top/"
+                href="http://localhost:1313/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.kingbatsoft.top/en/"
+                href="http://localhost:1313/en/"
                 />
   </url><url>
-    <loc>https://blog.kingbatsoft.top/en/about/</loc>
+    <loc>http://localhost:1313/en/about/</loc>
     <lastmod>2020-10-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.kingbatsoft.top/%E5%85%B3%E4%BA%8E/"
+                href="http://localhost:1313/%E5%85%B3%E4%BA%8E/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.kingbatsoft.top/en/about/"
+                href="http://localhost:1313/en/about/"
                 />
   </url><url>
-    <loc>https://blog.kingbatsoft.top/en/page/</loc>
+    <loc>http://localhost:1313/en/page/</loc>
     <lastmod>2020-10-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.kingbatsoft.top/page/"
+                href="http://localhost:1313/page/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.kingbatsoft.top/en/page/"
+                href="http://localhost:1313/en/page/"
                 />
   </url><url>
-    <loc>https://blog.kingbatsoft.top/en/categories/</loc>
+    <loc>http://localhost:1313/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.kingbatsoft.top/categories/"
+                href="http://localhost:1313/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.kingbatsoft.top/en/categories/"
+                href="http://localhost:1313/en/categories/"
                 />
   </url><url>
-    <loc>https://blog.kingbatsoft.top/en/tags/</loc>
+    <loc>http://localhost:1313/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.kingbatsoft.top/tags/"
+                href="http://localhost:1313/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.kingbatsoft.top/en/tags/"
+                href="http://localhost:1313/en/tags/"
                 />
   </url><url>
-    <loc>https://blog.kingbatsoft.top/en/%E9%93%BE%E6%8E%A5/</loc>
+    <loc>http://localhost:1313/en/%E9%93%BE%E6%8E%A5/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.kingbatsoft.top/%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/"
+                href="http://localhost:1313/%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.kingbatsoft.top/en/%E9%93%BE%E6%8E%A5/"
+                href="http://localhost:1313/en/%E9%93%BE%E6%8E%A5/"
                 />
   </url>
 </urlset>

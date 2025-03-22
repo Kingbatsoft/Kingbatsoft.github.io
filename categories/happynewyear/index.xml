@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Happynewyear on 清尘博客 - 静心</title>
-        <link>https://blog.kingbatsoft.top/categories/happynewyear/</link>
+        <link>http://localhost:1313/categories/happynewyear/</link>
         <description>Recent content in Happynewyear on 清尘博客 - 静心</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Kingbatsoft</copyright>
-        <lastBuildDate>Thu, 23 Jan 2025 12:33:33 +0800</lastBuildDate><atom:link href="https://blog.kingbatsoft.top/categories/happynewyear/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 23 Jan 2025 12:33:33 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/happynewyear/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>2025新年快乐~</title>
-        <link>https://blog.kingbatsoft.top/p/happy_new_year_2025/</link>
+        <link>http://localhost:1313/p/happy_new_year_2025/</link>
         <pubDate>Thu, 23 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.kingbatsoft.top/p/happy_new_year_2025/</guid>
+        <guid>http://localhost:1313/p/happy_new_year_2025/</guid>
         <description>&lt;p&gt;新年快乐！&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.kingbatsoft.top/p/happy_new_year_2025/happyyear2025.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/happy_new_year_2025/happyyear2025.jpg&#34;
 	width=&#34;1376&#34;
 	height=&#34;776&#34;
-	srcset=&#34;https://blog.kingbatsoft.top/p/happy_new_year_2025/happyyear2025_hu9839386089696600309.jpg 480w, https://blog.kingbatsoft.top/p/happy_new_year_2025/happyyear2025_hu14271218650894328092.jpg 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/happy_new_year_2025/happyyear2025_hu9839386089696600309.jpg 480w, http://localhost:1313/p/happy_new_year_2025/happyyear2025_hu14271218650894328092.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;新年贺图&#34;
