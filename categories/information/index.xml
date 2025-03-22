@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Information on 清尘博客 - 静心</title>
-        <link>http://localhost:1313/categories/information/</link>
+        <link>https://blog.kingbatsoft.top/categories/information/</link>
         <description>Recent content in Information on 清尘博客 - 静心</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Kingbatsoft</copyright>
-        <lastBuildDate>Wed, 06 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/information/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 06 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.kingbatsoft.top/categories/information/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>CTF_show Web入门 信息收集writeup WEB1-WEB20</title>
-        <link>http://localhost:1313/p/ctfshow_web_informationcollect_write_up/</link>
+        <link>https://blog.kingbatsoft.top/p/ctfshow_web_informationcollect_write_up/</link>
         <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/ctfshow_web_informationcollect_write_up/</guid>
+        <guid>https://blog.kingbatsoft.top/p/ctfshow_web_informationcollect_write_up/</guid>
         <description>&lt;h1 id=&#34;ctfshow-web入门-信息收集writeup&#34;&gt;CTFSHOW web入门 信息收集WriteUP
 &lt;/h1&gt;&lt;p&gt;&lt;code&gt;2&lt;/code&gt; &lt;code&gt;3&lt;/code&gt; &lt;code&gt;3&lt;/code&gt; &lt;code&gt;C&lt;/code&gt; &lt;code&gt;T&lt;/code&gt; &lt;code&gt;F&lt;/code&gt; &lt;code&gt;S&lt;/code&gt; &lt;code&gt;H&lt;/code&gt; &lt;code&gt;O&lt;/code&gt; &lt;code&gt;W&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;因为放图后国内网络问题导致加载速度很慢效果不佳所以从这个开始就尽量不放图片了&lt;/strong&gt;&lt;/p&gt;

