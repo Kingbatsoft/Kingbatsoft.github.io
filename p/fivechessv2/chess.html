@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>五子棋（集成示例）</title>
+  <style>
+    body {
+      text-align: center;
+      background-color: #f0f0f0;
+      font-family: sans-serif;
+      margin-top: 20px;
+    }
+    canvas {
+      background-color: #e8b96e;
+      border: 2px solid #000;
+      cursor: pointer;
+    }
+    button, select {
+      margin: 10px 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    .game-info {
+      margin: 10px 0;
+      font-size: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+    .player-timer {
+      padding: 10px 20px;
+      border-radius: 5px;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .player-timer.active {
+      background: #e8f5e9;
+      font-weight: bold;
+    }
+    .mode-switch {
+      margin: 10px 0;
+    }
+    .mode-switch label {
+      margin: 0 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>五子棋（集成示例）</h1>
+
+  <!-- 难度选择下拉框 -->
+  <div>
+    <label for="difficulty">AI 难度：</label>
+    <select id="difficulty">
+      <option value="1">简单</option>
+      <option value="2" selected>中等</option>
+      <option value="3">困难</option>
+    </select>
+  </div>
+
+  <div class="mode-switch">
+    <label>
+      <input type="radio" name="mode" value="pvp" checked> 双人对战
+    </label>
+    <label>
+      <input type="radio" name="mode" value="pve"> 人机对战
+    </label>
+  </div>
+  <div class="game-info">
+    <div id="player1Timer" class="player-timer active">黑方用时：0秒</div>
+    <div id="player2Timer" class="player-timer">白方用时：0秒</div>
+  </div>
+
+  <canvas id="board" width="600" height="600"></canvas>
+  <br>
+  <button id="reset">重置棋盘</button>
+  <button id="rollback">悔棋</button>
+
+  <!-- 如果要真正使用「Rapfi」引擎，请在此处加上相关脚本，如：
+       <script src="rapfi-single.js"></script>
+       <script src="rapfi.data"></script>
+       ... -->
+  <!-- 或者把下面这段非常简化的AI逻辑换成对 Rapfi 引擎的调用 -->
+
+  <script>
+    // ========== 这里开始是（示例）AI 引擎配置区域 ==========
+
+    // 如果你要用「Rapfi」，可以在这里初始化引擎:
+    /*
+    // import { init, sendCommand, stopThinking } from './engine-warpper.js'
+    // 假设 difficulty = 1,2,3 可以对应:
+    //    1: INFO STRENGTH 20
+    //    2: INFO STRENGTH 50
+    //    3: INFO STRENGTH 100
+    // 你需要在 init() 的回调里监听引擎 "ok" 标志表示已就绪
+    // 具体可参考此前贴出的 Rapfi 封装代码
+    let rapfiReady = false;
+    let rapfiCallback = function(msg) {
+      console.log("Engine msg:", msg);
+      if (msg.ok) rapfiReady = true;
+      // 其他返回信息在这里处理
+    };
+    init(rapfiCallback);
+    */
+
+    // 下面是示例的 Minimax 评估，会根据 difficulty 改变搜索深度
+    let difficultyLevel = 2;  // 对应下拉框的默认值
+
+    function setDifficulty(level) {
+      difficultyLevel = level;
+      // 如果用 Rapfi，可在此调用 sendCommand("INFO STRENGTH " + xxx);
+      // 或者 sendCommand("INFO MAX_DEPTH " + someDepth);
+      console.log("AI 难度已设置为：", level);
+    }
+
+    // ========== 这里是示例 Minimax + 评估函数，和原本的逻辑类似 ==========
+
+    const boardSize = 15;
+    let board = [];      // board[x][y]：0-空 1-黑 2-白
+    let moveHistory = []; // 记录所有走步
+
+    // 简易评估用到的权重
+    const weights = {
+      FIVE: 100000,
+      LIVE_FOUR: 10000,
+      DEAD_FOUR: 1000,
+      LIVE_THREE: 1000,
+      DEAD_THREE: 100,
+      LIVE_TWO: 100,
+      DEAD_TWO: 10
+    };
+
+    function evaluateBoard() {
+      let score = 0;
+      for (let i = 0; i < boardSize; i++) {
+        for (let j = 0; j < boardSize; j++) {
+          // 水平
+          if (j <= boardSize - 5) score += evaluateGroup(getLine(i, j, 0, 1, 5));
+          // 垂直
+          if (i <= boardSize - 5) score += evaluateGroup(getLine(i, j, 1, 0, 5));
+          // 右下斜
+          if (i <= boardSize - 5 && j <= boardSize - 5) score += evaluateGroup(getLine(i, j, 1, 1, 5));
+          // 左下斜
+          if (i <= boardSize - 5 && j >= 4) score += evaluateGroup(getLine(i, j, 1, -1, 5));
+        }
+      }
+      return score;
+    }
+
+    function getLine(row, col, deltaRow, deltaCol, length) {
+      const line = [];
+      for (let i = 0; i < length; i++) {
+        const r = row + deltaRow * i;
+        const c = col + deltaCol * i;
+        if (r >= 0 && r < boardSize && c >= 0 && c < boardSize) {
+          line.push(board[r][c]);
+        }
+      }
+      return line;
+    }
+
+    function evaluateGroup(group) {
+      if (group.length < 5) return 0;
+      const str = group.join('');
+      let score = 0;
+      // AI(白=2) 的加分
+      if (str === '22222') score += weights.FIVE;
+      else if (str.includes('022220')) score += weights.LIVE_FOUR;
+      else if (str.includes('02222') || str.includes('22220')) score += weights.DEAD_FOUR;
+      else if (str.includes('02220')) score += weights.LIVE_THREE;
+      else if (str.includes('00222') || str.includes('22200')) score += weights.DEAD_THREE;
+      else if (str.includes('02200') || str.includes('00220')) score += weights.LIVE_TWO;
+
+      // 玩家(黑=1) 的威胁分，采取负分
+      if (str === '11111') score -= weights.FIVE * 2;
+      else if (str.includes('011110')) score -= weights.LIVE_FOUR * 2;
+      else if (str.includes('01111') || str.includes('11110')) score -= weights.DEAD_FOUR * 2;
+      else if (str.includes('01110')) score -= weights.LIVE_THREE * 1.5;
+
+      return score;
+    }
+
+    // 获取所有可下的点（示例中：以落子周边为主）
+    function getValidMoves() {
+      const moves = [];
+      const visited = new Set();
+
+      for (const move of moveHistory) {
+        for (let dx = -2; dx <= 2; dx++) {
+          for (let dy = -2; dy <= 2; dy++) {
+            const x = move.x + dx;
+            const y = move.y + dy;
+            const key = `${x},${y}`;
+            if (!visited.has(key) &&
+                x >= 0 && x < boardSize &&
+                y >= 0 && y < boardSize &&
+                board[x][y] === 0) {
+              visited.add(key);
+              moves.push({x, y});
+            }
+          }
+        }
+      }
+      if (moves.length === 0) {
+        // 如果是第一手，默认在棋盘中心
+        const center = Math.floor(boardSize / 2);
+        moves.push({x: center, y: center});
+      }
+      return moves;
+    }
+
+    // 极大极小搜索
+    function minimax(depth, isMaximizing, alpha, beta) {
+      if (depth === 0) return evaluateBoard();
+      const moves = getValidMoves();
+
+      if (moves.length === 0) {
+        // 没有可走的点
+        return evaluateBoard();
+      }
+
+      if (isMaximizing) {
+        let maxScore = -Infinity;
+        for (const move of moves) {
+          board[move.x][move.y] = 2; // AI(白)
+          const score = minimax(depth - 1, false, alpha, beta);
+          board[move.x][move.y] = 0;
+          maxScore = Math.max(maxScore, score);
+          alpha = Math.max(alpha, score);
+          if (alpha >= beta) break;
+        }
+        return maxScore;
+      } else {
+        let minScore = Infinity;
+        for (const move of moves) {
+          board[move.x][move.y] = 1; // 玩家(黑)
+          const score = minimax(depth - 1, true, alpha, beta);
+          board[move.x][move.y] = 0;
+          minScore = Math.min(minScore, score);
+          beta = Math.min(beta, score);
+          if (beta <= alpha) break;
+        }
+        return minScore;
+      }
+    }
+
+    // 真正下子前，先用 minimax 找最佳着法
+    function aiMove() {
+      let depth = 2; // 默认搜索深度
+      if (difficultyLevel == 1) {
+        depth = 1; // 简单
+      } else if (difficultyLevel == 2) {
+        depth = 2; // 中等
+      } else {
+        depth = 3; // 困难
+      }
+
+      let bestScore = -Infinity;
+      let bestMove = null;
+      const moves = getValidMoves();
+
+      for (const move of moves) {
+        board[move.x][move.y] = 2; // AI(白)
+        const score = minimax(depth - 1, false, -Infinity, Infinity);
+        board[move.x][move.y] = 0;
+        if (score > bestScore) {
+          bestScore = score;
+          bestMove = move;
+        }
+      }
+      return bestMove || moves[0];
+    }
+
+    // ========== 这里结束示例 AI ==========
+
+    // ========== 以下是原先的棋盘绘制与事件处理逻辑，稍作整合 ==========
+
+    const canvas = document.getElementById('board');
+    const ctx = canvas.getContext('2d');
+    const gridSize = canvas.width / boardSize;
+
+    let currentPlayer = 1; // 1-黑，2-白
+    let gameOver = false;
+    let gameStartTime = Date.now();
+    let timerInterval;
+    let gameMode = 'pvp'; // 默认双人对战
+    let player1Time = 0; // 黑方用时
+    let player2Time = 0; // 白方用时
+    let lastMoveTime = Date.now(); // 上一步时间戳
+
+    function initBoard() {
+      board = [];
+      moveHistory = [];
+      for (let i = 0; i < boardSize; i++) {
+        board[i] = [];
+        for (let j = 0; j < boardSize; j++) {
+          board[i][j] = 0; // 空
+        }
+      }
+      currentPlayer = 1;
+      gameOver = false;
+      gameStartTime = Date.now();
+      lastMoveTime = Date.now();
+      player1Time = 0;
+      player2Time = 0;
+      startTimer();
+      drawBoard();
+      updateTimerDisplay();
+    }
+
+    function startTimer() {
+      clearInterval(timerInterval);
+      timerInterval = setInterval(() => {
+        if (!gameOver) {
+          const now = Date.now();
+          const elapsed = now - lastMoveTime;
+          if (currentPlayer === 1) {
+            player1Time += elapsed;
+          } else {
+            player2Time += elapsed;
+          }
+          lastMoveTime = now;
+          updateTimerDisplay();
+        }
+      }, 1000);
+    }
+
+    function updateTimerDisplay() {
+      const player1Elem = document.getElementById('player1Timer');
+      const player2Elem = document.getElementById('player2Timer');
+
+      player1Elem.textContent = `黑方用时：${Math.floor(player1Time / 1000)}秒`;
+      player2Elem.textContent = `白方用时：${Math.floor(player2Time / 1000)}秒`;
+
+      player1Elem.className = `player-timer${currentPlayer === 1 ? ' active' : ''}`;
+      player2Elem.className = `player-timer${currentPlayer === 2 ? ' active' : ''}`;
+    }
+
+    function drawBoard() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.strokeStyle = "#000";
+
+      // 棋盘背景
+      ctx.fillStyle = "#e8b96e";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // 坐标标记
+      ctx.fillStyle = "#000";
+      ctx.font = "14px Arial";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+
+      // 绘制字母 A-O
+      for (let i = 0; i < boardSize; i++) {
+        const letter = String.fromCharCode(65 + i);
+        ctx.fillText(letter, gridSize / 2 + i * gridSize, gridSize / 4);
+        ctx.fillText(letter, gridSize / 2 + i * gridSize, canvas.height - gridSize / 4);
+      }
+      // 绘制数字 1-15
+      for (let j = 0; j < boardSize; j++) {
+        const number = (j + 1).toString();
+        ctx.fillText(number, gridSize / 4, gridSize / 2 + j * gridSize);
+        ctx.fillText(number, canvas.width - gridSize / 4, gridSize / 2 + j * gridSize);
+      }
+
+      // 网格线
+      for (let i = 0; i < boardSize; i++) {
+        ctx.beginPath();
+        ctx.moveTo(gridSize / 2 + i * gridSize, gridSize / 2);
+        ctx.lineTo(gridSize / 2 + i * gridSize, canvas.height - gridSize / 2);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(gridSize / 2, gridSize / 2 + i * gridSize);
+        ctx.lineTo(canvas.width - gridSize / 2, gridSize / 2 + i * gridSize);
+        ctx.stroke();
+      }
+
+      // 天元 + 星位
+      const stars = [
+        {x: 3, y: 3}, {x: 11, y: 3}, {x: 7, y: 7},
+        {x: 3, y: 11}, {x: 11, y: 11}
+      ];
+      stars.forEach(star => {
+        ctx.beginPath();
+        ctx.arc(gridSize / 2 + star.x * gridSize, gridSize / 2 + star.y * gridSize, 4, 0, 2 * Math.PI);
+        ctx.fillStyle = "#000";
+        ctx.fill();
+      });
+
+      // 已下的棋子
+      for (let i = 0; i < boardSize; i++) {
+        for (let j = 0; j < boardSize; j++) {
+          if (board[i][j] !== 0) {
+            drawStone(i, j, board[i][j]);
+          }
+        }
+      }
+
+      // 最后一手棋标记
+      if (moveHistory.length > 0) {
+        const lastMove = moveHistory[moveHistory.length - 1];
+        ctx.beginPath();
+        ctx.arc(gridSize / 2 + lastMove.x * gridSize, gridSize / 2 + lastMove.y * gridSize, 4, 0, 2 * Math.PI);
+        ctx.fillStyle = "#ff0000";
+        ctx.fill();
+      }
+    }
+
+    function drawStone(i, j, player) {
+      const x = gridSize / 2 + i * gridSize;
+      const y = gridSize / 2 + j * gridSize;
+      const radius = gridSize / 2 - 2;
+
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, 2 * Math.PI);
+
+      const gradient = ctx.createRadialGradient(
+        x - radius/3, y - radius/3, radius/10,
+        x, y, radius
+      );
+      if (player === 1) {
+        gradient.addColorStop(0, '#666');
+        gradient.addColorStop(1, '#000');
+      } else {
+        gradient.addColorStop(0, '#fff');
+        gradient.addColorStop(1, '#ddd');
+      }
+      ctx.fillStyle = gradient;
+      ctx.fill();
+
+      if (player === 2) {
+        ctx.strokeStyle = "#000";
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+    }
+
+    // 鼠标点击落子
+    canvas.addEventListener('click', function(e) {
+      if (gameOver) return;
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const i = Math.floor((x - gridSize / 2) / gridSize + 0.5);
+      const j = Math.floor((y - gridSize / 2) / gridSize + 0.5);
+
+      if (i < 0 || i >= boardSize || j < 0 || j >= boardSize || board[i][j] !== 0) return;
+
+      // 玩家(黑)落子
+      makeMove(i, j);
+
+      // 如果是人机模式并且未结束，AI(白)落子
+      if (gameMode === 'pve' && !gameOver && currentPlayer === 2) {
+        setTimeout(() => {
+          // 如果用 Rapfi，引擎就绪后可发送棋盘给引擎并获取结果
+          // 这里用示例的 minimax
+          const best = aiMove();
+          if (best) {
+            makeMove(best.x, best.y);
+          }
+        }, 500);
+      }
+    });
+
+    function makeMove(i, j) {
+      board[i][j] = currentPlayer;
+      moveHistory.push({x: i, y: j, player: currentPlayer});
+      drawBoard();
+
+      if (checkWin(i, j, currentPlayer)) {
+        gameOver = true;
+        clearInterval(timerInterval);
+        setTimeout(() => {
+          alert((currentPlayer === 1 ? "黑方" : "白方") + 
+                ` 获胜！\n黑方用时：${Math.floor(player1Time / 1000)}秒\n白方用时：${Math.floor(player2Time / 1000)}秒`);
+        }, 10);
+      } else {
+        // 切换选手
+        const now = Date.now();
+        const elapsed = now - lastMoveTime;
+        if (currentPlayer === 1) player1Time += elapsed;
+        else player2Time += elapsed;
+        lastMoveTime = now;
+
+        currentPlayer = (currentPlayer === 1 ? 2 : 1);
+        updateTimerDisplay();
+      }
+    }
+
+    function checkWin(x, y, player) {
+      const directions = [
+        {dx: 1, dy: 0},  
+        {dx: 0, dy: 1},
+        {dx: 1, dy: 1},
+        {dx: 1, dy: -1}
+      ];
+      for (let d = 0; d < directions.length; d++) {
+        let count = 1;
+        const dx = directions[d].dx;
+        const dy = directions[d].dy;
+        // 正向
+        for (let step = 1; step < 5; step++) {
+          const nx = x + step * dx;
+          const ny = y + step * dy;
+          if (nx < 0 || nx >= boardSize || ny < 0 || ny >= boardSize) break;
+          if (board[nx][ny] === player) count++;
+          else break;
+        }
+        // 反向
+        for (let step = 1; step < 5; step++) {
+          const nx = x - step * dx;
+          const ny = y - step * dy;
+          if (nx < 0 || nx >= boardSize || ny < 0 || ny >= boardSize) break;
+          if (board[nx][ny] === player) count++;
+          else break;
+        }
+        if (count >= 5) return true;
+      }
+      return false;
+    }
+
+    // 悔棋
+    function rollback() {
+      if (gameOver || moveHistory.length === 0) return;
+      const stepsToRollback = (gameMode === 'pve' ? 2 : 1);
+      for (let i = 0; i < stepsToRollback && moveHistory.length > 0; i++) {
+        const lastMove = moveHistory.pop();
+        board[lastMove.x][lastMove.y] = 0;
+      }
+      currentPlayer = (moveHistory.length > 0 ?
+        (moveHistory[moveHistory.length - 1].player === 1 ? 2 : 1) : 1);
+      lastMoveTime = Date.now();
+      updateTimerDisplay();
+      drawBoard();
+    }
+
+    // 绑定按钮
+    document.getElementById('reset').addEventListener('click', function() {
+      initBoard();
+    });
+    document.getElementById('rollback').addEventListener('click', function() {
+      rollback();
+    });
+
+    // 模式切换
+    document.querySelectorAll('input[name="mode"]').forEach(radio => {
+      radio.addEventListener('change', function(e) {
+        gameMode = e.target.value;
+        initBoard();
+      });
+    });
+
+    // 难度下拉框切换
+    document.getElementById('difficulty').addEventListener('change', function(e) {
+      const level = parseInt(e.target.value);
+      setDifficulty(level);
+    });
+
+    // 初始设置 & 启动
+    initBoard();
+    // 如果需要的话，默认将难度设置到“中等”
+    setDifficulty(2);
+  </script>
+
+  <footer>
+    <p>© 2025 Kingbatsoft</p>
+  </footer>
+</body>
+</html>
