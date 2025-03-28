@@ -32,7 +32,7 @@
 &lt;div class=&#34;gomoku-container&#34;&gt;
   &lt;iframe src=&#34;./deepmiao.html&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
-&lt;!-- &lt;a href=&#34;chess.html&#34;&gt;移动端访问这里&lt;/a&gt; --&gt;
+&lt;a href=&#34;deepmiao.html&#34;&gt;移动端访问这里&lt;/a&gt;
 </description>
         </item>
         <item>
