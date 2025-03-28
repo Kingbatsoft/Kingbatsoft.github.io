@@ -10,7 +10,7 @@
 <meta property='og:description' content="CTFSHOW">
 <meta property='og:url' content='https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up_3/'>
 <meta property='og:site_name' content='清尘博客 - 静心'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-03-18T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-03-18T00:00:00&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-03-26T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-03-26T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="CTF_show Web 命令执行writeup P3 WEB51-WEB60">
 <meta name="twitter:description" content="CTFSHOW"><style>
      
@@ -329,6 +329,9 @@
     <li><a href="#web51">WEB51</a></li>
     <li><a href="#web52">WEB52</a></li>
     <li><a href="#web53">WEB53</a></li>
+    <li><a href="#web54">WEB54</a></li>
+    <li><a href="#web55">WEB55</a></li>
+    <li><a href="#web56">WEB56</a></li>
   </ol>
 </nav>
         </div>
@@ -398,7 +401,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Mar 18, 2025</time>
+                <time class="article-time--published">Mar 26, 2025</time>
             </div>
         
 
@@ -413,7 +416,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 3 分钟
                 </time>
             </div>
         
@@ -612,7 +615,191 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span> 
 </span></span></code></pre></td></tr></table>
 </div>
+</div><p>本题可以通过反斜杠和引号绕过e.g.<code>?c=nl${IFS}fl\ag.php</code> <code>?c=ca\t${IFS}fl\ag.php</code>
+p.s.一个小知识：
+<img src="/p/ctfshow_web_command_write_up_3/image.png"
+	width="1408"
+	height="1269"
+	srcset="/p/ctfshow_web_command_write_up_3/image_hu14334683025177371136.png 480w, /p/ctfshow_web_command_write_up_3/image_hu14804297556160762340.png 1024w"
+	loading="lazy"
+	
+		alt="233"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="110"
+		data-flex-basis="266px"
+	
+></p>
+<h2 id="web54">WEB54
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"> <span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm"># -*- coding: utf-8 -*-
+</span></span></span><span class="line"><span class="cl"><span class="cm"># @Author: Lazzaro
+</span></span></span><span class="line"><span class="cl"><span class="cm"># @Date:   2020-09-05 20:49:30
+</span></span></span><span class="line"><span class="cl"><span class="cm"># @Last Modified by:   h1xa
+</span></span></span><span class="line"><span class="cl"><span class="cm"># @Last Modified time: 2020-09-07 19:43:42
+</span></span></span><span class="line"><span class="cl"><span class="cm"># @email: h1xa@ctfer.com
+</span></span></span><span class="line"><span class="cl"><span class="cm"># @link: https://ctfer.com
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">])){</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$c</span><span class="o">=</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">preg_match</span><span class="p">(</span><span class="s2">&#34;/\;|.*c.*a.*t.*|.*f.*l.*a.*g.*| |[0-9]|\*|.*m.*o.*r.*e.*|.*w.*g.*e.*t.*|.*l.*e.*s.*s.*|.*h.*e.*a.*d.*|.*s.*o.*r.*t.*|.*t.*a.*i.*l.*|.*s.*e.*d.*|.*c.*u.*t.*|.*t.*a.*c.*|.*a.*w.*k.*|.*s.*t.*r.*i.*n.*g.*s.*|.*o.*d.*|.*c.*u.*r.*l.*|.*n.*l.*|.*s.*c.*p.*|.*r.*m.*|\`|\%|</span><span class="se">\x09</span><span class="s2">|</span><span class="se">\x26</span><span class="s2">|\&gt;|\&lt;/i&#34;</span><span class="p">,</span> <span class="nv">$c</span><span class="p">)){</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">system</span><span class="p">(</span><span class="nv">$c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">highlight_file</span><span class="p">(</span><span class="no">__FILE__</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> 
+</span></span></code></pre></td></tr></table>
 </div>
+</div><p>tip:过滤了很多命令。中间这些个很多的星号的内容，其实是说，含有cat,more这样的会被匹配，如cat 那么ca323390ft或c232fa3kdfst，凡是按序出现了cat 都被匹配。这时，我们不能直接写ca?因为这样是匹配不到命令的。只能把全路径写出来，如/bin/ca?，与/bin/ca?匹配的，只有/bin/cat命令，这样就用到了cat命令了。</p>
+<p>这里有两种思路，第一种就是通过疏忽没有过滤的指令来进行读取（查上一章的表），第二种是通过一些特殊方法绕过。</p>
+<p>我先想出来的第一种：</p>
+<p>这里中间加星号的意思就是匹配到例如cxxxxxaxxxt这种字符就过滤掉，这里就不可以出现可以连起来的以上的词，这里我通过hexdump来读取出文件编码，然后通过cyberchef先from hexdump转成原始hex位，再使用Swap endianness进行一次反转，再转换回去就得到了原始的文件。</p>
+<p>这里还可以通过<code>/bin/ca?``mv flag.php 1.txt</code> 这种进行绕过，这里不仔细说了。</p>
+<h2 id="web55">WEB55
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-PHP" data-lang="PHP"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm"># -*- coding: utf-8 -*-
+</span></span></span><span class="line"><span class="cl"><span class="cm"># @Author: Lazzaro
+</span></span></span><span class="line"><span class="cl"><span class="cm"># @Date:   2020-09-05 20:49:30
+</span></span></span><span class="line"><span class="cl"><span class="cm"># @Last Modified by:   h1xa
+</span></span></span><span class="line"><span class="cl"><span class="cm"># @Last Modified time: 2020-09-07 20:03:51
+</span></span></span><span class="line"><span class="cl"><span class="cm"># @email: h1xa@ctfer.com
+</span></span></span><span class="line"><span class="cl"><span class="cm"># @link: https://ctfer.com
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 你们在炫技吗？
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">if</span><span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">])){</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$c</span><span class="o">=</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">preg_match</span><span class="p">(</span><span class="s2">&#34;/\;|[a-z]|\`|\%|</span><span class="se">\x09</span><span class="s2">|</span><span class="se">\x26</span><span class="s2">|\&gt;|\&lt;/i&#34;</span><span class="p">,</span> <span class="nv">$c</span><span class="p">)){</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">system</span><span class="p">(</span><span class="nv">$c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">highlight_file</span><span class="p">(</span><span class="no">__FILE__</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这道题考bash无字母命令执行，这题解法挺多的，这里举例两个：</p>
+<p>1.
+由于过滤了字母，但没有过滤数字，我们尝试使用/bin目录下的可执行程序。</p>
+<p>但因为字母不能传入，我们需要使用通配符?来进行代替</p>
+<p>?c=/bin/base64 flag.php</p>
+<p>替换后payload为：</p>
+<p>?c=/???/????64 ????.???
+2.
+使用这种Bash的八进制转义序列：$&rsquo;\154\163&rsquo;（ls） $&rsquo;\143\141\164&rsquo;%20*（cat *）</p>
+<h2 id="web56">WEB56
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"> <span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm"># -*- coding: utf-8 -*-
+</span></span></span><span class="line"><span class="cl"><span class="cm"># @Author: Lazzaro
+</span></span></span><span class="line"><span class="cl"><span class="cm"># @Date:   2020-09-05 20:49:30
+</span></span></span><span class="line"><span class="cl"><span class="cm"># @Last Modified by:   h1xa
+</span></span></span><span class="line"><span class="cl"><span class="cm"># @Last Modified time: 2020-09-07 22:02:47
+</span></span></span><span class="line"><span class="cl"><span class="cm"># @email: h1xa@ctfer.com
+</span></span></span><span class="line"><span class="cl"><span class="cm"># @link: https://ctfer.com
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 你们在炫技吗？
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">if</span><span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">])){</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$c</span><span class="o">=</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">preg_match</span><span class="p">(</span><span class="s2">&#34;/\;|[a-z]|[0-9]|</span><span class="se">\\</span><span class="s2">$|\(|\{|\&#39;|</span><span class="se">\&#34;</span><span class="s2">|\`|\%|</span><span class="se">\x09</span><span class="s2">|</span><span class="se">\x26</span><span class="s2">|\&gt;|\&lt;/i&#34;</span><span class="p">,</span> <span class="nv">$c</span><span class="p">)){</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">system</span><span class="p">(</span><span class="nv">$c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">highlight_file</span><span class="p">(</span><span class="no">__FILE__</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这次把0-9和a-z全部过滤了</p>
+
 </section>
 
 

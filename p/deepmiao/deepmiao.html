@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepmiao - 喵喵对话AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/core.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/github.min.css">
+    <style>
+        :root {
+            --primary-color: #6d4aff;
+            --secondary-color: #8e6cff;
+            --bg-color: #f5f7fa;
+            --card-color: #ffffff;
+            --text-color: #333333;
+            --text-secondary: #666666;
+            --border-color: #e1e4e8;
+            --user-bubble: #e3f2fd;
+            --bot-bubble: #f0f0f0;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            font-size: 28px;
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-left: 10px;
+        }
+
+        .chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--card-color);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .chat-history {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            line-height: 1.5;
+            position: relative;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .user-message {
+            align-self: flex-end;
+            background-color: var(--primary-color);
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .bot-message {
+            align-self: flex-start;
+            background-color: var(--bot-bubble);
+            color: var(--text-color);
+            border-bottom-left-radius: 4px;
+        }
+
+        .message-content {
+            word-wrap: break-word;
+        }
+
+        .message-content img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .message-content pre {
+            background-color: rgba(0, 0, 0, 0.05);
+            padding: 12px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .message-content code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        .message-time {
+            font-size: 11px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+            text-align: right;
+        }
+
+        .input-area {
+            padding: 16px;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--card-color);
+            display: flex;
+            gap: 10px;
+        }
+
+        .input-field {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .input-field:focus {
+            border-color: var(--primary-color);
+        }
+
+        .send-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .send-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .send-button i {
+            font-size: 18px;
+        }
+
+        .typing-indicator {
+            display: none;
+            align-self: flex-start;
+            background-color: var(--bot-bubble);
+            padding: 12px 16px;
+            border-radius: 18px;
+            border-bottom-left-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--text-secondary);
+            border-radius: 50%;
+            animation: typingAnimation 1.4s infinite ease-in-out;
+        }
+
+        .typing-dot:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typingAnimation {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-4px); }
+        }
+
+        .welcome-message {
+            text-align: center;
+            margin: auto;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        .welcome-message h2 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .welcome-message p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .feature {
+            background-color: var(--bot-bubble);
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature i {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .message {
+                max-width: 90%;
+            }
+            
+            .logo-text {
+                font-size: 20px;
+            }
+            
+            .tagline {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-cat logo-icon"></i>
+                <span class="logo-text">Deepmiao</span>
+                <span class="tagline">· 只会喵喵叫的AI</span>
+            </div>
+        </header>
+
+        <div class="chat-container">
+            <div class="chat-history" id="chatHistory">
+                <div class="welcome-message">
+                    <h2>欢迎使用 Deepmiao</h2>
+                    <p>喵喵喵喵喵喵喵喵喵喵喵喵喵</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-comment-alt"></i>
+                            <span>不智能喵喵回复</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-history"></i>
+                            <span>不支持对话历史记录</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-code"></i>
+                            <span>只支持Markdown</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="typing-dots">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <input type="text" class="input-field" id="userInput" placeholder="输入你想说的话..." autocomplete="off">
+                <button class="send-button" id="sendButton">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatHistory = document.getElementById('chatHistory');
+            const userInput = document.getElementById('userInput');
+            const sendButton = document.getElementById('sendButton');
+            const typingIndicator = document.getElementById('typingIndicator');
+            
+            // 配置marked.js以支持语法高亮
+            marked.setOptions({
+                highlight: function(code, lang) {
+                    if (lang && hljs.getLanguage(lang)) {
+                        return hljs.highlight(lang, code).value;
+                    }
+                    return hljs.highlightAuto(code).value;
+                },
+                breaks: true,
+                gfm: true
+            });
+            
+            // 发送消息函数
+            function sendMessage() {
+                const message = userInput.value.trim();
+                if (message === '') return;
+                
+                // 添加用户消息到聊天历史
+                addMessage(message, 'user');
+                userInput.value = '';
+                
+                // 显示"正在输入"指示器
+                typingIndicator.style.display = 'block';
+                chatHistory.scrollTop = chatHistory.scrollHeight;
+                
+                // 模拟AI思考时间
+                setTimeout(() => {
+                    typingIndicator.style.display = 'none';
+                    
+                    // 生成随机喵喵回复
+                    const miaoResponse = generateMiaoResponse();
+                    addMessage(miaoResponse, 'bot');
+                    
+                    chatHistory.scrollTop = chatHistory.scrollHeight;
+                }, 1000 + Math.random() * 2000);
+            }
+            
+            // 添加消息到聊天历史
+            function addMessage(content, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender}-message`;
+                
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'message-content';
+                contentDiv.innerHTML = marked.parse(content);
+                
+                const timeDiv = document.createElement('div');
+                timeDiv.className = 'message-time';
+                timeDiv.textContent = getCurrentTime();
+                
+                messageDiv.appendChild(contentDiv);
+                messageDiv.appendChild(timeDiv);
+                
+                // 移除欢迎消息（如果有）
+                const welcomeMessage = chatHistory.querySelector('.welcome-message');
+                if (welcomeMessage && chatHistory.children.length > 1) {
+                    welcomeMessage.remove();
+                }
+                
+                chatHistory.appendChild(messageDiv);
+            }
+            
+            // 生成随机喵喵回复
+            function generateMiaoResponse() {
+                const miaoTypes = [
+                    // 简单喵
+                    '喵~',
+                    '喵喵！',
+                    '喵...',
+                    '喵？',
+                    '喵呜~',
+                    '喵嗷！',
+                    '喵喵喵？',
+                    '喵~',
+                    '喵喵！',
+                    '喵...',
+                    '喵？',
+                    '喵呜~',
+                    '喵嗷！',
+                    '喵喵喵？',
+                    '喵~',
+                    '喵喵！',
+                    '喵...',
+                    '喵？',
+                    '喵呜~',
+                    '喵嗷！',
+                    '喵喵喵？',
+                    // 长喵
+                    '喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵',
+		    // 代码喵
+                    '```javascript\nfunction miao() {\n  return "喵".repeat(100);\n}\n```',
+                    '```python\ndef miao():\n    for i in range(10):\n        print("喵" * i)\n```',
+                    '```html\n<div class="cat">\n  <span>喵</span>\n  <span>喵</span>\n  <span>喵</span>\n</div>\n```',
+                    
+                    // 列表喵
+                    '- 喵\n- 喵喵\n- 喵喵喵\n- 喵喵喵喵',
+                    '1. 第一喵\n2. 第二喵\n3. 第三喵',
+                    
+                    // 强调喵
+                    '**重要喵！** 这是非常重要的喵！',
+                    '_优雅的喵_ 和 `代码喵`',
+                    
+                    // 链接和图片喵
+                    '[点击查看更多喵](https://http.cat/)',
+                    '![好康的图片](https://api.btstu.cn/sjbz/api.php?lx=dongman&format=images)',
+                    
+                    // 表格喵
+                    '| 喵种 | 描述 |\n|------|------|\n| 短毛喵 | 喵喵 |\n| 长毛喵 | 喵呜喵呜 |\n| 胖喵 | 喵嗷嗷 |',
+                    
+                    // 混合喵
+                    '# 喵喵研究报告\n\n**摘要**：喵喵是非常重要的。\n\n## 方法\n\n1. 收集喵\n2. 分析喵\n3. 得出结论\n\n```python\nprint("喵" * 10)\n```\n\n![实验喵](https://http.cat/200)'
+                ];
+                
+                // 随机选择1-3种喵类型组合
+                const responseCount = 1 + Math.floor(Math.random() * 3);
+                let finalResponse = '';
+                
+                for (let i = 0; i < responseCount; i++) {
+                    const randomIndex = Math.floor(Math.random() * miaoTypes.length);
+                    finalResponse += miaoTypes[randomIndex] + '\n\n';
+                }
+                
+                return finalResponse.trim();
+            }
+            
+            // 获取当前时间
+		function getCurrentTime() {
+	        const now = new Date();
+                const hours = now.getHours().toString().padStart(2, '0');
+ 		const minutes = now.getMinutes().toString().padStart(2, '0');
+                const seconds = now.getSeconds().toString().padStart(2, '0');
+                const milliseconds = now.getMilliseconds().toString().padStart(3, '0');
+                return `${hours}:${minutes}:${seconds}:${milliseconds}`;
+           }
+
+            
+            // 事件监听
+            sendButton.addEventListener('click', sendMessage);
+            
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            // 初始欢迎消息
+            setTimeout(() => {
+                addMessage("喵~ 我是Deepmiao，一个只会喵喵叫的AI。\n\n你可以问我任何问题，但我只会喵喵喵", 'bot');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

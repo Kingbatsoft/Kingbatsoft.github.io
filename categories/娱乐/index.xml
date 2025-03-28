@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>娱乐 on 清尘博客 - 静心</title>
+        <link>https://blog.kingbatsoft.top/categories/%E5%A8%B1%E4%B9%90/</link>
+        <description>Recent content in 娱乐 on 清尘博客 - 静心</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Kingbatsoft</copyright>
+        <lastBuildDate>Fri, 28 Mar 2025 21:31:24 +0800</lastBuildDate><atom:link href="https://blog.kingbatsoft.top/categories/%E5%A8%B1%E4%B9%90/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>本站现已接入AI喵...对吗？</title>
+        <link>https://blog.kingbatsoft.top/p/deepmiao/</link>
+        <pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.kingbatsoft.top/p/deepmiao/</guid>
+        <description>&lt;p&gt;&lt;del&gt;&lt;em&gt;喵？&lt;/em&gt;&lt;/del&gt;&lt;/p&gt;
+&lt;style&gt;
+  .gomoku-container {
+    position: relative;
+    width: 100%;
+    padding-top: 80%;
+  }
+  .gomoku-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+&lt;/style&gt;
+&lt;div class=&#34;gomoku-container&#34;&gt;
+  &lt;iframe src=&#34;./deepmiao.html&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;!-- &lt;a href=&#34;chess.html&#34;&gt;移动端访问这里&lt;/a&gt; --&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
