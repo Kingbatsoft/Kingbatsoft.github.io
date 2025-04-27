@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.kingbatsoft.top/</loc>
-    <lastmod>2025-03-28T21:31:24+08:00</lastmod>
+    <lastmod>2025-04-22T17:53:49+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -15,11 +15,8 @@
                 href="https://blog.kingbatsoft.top/"
                 />
   </url><url>
-    <loc>https://blog.kingbatsoft.top/categories/ai/</loc>
-    <lastmod>2025-03-28T21:31:24+08:00</lastmod>
-  </url><url>
     <loc>https://blog.kingbatsoft.top/categories/</loc>
-    <lastmod>2025-03-28T21:31:24+08:00</lastmod>
+    <lastmod>2025-04-22T17:53:49+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -31,10 +28,34 @@
                 href="https://blog.kingbatsoft.top/categories/"
                 />
   </url><url>
-    <loc>https://blog.kingbatsoft.top/categories/online/</loc>
-    <lastmod>2025-03-28T21:31:24+08:00</lastmod>
+    <loc>https://blog.kingbatsoft.top/categories/commandexec/</loc>
+    <lastmod>2025-04-22T17:53:49+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.kingbatsoft.top/categories/ctf/</loc>
+    <lastmod>2025-04-22T17:53:49+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.kingbatsoft.top/categories/ctf_show/</loc>
+    <lastmod>2025-04-22T17:53:49+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up_4/</loc>
+    <lastmod>2025-04-22T17:33:49+08:00</lastmod>
   </url><url>
     <loc>https://blog.kingbatsoft.top/post/</loc>
+    <lastmod>2025-04-22T17:53:49+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.kingbatsoft.top/categories/web/</loc>
+    <lastmod>2025-04-22T17:53:49+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.kingbatsoft.top/categories/wrtieup/</loc>
+    <lastmod>2025-04-22T17:53:49+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up_3/</loc>
+    <lastmod>2025-04-22T17:53:49+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.kingbatsoft.top/categories/ai/</loc>
+    <lastmod>2025-03-28T21:31:24+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.kingbatsoft.top/categories/online/</loc>
     <lastmod>2025-03-28T21:31:24+08:00</lastmod>
   </url><url>
     <loc>https://blog.kingbatsoft.top/p/deepmiao/</loc>
@@ -42,24 +63,6 @@
   </url><url>
     <loc>https://blog.kingbatsoft.top/categories/%E5%A8%B1%E4%B9%90/</loc>
     <lastmod>2025-03-28T21:31:24+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.kingbatsoft.top/categories/commandexec/</loc>
-    <lastmod>2025-03-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.kingbatsoft.top/categories/ctf/</loc>
-    <lastmod>2025-03-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.kingbatsoft.top/categories/ctf_show/</loc>
-    <lastmod>2025-03-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.kingbatsoft.top/p/ctfshow_web_command_write_up_3/</loc>
-    <lastmod>2025-03-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.kingbatsoft.top/categories/web/</loc>
-    <lastmod>2025-03-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.kingbatsoft.top/categories/wrtieup/</loc>
-    <lastmod>2025-03-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.kingbatsoft.top/categories/games/</loc>
     <lastmod>2025-03-22T20:27:24+08:00</lastmod>
