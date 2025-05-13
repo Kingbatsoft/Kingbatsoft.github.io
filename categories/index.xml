@@ -7,18 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Kingbatsoft</copyright>
-        <lastBuildDate>Tue, 22 Apr 2025 17:53:49 +0800</lastBuildDate><atom:link href="https://blog.kingbatsoft.top/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>CommandExec</title>
-        <link>https://blog.kingbatsoft.top/categories/commandexec/</link>
-        <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://blog.kingbatsoft.top/categories/commandexec/</guid>
-        <description></description>
-        </item>
-        <item>
+        <lastBuildDate>Tue, 13 May 2025 17:37:27 +0800</lastBuildDate><atom:link href="https://blog.kingbatsoft.top/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>CTF</title>
         <link>https://blog.kingbatsoft.top/categories/ctf/</link>
-        <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
+        <pubDate>Tue, 13 May 2025 00:00:00 +0000</pubDate>
         
         <guid>https://blog.kingbatsoft.top/categories/ctf/</guid>
         <description></description>
@@ -26,15 +18,23 @@
         <item>
         <title>CTF_Show</title>
         <link>https://blog.kingbatsoft.top/categories/ctf_show/</link>
-        <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
+        <pubDate>Tue, 13 May 2025 00:00:00 +0000</pubDate>
         
         <guid>https://blog.kingbatsoft.top/categories/ctf_show/</guid>
         <description></description>
         </item>
         <item>
+        <title>FileInclude</title>
+        <link>https://blog.kingbatsoft.top/categories/fileinclude/</link>
+        <pubDate>Tue, 13 May 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.kingbatsoft.top/categories/fileinclude/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Web</title>
         <link>https://blog.kingbatsoft.top/categories/web/</link>
-        <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
+        <pubDate>Tue, 13 May 2025 00:00:00 +0000</pubDate>
         
         <guid>https://blog.kingbatsoft.top/categories/web/</guid>
         <description></description>
@@ -42,9 +42,17 @@
         <item>
         <title>WrtieUp</title>
         <link>https://blog.kingbatsoft.top/categories/wrtieup/</link>
-        <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
+        <pubDate>Tue, 13 May 2025 00:00:00 +0000</pubDate>
         
         <guid>https://blog.kingbatsoft.top/categories/wrtieup/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>CommandExec</title>
+        <link>https://blog.kingbatsoft.top/categories/commandexec/</link>
+        <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.kingbatsoft.top/categories/commandexec/</guid>
         <description></description>
         </item>
         <item>
