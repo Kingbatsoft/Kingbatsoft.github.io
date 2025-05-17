@@ -1,0 +1,3586 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Python Data Analysis Quick Reference Guide by Danvei233">
+<title>Python数据分析快速参考指南</title>
+
+<link rel='canonical' href='https://blog.kingbatsoft.top/p/python_data_analysis/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Python数据分析快速参考指南">
+<meta property='og:description' content="Python Data Analysis Quick Reference Guide by Danvei233">
+<meta property='og:url' content='https://blog.kingbatsoft.top/p/python_data_analysis/'>
+<meta property='og:site_name' content='清尘博客 - 静心'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-17T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-05-17T14:17:27&#43;08:00'/>
+<meta name="twitter:title" content="Python数据分析快速参考指南">
+<meta name="twitter:description" content="Python Data Analysis Quick Reference Guide by Danvei233"><style>
+     
+    :root {
+        --article-font-family: "Noto Serif SC", var(--base-font-family);
+    }
+</style>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@200..900&display=swap";
+    
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+    
+        document.head.appendChild(customFont);
+    }());
+</script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu150236730683288566.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">✨</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">清尘博客 - 静心</a></h1>
+            <h2 class="site-description">静心感悟，淡泊明志。</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/341141074'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Kingbatsoft'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/Kingbatsoft'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档内容</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>工具网站</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://blog.kingbatsoft.top/" selected>中文</option>
+                                
+                                    <option value="https://blog.kingbatsoft.top/en/" >English</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#01-变量与数据类型概览">0.1 变量与数据类型概览</a></li>
+    <li><a href="#02-函数及其结构">0.2 函数及其结构</a>
+      <ol>
+        <li><a href="#021-定义语法">0.2.1 定义语法</a></li>
+        <li><a href="#022-函数命名规则">0.2.2 函数命名规则</a></li>
+        <li><a href="#023-参数类型">0.2.3 参数类型</a></li>
+        <li><a href="#024-调用函数">0.2.4 调用函数</a></li>
+        <li><a href="#025-变量作用域">0.2.5 变量作用域</a></li>
+      </ol>
+    </li>
+    <li><a href="#03-对象class">0.3 对象（class）</a>
+      <ol>
+        <li><a href="#031-代码骨架从上到下一次写完">0.3.1 代码骨架（从上到下一次写完）</a></li>
+        <li><a href="#032-实例化真机到手">0.3.2 实例化（真机到手）</a></li>
+        <li><a href="#033-速记要点">0.3.3 速记要点</a></li>
+      </ol>
+    </li>
+    <li><a href="#04-包package">0.4 包（package）</a>
+      <ol>
+        <li><a href="#041-包的基本结构">0.4.1 包的基本结构</a></li>
+        <li><a href="#042-导入语法示例">0.4.2 导入语法示例</a></li>
+        <li><a href="#043-常见用途">0.4.3 常见用途</a></li>
+      </ol>
+    </li>
+    <li><a href="#05-数字类型计算">0.5 数字类型计算</a>
+      <ol>
+        <li><a href="#051-数字类别回顾">0.5.1 数字类别回顾</a></li>
+        <li><a href="#052-一元运算与常用函数">0.5.2 一元运算与常用函数</a></li>
+        <li><a href="#053-二元运算符">0.5.3 二元运算符</a></li>
+        <li><a href="#054-math-标准库速查">0.5.4 <code>math</code> 标准库速查</a></li>
+        <li><a href="#055-精度陷阱与解决办法">0.5.5 精度陷阱与解决办法</a></li>
+        <li><a href="#056-小技巧">0.5.6 小技巧</a></li>
+      </ol>
+    </li>
+    <li><a href="#06-分支控制与循环">0.6 分支控制与循环</a>
+      <ol>
+        <li><a href="#061-比较与逻辑运算符">0.6.1 比较与逻辑运算符</a></li>
+        <li><a href="#062-if--elif--else">0.6.2 if / elif / else</a></li>
+        <li><a href="#063-循环结构">0.6.3 循环结构</a>
+          <ol>
+            <li><a href="#while">while</a></li>
+            <li><a href="#for">for</a></li>
+            <li><a href="#推导式">推导式</a></li>
+          </ol>
+        </li>
+        <li><a href="#064-循环相关语句">0.6.4 循环相关语句</a></li>
+        <li><a href="#065-常见坑">0.6.5 常见坑</a></li>
+        <li><a href="#分支if--elif--else">分支（if / elif / else）</a></li>
+        <li><a href="#循环">循环</a></li>
+      </ol>
+    </li>
+  </ol>
+
+  <ol>
+    <li><a href="#10-字符串">1.0 字符串</a>
+      <ol>
+        <li><a href="#101-定义字符串">1.0.1 定义字符串</a></li>
+        <li><a href="#103-切片与索引获取">1.0.3 切片与索引获取</a></li>
+        <li><a href="#104-常用字符串方法">1.0.4 常用字符串方法</a>
+          <ol>
+            <li><a href="#核心方法详解">核心方法详解</a></li>
+            <li><a href="#例子汇总">例子汇总</a></li>
+          </ol>
+        </li>
+        <li><a href="#105-输入与输出">1.0.5 输入与输出</a></li>
+        <li><a href="#input">input()</a></li>
+        <li><a href="#print">print()</a></li>
+        <li><a href="#106-map">1.0.6 map()</a></li>
+      </ol>
+    </li>
+    <li><a href="#11-列表">1.1 列表</a>
+      <ol>
+        <li><a href="#111-创建方式">1.1.1 创建方式</a></li>
+        <li><a href="#112-访问与切片">1.1.2 访问与切片</a></li>
+        <li><a href="#113-常用统计函数">1.1.3 常用统计函数</a></li>
+        <li><a href="#114-修改与管理方法">1.1.4 修改与管理方法</a></li>
+      </ol>
+    </li>
+  </ol>
+
+  <ol>
+    <li><a href="#21-numpy-库">2.1 NumPy 库</a>
+      <ol>
+        <li><a href="#211-数组创建">2.1.1 数组创建</a>
+          <ol>
+            <li><a href="#2111-随机数组">2.1.1.1 随机数组</a></li>
+          </ol>
+        </li>
+        <li><a href="#212-数组修改">2.1.2 数组修改</a>
+          <ol>
+            <li><a href="#2121-形状--类型">2.1.2.1 形状 &amp; 类型</a></li>
+            <li><a href="#2122-数据级改动">2.1.2.2 数据级改动</a></li>
+          </ol>
+        </li>
+        <li><a href="#213-属性查询--切片">2.1.3 属性查询 &amp; 切片</a></li>
+        <li><a href="#214-逻辑运算--条件筛">2.1.4 逻辑运算 &amp; 条件筛</a></li>
+        <li><a href="#215-广播-broadcasting">2.1.5 广播 (Broadcasting)</a></li>
+        <li><a href="#216-统计--聚合">2.1.6 统计 &amp; 聚合</a></li>
+        <li><a href="#217-拷贝语义">2.1.7 拷贝语义</a></li>
+        <li><a href="#218-删除--去重">2.1.8 删除 &amp; 去重</a></li>
+      </ol>
+    </li>
+    <li><a href="#-速记清单">⚡ 速记清单</a></li>
+    <li><a href="#22-pandas-库概览">2.2 Pandas 库概览</a>
+      <ol>
+        <li><a href="#221-读入数据">2.2.1 读入数据</a>
+          <ol>
+            <li><a href="#基本信息速查">基本信息速查</a></li>
+          </ol>
+        </li>
+        <li><a href="#222-核心数据结构">2.2.2 核心数据结构</a>
+          <ol>
+            <li><a href="#2221-series-访问">2.2.2.1 Series 访问</a></li>
+            <li><a href="#2222-dataframe-访问">2.2.2.2 DataFrame 访问</a></li>
+          </ol>
+        </li>
+        <li><a href="#223-查询五大套路">2.2.3 查询（五大套路）</a></li>
+        <li><a href="#224-新增--修改列">2.2.4 新增 / 修改列</a></li>
+        <li><a href="#225-统计与描述">2.2.5 统计与描述</a></li>
+        <li><a href="#226-缺失值处理">2.2.6 缺失值处理</a></li>
+        <li><a href="#227-排序--重排">2.2.7 排序 &amp; 重排</a></li>
+      </ol>
+    </li>
+    <li><a href="#-速记清单-1">⚡ 速记清单</a></li>
+    <li><a href="#23-matplotlib--pyplot-速查">2.3 Matplotlib – pyplot 速查</a>
+      <ol>
+        <li><a href="#231-画布">2.3.1 画布</a></li>
+        <li><a href="#232-直线图pltplot">2.3.2 直线图：<code>plt.plot</code></a></li>
+        <li><a href="#233-散点图pltscatter">2.3.3 散点图：<code>plt.scatter</code></a></li>
+        <li><a href="#234-注释元素">2.3.4 注释元素</a></li>
+        <li><a href="#235-保存与显示">2.3.5 保存与显示</a></li>
+      </ol>
+    </li>
+    <li><a href="#-速记清单-2">⚡ 速记清单</a></li>
+    <li><a href="#0x3-常用算法与技巧">0x3 常用算法与技巧</a>
+      <ol>
+        <li><a href="#31-输入输出-技巧">3.1 输入／输出 技巧</a></li>
+        <li><a href="#32-字符串与编码">3.2 字符串与编码</a></li>
+        <li><a href="#33-循环-常见模板">3.3 循环 常见模板</a></li>
+        <li><a href="#34-取余--的妙用">3.4 取余 (%) 的妙用</a></li>
+        <li><a href="#35-快速文件操作with-语句">3.5 快速文件操作：<code>with</code> 语句</a></li>
+        <li><a href="#36-排序">3.6 排序</a></li>
+        <li><a href="#37-常用标准库">3.7 常用标准库</a>
+          <ol>
+            <li><a href="#371-datetime">3.7.1 datetime</a></li>
+            <li><a href="#372-random">3.7.2 random</a></li>
+          </ol>
+        </li>
+        <li><a href="#heading"></a></li>
+        <li><a href="#38-常见英文单词月份--星期">3.8 常见英文单词：月份 &amp; 星期</a>
+          <ol>
+            <li><a href="#月份months">月份（Months）</a></li>
+            <li><a href="#星期weekdays">星期（Weekdays）</a></li>
+          </ol>
+        </li>
+        <li><a href="#heading-1"></a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/python/" >
+                Python
+            </a>
+        
+            <a href="/categories/lesson/" >
+                Lesson
+            </a>
+        
+            <a href="/categories/numpy/" >
+                Numpy
+            </a>
+        
+            <a href="/categories/plt/" >
+                Plt
+            </a>
+        
+            <a href="/categories/pandas/" >
+                Pandas
+            </a>
+        
+            <a href="/categories/danvei233/" >
+                Danvei233
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/python_data_analysis/">Python数据分析快速参考指南</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Python Data Analysis Quick Reference Guide by Danvei233
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 17, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 17 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="0xb-写在前面的话">0xB 写在前面的话
+</h1><p>本文档是 Python 数据分析考试的参考/复习资料，涵盖 <strong>基本语法、常用函数、简单算法实现</strong> 等内容。</p>
+<ul>
+<li>适用人群：一编程基础的同学（备考）</li>
+<li>纯粹没过函数的或者自己写过的请不要用本文档，本文档不包含足够例子！</li>
+<li>作者：Danvei233（<a class="link" href="https://github.com/Danvei233"  target="_blank" rel="noopener"
+    >@GitHub</a>）</li>
+<li>第零章是基本语法和纲要（速查）</li>
+<li>使用GPT-o3润色</li>
+</ul>
+<h1 id="0xd-目录">0xD 目录
+</h1><p>[TOC]</p>
+<h1 id="0x0-基本语法与数据类型">0x0 基本语法与数据类型
+</h1><h2 id="01-变量与数据类型概览">0.1 变量与数据类型概览
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>分类</th>
+          <th>内置类型</th>
+          <th>典型字面量 / 赋值示例</th>
+          <th>构造函数 (函数式写法)</th>
+          <th>常见操作</th>
+          <th>备注</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>数字 (Numeric)</strong></td>
+          <td><code>int</code>   <code>float</code>  <code>complex</code></td>
+          <td><code>a = 3</code>   <code>b = 1.2</code>  <code>c = 2+3j</code></td>
+          <td><code>int(&quot;42&quot;)</code>  <code>float(&quot;3.14&quot;)</code>  <code>complex(2, 3)</code></td>
+          <td>加减乘除 <code>+ - * /</code>  幂 <code>**</code>  取整除 <code>//</code>  取余 <code>%</code></td>
+          <td><code>bool</code> 本质上继承自 <code>int</code> (<code>True==1</code>, <code>False==0</code>)</td>
+      </tr>
+      <tr>
+          <td><strong>布尔 (Boolean)</strong></td>
+          <td><code>bool</code></td>
+          <td><code>flag = True</code>  <code>is_ok = (3 == 1)</code></td>
+          <td><code>bool(0)</code> → <code>False</code></td>
+          <td>逻辑与 <code>and</code>  逻辑或 <code>or</code>  取反 <code>not</code></td>
+          <td>只可取值 <code>True/False</code></td>
+      </tr>
+      <tr>
+          <td><strong>序列 (Sequence)</strong></td>
+          <td><code>str</code>  <code>list</code>  <code>tuple</code>  <code>range</code></td>
+          <td><code>s = &quot;hello&quot;</code>   <code>s2 = f&quot;{name}&quot;</code>  <code>lst = [1, 2, 3]</code>  <code>tpl = (1, 2)</code>  <code>r = range(0, 5)</code></td>
+          <td><code>str(123)</code>  <code>list(&quot;abc&quot;)</code>  <code>tuple([1,2])</code>  <code>range(5)</code></td>
+          <td>切片 <code>[:]</code>  拼接 <code>+</code>  成员测试 <code>in</code>  长度 <code>len()</code></td>
+          <td><code>str</code>、<code>tuple</code>、<code>range</code> 不可变；<code>list</code> 可变</td>
+      </tr>
+      <tr>
+          <td><strong>映射 (Mapping)</strong></td>
+          <td><code>dict</code></td>
+          <td><code>d = {&quot;name&quot;: &quot;Bob&quot;, &quot;age&quot;: 18}</code></td>
+          <td><code>dict(name=&quot;Bob&quot;, age=18)</code></td>
+          <td>取值 <code>d[key]</code>  遍历 <code>for k,v in d.items()</code></td>
+          <td>键必须可哈希 (<strong>hash</strong>)</td>
+      </tr>
+      <tr>
+          <td><strong>特殊单值</strong></td>
+          <td><code>NoneType</code></td>
+          <td><code>x = None</code></td>
+          <td>—</td>
+          <td>占位、空值</td>
+          <td>只有一个实例 <code>None</code></td>
+      </tr>
+  </tbody>
+</table></div>
+<blockquote>
+<p><strong>提示</strong>：<code>type(obj)</code> 可查看变量实际类型，<code>isinstance(obj, T)</code> 用于类型判断（推荐），构造函数可以用于转换类型。</p>
+</blockquote>
+<h2 id="02-函数及其结构">0.2 函数及其结构
+</h2><p><strong>函数</strong>：带名字的可复用代码块，对输入（参数）进行处理并可返回输出（返回值）。</p>
+<h3 id="021-定义语法">0.2.1 定义语法
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="o">=</span><span class="n">default</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;文档字符串（可选）&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 函数体（4 个空格缩进）</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">value</span>  <span class="c1"># 返回值可省略，相当于 return None</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>def</code> 关键字后跟函数名和参数列表，末尾必须有冒号 <code>:</code>。</li>
+<li>函数体必须统一缩进（推荐 <strong>4 个空格</strong>）。</li>
+<li><code>return</code> 没有表达式时等价于 <code>return None</code>。</li>
+</ul>
+<h3 id="022-函数命名规则">0.2.2 函数命名规则
+</h3><ul>
+<li>不与现有标识符重复，区分大小写。</li>
+<li>以字母或 <code>_</code> 开头，不能以数字开头，且不含特殊符号。</li>
+<li>推荐 <strong>snake_case</strong> 或驼峰 <code>camelCase</code>，关键是<strong>自描述</strong>。 例如：<code>is_leap_year(year)</code> 一看即知其功能与返回值。</li>
+</ul>
+<h3 id="023-参数类型">0.2.3 参数类型
+</h3><ol>
+<li><strong>位置参数</strong>：调用时按顺序一一对应。</li>
+<li><strong>默认参数</strong>：形参中写 <code>param=value</code> 并放在末尾，可在调用时省略。</li>
+<li><strong>可变长度</strong>：<code>*args</code>、<code>**kwargs</code>（进阶用法，考试可选）。</li>
+</ol>
+<blockquote>
+<p>参数在函数调用结束后即被销毁，仅在函数体内部可见。</p>
+</blockquote>
+<h3 id="024-调用函数">0.2.4 调用函数
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">is_leap_year</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="n">y</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">y</span> <span class="o">%</span> <span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">is_leap_year</span><span class="p">(</span><span class="mi">2024</span><span class="p">)</span>  <span class="c1"># 返回 True</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="025-变量作用域">0.2.5 变量作用域
+</h3><ul>
+<li><strong>局部变量</strong>：在函数体内声明，只在该函数内可见。</li>
+<li><strong>全局变量</strong>：在函数外部声明；若需在函数中修改，必须使用 <code>global</code> 关键字。</li>
+</ul>
+<h2 id="03-对象class">0.3 对象（class）
+</h2><blockquote>
+<p><strong>一句话：</strong> 类是“设计图”，对象是根据设计图做出的“实物”。</p>
+</blockquote>
+<h3 id="031-代码骨架从上到下一次写完">0.3.1 代码骨架（从上到下一次写完）
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>            <span class="c1"># ① class 开头，冒号不能丢</span>
+</span></span><span class="line"><span class="cl">    <span class="n">common_val</span> <span class="o">=</span> <span class="mi">0</span>        <span class="c1"># ② 类变量：所有对象共用</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>  <span class="c1"># ③ 初始化，a = MyClass(10) 时自动调用</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>        <span class="c1">#    self 就是“这台机器”</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">method1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>     <span class="c1"># ④ 自定义方法</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>写顺序：<code>class</code> ➜ <strong>类变量</strong> ➜ <code>__init__</code> ➜ 其他 <code>def</code>，全部 4 空格缩进。</p>
+</blockquote>
+<h3 id="032-实例化真机到手">0.3.2 实例化（真机到手）
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>   <span class="c1"># 造一台对象</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">.</span><span class="n">method1</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>      <span class="c1"># 输出 15</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>访问属性：<code>a.val</code> 或 <code>MyClass.common_val</code>。</li>
+<li>改类变量：<code>MyClass.common_val = 99</code> ➜ 所有对象一起变。</li>
+</ul>
+<h3 id="033-速记要点">0.3.3 速记要点
+</h3><ol>
+<li><code>**self**</code> <strong>必写</strong>：缺了会报错 <code>missing 1 required positional argument: 'self'</code>。</li>
+<li><strong>类变量 vs 实例变量</strong>：类变量大家共用；实例变量(<code>self.xxx</code>)只属于自己。</li>
+<li><strong>私有/保护名</strong>：
+<ul>
+<li><code>_name</code> 单下划线：只是提醒“内部用”。</li>
+<li><code>__name</code> 双下划线：Python 会改名混淆，一般外部访问不到。</li>
+</ul>
+</li>
+</ol>
+<h2 id="04-包package">0.4 包（package）
+</h2><blockquote>
+<p><strong>一句话：</strong> 包就是把相关功能组织成文件夹，让项目结构清晰。</p>
+</blockquote>
+<h3 id="041-包的基本结构">0.4.1 包的基本结构
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">project_folder</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="err">├─</span> <span class="n">package_name</span><span class="o">/</span>      <span class="c1"># 包（文件夹）</span>
+</span></span><span class="line"><span class="cl"><span class="err">│</span>   <span class="err">├─</span> <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>    <span class="c1"># 标记此目录为包，可为空</span>
+</span></span><span class="line"><span class="cl"><span class="err">│</span>   <span class="err">├─</span> <span class="n">module1</span><span class="o">.</span><span class="n">py</span>     <span class="c1"># 模块（.py 文件）</span>
+</span></span><span class="line"><span class="cl"><span class="err">│</span>   <span class="err">└─</span> <span class="n">module2</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="cl"><span class="err">└─</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span>            <span class="c1"># 使用包的脚本</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>包</strong> (<code>package_name</code>) 是包含 <code>__init__.py</code> 的文件夹。</li>
+<li><strong>模块</strong> (<code>module1.py</code>) 可以导入、调用其中的变量、函数、类。</li>
+</ul>
+<h3 id="042-导入语法示例">0.4.2 导入语法示例
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">package_name</span>             <span class="c1"># 导入整个包</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">package_name.module1</span>     <span class="c1"># 导入模块</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">package_name</span> <span class="kn">import</span> <span class="n">module2</span>  <span class="c1"># 从包里导入模块</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">package_name.module1</span> <span class="kn">import</span> <span class="n">func1</span>  <span class="c1"># 导入模块中的函数</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">package_name</span> <span class="k">as</span> <span class="nn">pkg</span>      <span class="c1"># 起别名，方便书写</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">package_name.module1</span> <span class="kn">import</span> <span class="n">ClassA</span> <span class="k">as</span> <span class="n">CA</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>注意语法顺序</strong>：必须写作 <code>from 包名 import 名称</code>，而 <code>**import 名称 from 包名**</code> <strong>是不合法的</strong>。</li>
+<li><code>import ... as</code> 可以给包或模块起简短别名。</li>
+<li><code>from ... import ...</code> 让调用更直接（无需写全路径）。</li>
+</ul>
+<h3 id="043-常见用途">0.4.3 常见用途
+</h3><ul>
+<li>将不同功能拆分到不同模块，保持代码整洁。</li>
+<li>方便多人协作，每人维护独立模块。</li>
+</ul>
+<h2 id="05-数字类型计算">0.5 数字类型计算
+</h2><h3 id="051-数字类别回顾">0.5.1 数字类别回顾
+</h3><ul>
+<li><strong>int</strong>：任意精度整数，如 <code>42</code>、<code>0b1010</code>。</li>
+<li><strong>float</strong>：双精度浮点，如 <code>3.14</code>、<code>6.02e23</code>。</li>
+<li><strong>complex</strong>：形如 <code>3+4j</code>，含实部和虚部。</li>
+</ul>
+<h3 id="052-一元运算与常用函数">0.5.2 一元运算与常用函数
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>运算/函数</th>
+          <th>输入</th>
+          <th>结果</th>
+          <th>示例</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>+x</code> / <code>-x</code></td>
+          <td>数字</td>
+          <td>原值 / 相反数</td>
+          <td><code>-5</code></td>
+      </tr>
+      <tr>
+          <td><code>abs(x)</code></td>
+          <td>数字</td>
+          <td>绝对值</td>
+          <td><code>abs(-3) → 3</code></td>
+      </tr>
+      <tr>
+          <td><code>round(x, n)</code></td>
+          <td>浮点</td>
+          <td>四舍六入五靠偶；<code>n</code> 为保留位数</td>
+          <td><code>round(3.1416, 2) → 3.14</code></td>
+      </tr>
+      <tr>
+          <td><code>int(x)</code> / <code>float(x)</code></td>
+          <td>数字或可转换字符串</td>
+          <td>类型转换</td>
+          <td><code>int(3.9) → 3</code></td>
+      </tr>
+      <tr>
+          <td><code>divmod(a,b)</code></td>
+          <td>两整数</td>
+          <td><code>(a//b, a%b)</code> 二元组</td>
+          <td><code>divmod(17,4) → (4,1)</code></td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="053-二元运算符">0.5.3 二元运算符
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>运算符</th>
+          <th>含义</th>
+          <th>示例</th>
+          <th>结果</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>+ - * /</code></td>
+          <td>加减乘除（<code>/</code> 返回 float）</td>
+          <td><code>7/2</code></td>
+          <td><code>3.5</code></td>
+      </tr>
+      <tr>
+          <td><code>//</code></td>
+          <td>地板除（向负无穷取整）</td>
+          <td><code>-7//2</code></td>
+          <td><code>-4</code></td>
+      </tr>
+      <tr>
+          <td><code>%</code></td>
+          <td>取余</td>
+          <td><code>7%2</code></td>
+          <td><code>1</code></td>
+      </tr>
+      <tr>
+          <td><code>**</code></td>
+          <td>幂运算</td>
+          <td><code>2**10</code></td>
+          <td><code>1024</code></td>
+      </tr>
+      <tr>
+          <td><code>pow(x,y[,m])</code></td>
+          <td>幂，可带模</td>
+          <td><code>pow(2,10,1000)</code></td>
+          <td><code>24</code></td>
+      </tr>
+      <tr>
+          <td>`&laquo; &raquo; &amp;</td>
+          <td>^ ~`</td>
+          <td>位运算</td>
+          <td><code>5&lt;&lt;1</code></td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="054-math-标准库速查">0.5.4 <code>math</code> 标准库速查
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">math</span>
+</span></span><span class="line"><span class="cl"><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>          <span class="c1"># 3.0 开根</span>
+</span></span><span class="line"><span class="cl"><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mf">2.3</span><span class="p">)</span>         <span class="c1"># 3 上取整</span>
+</span></span><span class="line"><span class="cl"><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mf">2.9</span><span class="p">)</span>        <span class="c1"># 2 下取整</span>
+</span></span><span class="line"><span class="cl"><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>      <span class="c1"># 120 阶乘</span>
+</span></span><span class="line"><span class="cl"><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">e</span>        <span class="c1"># 圆周率和自然常数</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>需要高精度时，使用 <code>from decimal import Decimal</code>；处理分数可用 <code>from fractions import Fraction</code>。</p>
+</blockquote>
+<h3 id="055-精度陷阱与解决办法">0.5.5 精度陷阱与解决办法
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">==</span> <span class="mf">0.3</span>   <span class="c1"># False</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span> <span class="k">as</span> <span class="n">D</span>
+</span></span><span class="line"><span class="cl"><span class="n">D</span><span class="p">(</span><span class="s1">&#39;0.1&#39;</span><span class="p">)</span><span class="o">*</span><span class="mi">3</span> <span class="o">==</span> <span class="n">D</span><span class="p">(</span><span class="s1">&#39;0.3&#39;</span><span class="p">)</span>   <span class="c1"># True</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="056-小技巧">0.5.6 小技巧
+</h3><ul>
+<li>
+<p><strong>环绕取模</strong>：凯撒偏移 <code>(idx + k) % 26</code>。例2：把输入的数字映射到星期：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">week</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;日&#39;</span><span class="p">,</span><span class="s1">&#39;一&#39;</span><span class="p">,</span><span class="s1">&#39;二&#39;</span><span class="p">,</span><span class="s1">&#39;三&#39;</span><span class="p">,</span><span class="s1">&#39;四&#39;</span><span class="p">,</span><span class="s1">&#39;五&#39;</span><span class="p">,</span><span class="s1">&#39;六&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入数字（任意整数）：&#39;</span><span class="p">))</span> <span class="o">%</span> <span class="mi">7</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;星期&#39;</span> <span class="o">+</span> <span class="n">week</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li></li>
+<li>
+<p><strong>取十位</strong>：<code>n // 10 % 10</code>；（//留高位 %留低位） <strong>后三位</strong>：<code>n % 1000</code>。</p>
+</li>
+<li>
+<p><strong>商余同得</strong>：<code>q, r = divmod(n, m)</code>。</p>
+</li>
+</ul>
+<h2 id="06-分支控制与循环">0.6 分支控制与循环
+</h2><h3 id="061-比较与逻辑运算符">0.6.1 比较与逻辑运算符
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>类型</th>
+          <th>符号</th>
+          <th>含义</th>
+          <th>读法 / 记忆小技巧</th>
+          <th>示例</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>比较</td>
+          <td><code>==</code></td>
+          <td>相等</td>
+          <td>&ldquo;两个等号表示比较&rdquo;</td>
+          <td><code>5 == 5 → True</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td><code>!=</code></td>
+          <td>不等</td>
+          <td>&ldquo;! 表示 not，和 == 组合成 ≠&rdquo;</td>
+          <td><code>5 != 3 → True</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td><code>&gt;</code></td>
+          <td>大于</td>
+          <td>&ldquo;尖嘴向左，左边更大&rdquo;</td>
+          <td><code>5 &gt; 3 → True</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td><code>&lt;</code></td>
+          <td>小于</td>
+          <td>&ldquo;尖嘴向右，右边更大&rdquo;</td>
+          <td><code>3 &lt; 5 → True</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td><code>&gt;=</code></td>
+          <td>大于等于</td>
+          <td><strong>读作</strong> &ldquo;大于等于&rdquo;，<strong>写作</strong> <code>&gt;=</code>（记：先 &gt; 后 =)</td>
+          <td><code>5 &gt;= 5 → True</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td><code>&lt;=</code></td>
+          <td>小于等于</td>
+          <td><strong>读作</strong> &ldquo;小于等于&rdquo;，<strong>写作</strong> <code>&lt;=</code>（记：先 &lt; 后 =)</td>
+          <td><code>3 &lt;= 5 → True</code></td>
+      </tr>
+      <tr>
+          <td>逻辑</td>
+          <td><code>and</code></td>
+          <td>与</td>
+          <td>两边都真才真</td>
+          <td><code>True and False → False</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td><code>or</code></td>
+          <td>或</td>
+          <td>一真即真</td>
+          <td><code>True or False → True</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td><code>not</code></td>
+          <td>非</td>
+          <td>取反</td>
+          <td><code>not True → False</code></td>
+      </tr>
+  </tbody>
+</table></div>
+<blockquote>
+<p><strong>真值规则</strong>：0、<code>None</code>, <code>False</code> 为假，其他皆真。</p>
+</blockquote>
+<h3 id="062-if--elif--else">0.6.2 if / elif / else
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">score</span> <span class="o">=</span> <span class="mi">85</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;B&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">grade</span> <span class="o">=</span> <span class="s1">&#39;C or below&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>三元表达式：<code>gender = '男' if isBoy(me) else '女'</code>。</li>
+</ul>
+<h3 id="063-循环结构">0.6.3 循环结构
+</h3><h4 id="while">while
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">*=</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">64</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span>          <span class="c1"># 提前结束循环</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;正常结束&#39;</span><span class="p">)</span>   <span class="c1"># 未被 break 时才执行</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="for">for
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>  <span class="c1"># 0,1,2,3,4</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>遍历字典：<code>for k,v in d.items():</code>(更多请看下面)。</p>
+</li>
+<li>
+<p><code>range(start, stop, step)</code> 不含 <code>stop</code>，<code>step</code> 可为负。</p>
+</li>
+<li>
+<p>同时遍历两个序列：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h4 id="推导式">推导式
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">odd_map</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">%</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)}</span>
+</span></span><span class="line"><span class="cl"><span class="n">unique</span> <span class="o">=</span> <span class="p">{</span><span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="s1">&#39;Hello&#39;</span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="064-循环相关语句">0.6.4 循环相关语句
+</h3><ul>
+<li><code>break</code>：退出最近一层循环。</li>
+<li><code>continue</code>：跳过本次迭代，继续下一次。</li>
+<li><code>pass</code>：占位语句，什么都不做。</li>
+</ul>
+<h3 id="065-常见坑">0.6.5 常见坑
+</h3><ul>
+<li><strong>浮点比较</strong>：用 <code>abs(a-b) &lt; 1e-9</code>。</li>
+<li><strong>修改列表时遍历</strong>：可先复制 <code>for x in lst[:]</code> 或倒序遍历。</li>
+<li><strong>死循环</strong>：确保循环体内有让条件变假的语句。</li>
+</ul>
+<p><em>后续章节：文件 I/O、Numpy &amp; Pandas 简明指南…</em></p>
+<h3 id="分支if--elif--else">分支（if / elif / else）
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="n">条件表达式</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 代码块</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">另一个条件</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 代码块</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 代码块</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>条件表达式由比较运算符（<code>== != &gt; &lt; &lt;= &gt;=</code>）和逻辑运算符（<code>not and or</code>）组合而成。</li>
+<li><strong>禁止</strong>在条件中用浮点数判断相等，易出错。必要时用整数或阈值范围判断。</li>
+<li>可以写 <code>if x in some_list</code> 或 <code>if key in some_dict</code>。</li>
+</ul>
+<h3 id="循环">循环
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># while 循环</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">条件</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 代码块</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># for 循环</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>   <span class="c1"># iterable 可为字符串、列表、range 等</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 代码块</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p><code>range(start, end, step)</code>：包含 <code>start</code>，不包含 <code>end</code>，步长 <code>step</code>。</p>
+</li>
+<li>
+<p>遍历字典：</p>
+<ul>
+<li><code>for k, v in d.items():</code></li>
+<li><code>for k in d.keys():</code></li>
+<li><code>for v in d.values():</code></li>
+</ul>
+</li>
+<li>
+<p>列表推导式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">new_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">iterable</span> <span class="k">if</span> <span class="n">条件</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h1 id="0x1-数据结构与文件操作">0x1 数据结构与文件操作
+</h1><h2 id="10-字符串">1.0 字符串
+</h2><h3 id="101-定义字符串">1.0.1 定义字符串
+</h3><ul>
+<li>
+<p>单引号或双引号包裹：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="s2">&#34;hello&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;world&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>三引号用于多行文本：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">text</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">第一行
+</span></span></span><span class="line"><span class="cl"><span class="s2">第二行
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>原始字符串（不处理转义）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&#34;C:ew_folder	est&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">-</span> <span class="n">常用转义符</span><span class="err">：</span> <span class="err">`</span>
+</span></span><span class="line"><span class="cl"><span class="err">`（</span><span class="n">换行</span><span class="err">）、`</span>	<span class="err">`（</span><span class="n">制表</span><span class="err">）、`</span>\<span class="err">`（</span><span class="n">反斜杠本身</span><span class="err">）。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">## 1.0.2 字符串格式化</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">-</span> <span class="o">**</span><span class="n">f</span><span class="o">-</span><span class="n">string</span><span class="o">**</span><span class="err">（</span><span class="n">Python</span> <span class="mf">3.6</span><span class="o">+</span><span class="err">）：</span>
+</span></span><span class="line"><span class="cl"><span class="err">```</span><span class="n">python</span>
+</span></span><span class="line"><span class="cl"><span class="n">name</span> <span class="o">=</span> <span class="s2">&#34;Alice&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">score</span> <span class="o">=</span> <span class="mf">95.6789</span>
+</span></span><span class="line"><span class="cl"><span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> 同学成绩：</span><span class="si">{</span><span class="n">score</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&#34;</span>  <span class="c1"># 保留两位小数</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p><code>**format()**</code> <strong>方法</strong>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">template</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="si">{0}</span><span class="s2"> 同学成绩：</span><span class="si">{1:.2f}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 或指定名称</span>
+</span></span><span class="line"><span class="cl"><span class="n">template2</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="si">{n}</span><span class="s2"> 成绩：</span><span class="si">{s:.1f}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">score</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>常见格式说明：</p>
+<ul>
+<li><code>:.2f</code> 保留两位小数。</li>
+<li><code>:&gt;10</code> 右对齐，占 10 个字符宽度。</li>
+<li><code>:&lt;10</code> 左对齐。</li>
+<li><code>:^10</code> 居中对齐。</li>
+</ul>
+</li>
+</ul>
+<h3 id="103-切片与索引获取">1.0.3 切片与索引获取
+</h3><ul>
+<li>
+<p>按索引访问单个字符：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="s2">&#34;python&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>    <span class="c1"># &#39;p&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>   <span class="c1"># &#39;n&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>切片（<code>[start:stop:step]</code>）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="s2">&#34;abcdefg&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>    <span class="c1"># &#39;bcd&#39;  (包含索引1，不包含4)</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>     <span class="c1"># &#39;abc&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>     <span class="c1"># &#39;defg&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>    <span class="c1"># &#39;aceg&#39; (步长2)</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>   <span class="c1"># &#39;gfedcba&#39; (反转)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="104-常用字符串方法">1.0.4 常用字符串方法
+</h3><blockquote>
+<p><strong>重要提示：</strong> 字符串在 Python 中是 <strong>不可变</strong> 的——几乎所有方法都会返回 <strong>新字符串</strong>，原变量保持不变。别忘了把返回值接收进变量，否则你的修改会“丢失”。</p>
+</blockquote>
+<h4 id="核心方法详解">核心方法详解
+</h4><ul>
+<li><code>len(s)</code> → <code>int</code>
+<ul>
+<li><strong>作用</strong>：返回长度。</li>
+<li><strong>返回值</strong>：整数。原字符串不变。</li>
+</ul>
+</li>
+<li><code>s.upper()</code> / <code>s.lower()</code> → <code>str</code>
+<ul>
+<li><strong>作用</strong>：大小写转换。</li>
+<li><strong>返回值</strong>：新字符串；<code>s</code> 本身不变。</li>
+</ul>
+</li>
+<li><code>s.find(sub, start=0, end=len)</code> → <code>int</code>
+<ul>
+<li><strong>作用</strong>：子串第一次出现的位置。</li>
+<li><strong>返回值</strong>：索引；未找到返回 <code>-1</code>。</li>
+</ul>
+</li>
+<li><code>s.replace(old, new, count=-1)</code> → <code>str</code>
+<ul>
+<li><strong>作用</strong>：把所有（或前 <code>count</code> 个）<code>old</code> 换成 <code>new</code>。</li>
+<li><strong>返回值</strong>：新字符串；<strong>不会</strong>就地修改。</li>
+</ul>
+</li>
+<li><code>s.split(sep=None, maxsplit=-1)</code> → <code>list[str]</code>
+<ul>
+<li><strong>作用</strong>：按分隔符拆成列表；默认按空白拆。</li>
+<li><strong>返回值</strong>：列表；原字符串不变。</li>
+</ul>
+</li>
+<li><code>sep.join(iterable)</code> → <code>str</code>
+<ul>
+<li><strong>作用</strong>：把迭代器里的元素用 <code>sep</code> 连接。</li>
+<li><strong>返回值</strong>：新字符串。</li>
+<li><strong>小技巧</strong>：<code>' '.join(['Hello', 'Python'])</code> → <code>'Hello Python'</code>。</li>
+</ul>
+</li>
+<li><code>s.strip(chars=None)</code> / <code>lstrip</code> / <code>rstrip</code> → <code>str</code>
+<ul>
+<li><strong>作用</strong>：去掉两端或左/右侧指定字符（默认空白）。</li>
+<li><strong>返回值</strong>：新字符串。</li>
+</ul>
+</li>
+<li>判断类方法（返回 <code>bool</code>）：
+<ul>
+<li><code>s.isalpha()</code>：全是字母。</li>
+<li><code>s.isdigit()</code>：全是数字。</li>
+<li><code>s.isalnum()</code>：字母或数字。</li>
+<li><code>s.startswith(prefix)</code> / <code>s.endswith(suffix)</code>：前缀/后缀判断。</li>
+</ul>
+</li>
+<li>其他常用格式化/变形：
+<ul>
+<li><code>s.title()</code>：每个单词首字母大写。</li>
+<li><code>s.capitalize()</code>：首字母大写，其余小写。</li>
+<li>切片反转：<code>s[::-1]</code>。</li>
+<li>s.strip()       # 去除首尾空白
+s.lstrip()      # 去除左侧空白
+s.rstrip()      # 去除右侧空白</li>
+</ul>
+</li>
+</ul>
+<h4 id="例子汇总">例子汇总
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="s2">&#34; hello, python3 &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>                <span class="c1"># 15</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>     <span class="c1"># &#39;HELLO, PYTHON3&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;py&#39;</span><span class="p">))</span>          <span class="c1"># 8</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;python3&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">))</span>  <span class="c1"># &#39; hello, world &#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">]))</span>        <span class="c1"># &#39;A-B-C&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 字符编码互转</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">))</span>              <span class="c1"># 65 （字符→码点）</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="mi">9731</span><span class="p">))</span>             <span class="c1"># &#39;☃&#39; （码点→字符）</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="105-输入与输出">1.0.5 输入与输出
+</h3><h3 id="input">input()
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;请输入姓名：&#34;</span><span class="p">)</span>       <span class="c1"># 始终返回 str</span>
+</span></span><span class="line"><span class="cl"><span class="n">age</span>  <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;年龄：&#34;</span><span class="p">))</span>      <span class="c1"># 转成 int</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>            <span class="c1"># 用空格分割成两个变量（str）</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span> <span class="c1"># map(类型, 可迭代) → map 对象，需要再外层转换</span>
+</span></span><span class="line"><span class="cl"><span class="n">nums</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>  <span class="c1"># 先 map 再 list 得到整数列表</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>              <span class="c1"># 输入形如 &#34;(3,4)&#34;；⚠️ eval 有安全风险</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>map(func, iterable)</code> 会返回 <code>**map**</code> <strong>对象</strong>（惰性迭代器），常见用法是再包一层 <code>list()</code>、<code>tuple()</code> 或直接用在 <code>for</code> 循环里：<code>for x in map(int, data): ...</code>。</li>
+<li><code>input(prompt)</code> 在控制台显示提示文字，等待用户敲回车。</li>
+<li><strong>返回值永远是字符串</strong>，需要时自行用 <code>int()</code> / <code>float()</code> / <code>split()</code> 等转换。</li>
+</ul>
+<h3 id="print">print()
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Hello&#34;</span><span class="p">,</span> <span class="s2">&#34;World&#34;</span><span class="p">)</span>                 <span class="c1"># 默认空格分隔，换行结束</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;A&#34;</span><span class="p">,</span> <span class="s2">&#34;B&#34;</span><span class="p">,</span> <span class="s2">&#34;C&#34;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&#34;-&#34;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34;!</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;)  # 自定义分隔符与结尾</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">name</span><span class="si">=}</span><span class="s2">&#34;</span><span class="p">)</span>                       <span class="c1"># 调试利器，Python 3.8+</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>关键字参数：
+<ul>
+<li><code>sep</code>：多个参数之间的分隔符，默认 <code>' '</code>。</li>
+<li><code>end</code>：行尾结束符，默认 <code>' '</code>；改成 <code>''</code> 可取消自动换行。</li>
+<li><code>file</code>：输出目标，默认 <code>sys.stdout</code>；可重定向到文件对象。</li>
+<li><code>flush</code>：<code>True</code> 时立即刷新缓冲区。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>小贴士</strong>：<code>print(*iterable, sep=' ')</code> 可快速逐行打印列表内容。</p>
+</blockquote>
+<h3 id="106-map">1.0.6 map()
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">python复制编辑</span><span class="c1"># 将用户输入的数字用空格分隔并转换成 int</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;输入 3 个整数，用空格隔开：&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 说明：</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   map(类型, 可迭代对象) → 返回一个 map 对象（惰性迭代器）</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   想立即得到列表可再套一层 list()</span>
+</span></span><span class="line"><span class="cl"><span class="n">nums</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><strong>小结</strong></p>
+<ul>
+<li><code>map()</code> 不会立刻产生新列表，而是返回 <strong>map 对象</strong>；如果要多次使用，最好 <code>list(map(...))</code>。</li>
+<li><code>eval(input())</code> 能一次读多个 Python 表达式并直接变成对应类型，但有 <strong>安全隐患</strong>；考试能用就用，开发别随便用。</li>
+</ul>
+</blockquote>
+<h2 id="11-列表">1.1 列表
+</h2><h3 id="111-创建方式">1.1.1 创建方式
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">empty</span> <span class="o">=</span> <span class="p">[]</span>                 <span class="c1"># 字面量空列表</span>
+</span></span><span class="line"><span class="cl"><span class="n">empty2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>            <span class="c1"># 构造函数</span>
+</span></span><span class="line"><span class="cl"><span class="n">mix</span>   <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&#34;3&#34;</span><span class="p">]</span>        <span class="c1"># 混合类型</span>
+</span></span><span class="line"><span class="cl"><span class="n">copy</span>  <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span>             <span class="c1"># 存变量时只存“引用”，不会连带修改历史值</span>
+</span></span><span class="line"><span class="cl"><span class="n">matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>   <span class="c1"># 2×3 二维表，推荐列表推导式</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="112-访问与切片">1.1.2 访问与切片
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">v</span> <span class="o">=</span> <span class="n">mix</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>        <span class="c1"># 第 1 个，下标从 0 开始</span>
+</span></span><span class="line"><span class="cl"><span class="n">last</span> <span class="o">=</span> <span class="n">mix</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>    <span class="c1"># 倒数第 1 个</span>
+</span></span><span class="line"><span class="cl"><span class="n">sub</span> <span class="o">=</span> <span class="n">mix</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>    <span class="c1"># [start, end) 切片</span>
+</span></span><span class="line"><span class="cl"><span class="n">rev</span> <span class="o">=</span> <span class="n">mix</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>   <span class="c1"># 反转</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="113-常用统计函数">1.1.3 常用统计函数
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">n</span>   <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>         <span class="c1"># 长度</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span>   <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>         <span class="c1"># 求和（元素需可相加）</span>
+</span></span><span class="line"><span class="cl"><span class="n">avg</span> <span class="o">=</span> <span class="n">s</span> <span class="o">/</span> <span class="n">n</span>             <span class="c1"># 平均值</span>
+</span></span><span class="line"><span class="cl"><span class="n">hi</span><span class="p">,</span> <span class="n">lo</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">nums</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">nums_sorted</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>      <span class="c1"># 返回“新列表”</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="114-修改与管理方法">1.1.4 修改与管理方法
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>方法调用</th>
+          <th>作用</th>
+          <th>就地修改？</th>
+          <th>返回值</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>lst.append(x)</code></td>
+          <td>在尾部加一个元素</td>
+          <td>✅</td>
+          <td><code>None</code></td>
+      </tr>
+      <tr>
+          <td><code>lst.extend(it)</code></td>
+          <td>追加一个可迭代对象里的所有元素</td>
+          <td>✅</td>
+          <td><code>None</code></td>
+      </tr>
+      <tr>
+          <td><code>lst.insert(i, x)</code></td>
+          <td>在索引 <em>i</em> 处插入</td>
+          <td>✅</td>
+          <td><code>None</code></td>
+      </tr>
+      <tr>
+          <td><code>lst.pop(i=-1)</code></td>
+          <td>删除并返回索引 <em>i</em>（默认最后一个）</td>
+          <td>✅</td>
+          <td>被弹出的元素</td>
+      </tr>
+      <tr>
+          <td><code>lst.remove(x)</code></td>
+          <td>删 <strong>第一个</strong> 值等于 <em>x</em> 的元素</td>
+          <td>✅</td>
+          <td><code>None</code></td>
+      </tr>
+      <tr>
+          <td><code>lst.clear()</code></td>
+          <td>清空列表</td>
+          <td>✅</td>
+          <td><code>None</code></td>
+      </tr>
+      <tr>
+          <td><code>lst.index(x)</code></td>
+          <td>返回 <em>x</em> 第一次出现的索引</td>
+          <td>❌</td>
+          <td><code>int</code></td>
+      </tr>
+      <tr>
+          <td><code>lst.count(x)</code></td>
+          <td>统计 <em>x</em> 出现次数</td>
+          <td>❌</td>
+          <td><code>int</code></td>
+      </tr>
+      <tr>
+          <td><code>lst.sort(key=None, reverse=False)</code></td>
+          <td><strong>原地排序</strong></td>
+          <td>✅</td>
+          <td><code>None</code></td>
+      </tr>
+      <tr>
+          <td><code>lst.reverse()</code></td>
+          <td><strong>原地反转</strong></td>
+          <td>✅</td>
+          <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table></div>
+<blockquote>
+<ul>
+<li><code>sort()</code> vs <code>sorted()</code>：<code>lst.sort()</code> 会<strong>直接改变原列表</strong>且返回 <code>None</code>；<code>sorted(lst)</code> 则生成新列表并保持原列表不变。</li>
+<li><strong>不可变对象</strong>（如字符串）放进列表后，列表里只是存“引用”，若对象本身不可变就安全；可变对象（如另一个列表）若在别处修改，会反映到这里。</li>
+</ul>
+</blockquote>
+<p>这样一来，数字‑字符串‑列表三大“最常用基本类型”就都有完整速查了。
+如果还想再补其它容器（如元组、字典）或深入讲 <code>sort()</code> 的自定义 <code>key</code>，随时说！</p>
+<p>## 1.2 字典（dict）</p>
+<p>### 1.2.1 创建与赋值</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 空字典</span>
+</span></span><span class="line"><span class="cl"><span class="n">d1</span> <span class="o">=</span> <span class="p">{}</span>          <span class="c1"># 字面量</span>
+</span></span><span class="line"><span class="cl"><span class="n">d2</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>      <span class="c1"># 构造函数</span>
+</span></span><span class="line"><span class="cl"><span class="n">d2</span><span class="o">=</span><span class="nb">zip</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span><span class="n">list2</span><span class="p">)</span> <span class="c1">#用列表构造 取最短 第一个是键</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 带内容</span>
+</span></span><span class="line"><span class="cl"><span class="n">info</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Tom&#34;</span><span class="p">,</span> <span class="s2">&#34;age&#34;</span><span class="p">:</span> <span class="mi">18</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## 如果重复 后面的会覆盖前面的</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 动态添加 / 修改</span>
+</span></span><span class="line"><span class="cl"><span class="n">info</span><span class="p">[</span><span class="s2">&#34;city&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;Beijing&#34;</span>    <span class="c1"># 如果 key 不存在就创建，存在就改值</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 推导式</span>
+</span></span><span class="line"><span class="cl"><span class="n">squares</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)}</span>   <span class="c1"># {0:0, 1:1, 2:4, …}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><strong>键必须唯一</strong>，而且必须是<strong>可哈希</strong>的不可变对象（数字、字符串、元组…）。</p>
+</blockquote>
+<p>### 1.2.2 安全取值
+直接 <code>d[key]</code> 若键不存在会抛 <code>KeyError</code>。常见两种“稳取”写法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="s2">&#34;age&#34;</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>          <span class="c1"># 先判断</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s2">&#34;age&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;score&#34;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>   <span class="c1"># 若无则给默认 0</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>### 1.2.3 常用方法速查</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>调用</th>
+          <th>作用</th>
+          <th>返回值</th>
+          <th>备注</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>d.get(k, default=None)</code></td>
+          <td>取值</td>
+          <td>找到：值；没找到：<code>default</code></td>
+          <td>不报错</td>
+      </tr>
+      <tr>
+          <td><code>d.pop(k, default=KeyError)</code></td>
+          <td>删除并返回键 k</td>
+          <td>找不到：<code>KeyError</code> 或 <code>default</code></td>
+          <td>就地改</td>
+      </tr>
+      <tr>
+          <td><code>d.keys()</code> / <code>d.values()</code> / <code>d.items()</code></td>
+          <td>分别拿到键 / 值 / <code>(键,值)</code> 迭代器</td>
+          <td><code>dict_keys</code> 等</td>
+          <td>可转 <code>list()</code></td>
+      </tr>
+      <tr>
+          <td><code>d.update(other)</code></td>
+          <td>用 other 里的键值批量更新</td>
+          <td><code>None</code></td>
+          <td>就地改</td>
+      </tr>
+      <tr>
+          <td><code>d.clear()</code></td>
+          <td>清空字典</td>
+          <td><code>None</code></td>
+          <td>就地改</td>
+      </tr>
+      <tr>
+          <td><code>len(d)</code></td>
+          <td>键的个数</td>
+          <td><code>int</code></td>
+          <td>内置函数</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>### 1.2.4 遍历套路</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 遍历键</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">info</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#！！默认只遍历键</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 同时拿键和值</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">info</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> --&gt; </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>### 1.2.5 字典排序</p>
+<ol>
+<li>
+<p><strong>按键排序（最简单）</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">info</span><span class="p">):</span>         <span class="c1"># 默认升序</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">info</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>按值排序</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># sorted() 接收 key=，返回的是新列表</span>
+</span></span><span class="line"><span class="cl"><span class="n">items</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">kv</span><span class="p">:</span> <span class="n">kv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>   <span class="c1"># 按 value 升序</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>多级排序</strong>
+<code>lambda</code> 返回 <strong>元组</strong> → 先比第一项，再比第二项：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 先按 value 降序，再按 key 升序</span>
+</span></span><span class="line"><span class="cl"><span class="n">items</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">kv</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="n">kv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">kv</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>如果想对「多级元组排序」再整体反转，请<strong>不要</strong>写
+<code>sorted(..., reverse=True)</code> —— 这样会把所有维度一起翻转；
+<strong>正确做法</strong>：</p>
+<ol>
+<li>先写好带正负号的多级 <code>key</code>；</li>
+<li>或者先排好，再调用一次 <code>items.reverse()</code>。</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+<p>### 1.2.6 lambda 一口讲清</p>
+<ul>
+<li>
+<p><code>lambda 参数: 表达式</code> → 匿名小函数，用一次就丢。</p>
+</li>
+<li>
+<p>在 <code>sorted</code>, <code>map</code>, <code>filter</code> 等场景下当“回调”最常见。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 把字典按 value 从大到小排</span>
+</span></span><span class="line"><span class="cl"><span class="nb">sorted</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">kv</span><span class="p">:</span> <span class="n">kv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<blockquote>
+<p><strong>小贴士</strong></p>
+<ol>
+<li>字典元素无序（Python 3.7+ 保证“插入顺序”但不用于逻辑排序）。</li>
+<li><code>pop()</code> / <code>update()</code> 都会<strong>修改原字典</strong>；想保持原数据别直接动它。</li>
+<li>字典很适合当“哈希表”做 O(1) 查询，例如记录字符频次、缓存计算结果等。</li>
+</ol>
+</blockquote>
+<p>## 1.3 文件简单操作</p>
+<p>### 1.3.1 <code>open()</code> 基本语法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">f = open(filepath, mode=&#34;r&#34;, encoding=&#34;utf‑8&#34;)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>形参</th>
+          <th>常用取值</th>
+          <th>说明（一句话记住就够）</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>filepath</code></td>
+          <td><code>&quot;data.txt&quot;</code> / <code>&quot;./dir/log.csv&quot;</code></td>
+          <td>文件相对或绝对路径</td>
+      </tr>
+      <tr>
+          <td><code>mode</code></td>
+          <td><code>&quot;r&quot;</code> 读 <code>&quot;w&quot;</code> 写(覆盖) <code>&quot;a&quot;</code> 追加<code>&quot;rb&quot;</code> 二进制读 <code>&quot;wb&quot;</code> 二进制写</td>
+          <td><strong>r=read w=write a=append</strong></td>
+      </tr>
+      <tr>
+          <td><code>encoding</code></td>
+          <td><code>&quot;utf-8&quot;</code>（最常用）</td>
+          <td>文本文件的字符集；二进制模式不用写</td>
+      </tr>
+  </tbody>
+</table></div>
+<blockquote>
+<ul>
+<li><code>&quot;w&quot;</code> 会<strong>清空</strong>旧文件；若想安全一些，先用 <code>&quot;a&quot;</code> 或检查 <code>os.path.exists()</code>。</li>
+<li>省略 <code>encoding</code> 可能在不同系统读写中文时乱码，最好显式写 <code>&quot;utf‑8&quot;</code>。</li>
+</ul>
+</blockquote>
+<p>### 1.3.2 推荐写法：<code>with … as</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;data.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&#34;utf-8&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 离开 with 块，文件自动 close()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><em>考点：用</em> <code>*with*</code> <em>可以自动关闭文件，省去</em> <code>*f.close()*</code><em>，也能避免忘关导致数据没落盘。</em></p>
+<p>### 1.3.3 常用读写方法</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>调用</th>
+          <th>用途</th>
+          <th>返回值 / 行为</th>
+          <th>典型示例</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>f.read()</code></td>
+          <td>读完整个文件</td>
+          <td>字符串</td>
+          <td><code>data = f.read()</code></td>
+      </tr>
+      <tr>
+          <td><code>f.readline()</code></td>
+          <td>读一行（含 <code>\n</code>）</td>
+          <td>字符串</td>
+          <td><code>line = f.readline()</code></td>
+      </tr>
+      <tr>
+          <td><code>f.readlines()</code></td>
+          <td>按行读全部</td>
+          <td>列表，每行一元素</td>
+          <td><code>lines = f.readlines()</code></td>
+      </tr>
+      <tr>
+          <td><code>f.write(s)</code></td>
+          <td>写入字符串 <code>s</code></td>
+          <td>写入字节数 (<code>int</code>)</td>
+          <td><code>f.write(&quot;hello\n&quot;)</code></td>
+      </tr>
+      <tr>
+          <td><code>f.writelines(list)</code></td>
+          <td>连续写多行</td>
+          <td><code>None</code></td>
+          <td><code>f.writelines(lines)</code></td>
+      </tr>
+      <tr>
+          <td><code>f.close()</code></td>
+          <td>手动关文件</td>
+          <td><code>None</code></td>
+          <td>不用 <code>with</code> 时必须调</td>
+      </tr>
+  </tbody>
+</table></div>
+<blockquote>
+<ul>
+<li><strong>读完后文件指针在末尾</strong>，想再读需要 <code>f.seek(0)</code> 把指针移回开头。</li>
+<li><code>write()</code> 不自动换行，记得手动加 <code>\n</code>。</li>
+<li>二进制模式 (<code>&quot;rb&quot;</code>, <code>&quot;wb&quot;</code>) 读写得到/要求 <code>bytes</code> 而非 <code>str</code>。</li>
+</ul>
+</blockquote>
+<p>### 1.3.4 最常见 2 个模板</p>
+<p><strong>① 逐行读取并处理</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;score.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&#34;utf-8&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>              <span class="c1"># f 本身就可迭代</span>
+</span></span><span class="line"><span class="cl">        <span class="n">name</span><span class="p">,</span> <span class="n">score</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="o">...</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>② 写分析结果</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;result.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;w&#34;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&#34;utf-8&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Average </span><span class="si">{</span><span class="n">avg</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">top_items</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>只要记住“<code>with open(...) as f:</code> ➜ <code>f.read / f.write</code> ➜ 自动关闭”，文件 I/O 的基础就够用了。</p>
+<h1 id="0x2-数据分析">0x2 数据分析
+</h1><p>#此节过于坑爹（半节课讲了4-5节的内容？？） 故附上官方文档以供打印！本文档此处只简单列出基础用法。用于提示！！！！！</p>
+<p><a class="link" href="https://numpy.net/doc/stable/user/absolute_beginners.html"  target="_blank" rel="noopener"
+    >NumPy：初学者的绝对基础_Numpy中文网</a></p>
+<p><a class="link" href="https://pandas.ac.cn/docs/getting_started/intro_tutorials/index.html"  target="_blank" rel="noopener"
+    >入门教程 — pandas 2.2.3 文档 - pandas 数据分析库</a></p>
+<h2 id="21-numpy-库">2.1 NumPy 库
+</h2><blockquote>
+<p><strong>一句话记住</strong>：
+NumPy = <em>超快多维数组</em> + <em>矢量化数学运算</em>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">import numpy as np      # ⚠️ 别写成 import np as np
+</span></span></code></pre></td></tr></table>
+</div>
+</div></blockquote>
+<h3 id="211-数组创建">2.1.1 数组创建
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>方法</th>
+          <th>功能</th>
+          <th>示例</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>np.array(obj, dtype=…)</code></td>
+          <td>列表 → 数组；可指定类型</td>
+          <td><code>np.array([[1,2],[3,4]], dtype=np.int32)</code></td>
+      </tr>
+      <tr>
+          <td><code>np.arange(start, stop, step)</code></td>
+          <td>等差序列</td>
+          <td><code>np.arange(0, 10, 2)</code></td>
+      </tr>
+      <tr>
+          <td><code>np.linspace(start, stop, num)</code></td>
+          <td><em>均分</em> num 个点</td>
+          <td><code>np.linspace(0, 1, 5)</code></td>
+      </tr>
+      <tr>
+          <td><code>np.zeros(shape)</code></td>
+          <td>全 0</td>
+          <td><code>np.zeros((2,3))</code></td>
+      </tr>
+      <tr>
+          <td><code>np.ones(shape)</code></td>
+          <td>全 1</td>
+          <td><code>np.ones((2,3))</code></td>
+      </tr>
+      <tr>
+          <td><code>np.eye(N)</code> / <code>np.eye(M,N,k)</code></td>
+          <td>单位阵 / 偏移对角阵</td>
+          <td><code>np.eye(5)``np.eye(3,5,2)</code></td>
+      </tr>
+      <tr>
+          <td><code>np.full(shape, fill_value)</code></td>
+          <td>固定值⚠️ <strong>若</strong> <code>***\**\*fill_value\*\**\***</code> <strong>是列表，其长度必须 == 最后一维长度</strong></td>
+          <td><code>np.full((2,3,4), 9)``np.full((2,3,4), [1,2,3,4])</code></td>
+      </tr>
+  </tbody>
+</table></div>
+<h4 id="2111-随机数组">2.1.1.1 随机数组
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>方法</th>
+          <th>功能</th>
+          <th>示例</th>
+          <th>⚠️ 易错点</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>np.random.random(shape)</code></td>
+          <td><code>[0,1)</code> 均匀</td>
+          <td><code>np.random.random((2,3))</code></td>
+          <td><strong>只能传形状元组</strong>，不能分写 <code>m,n</code></td>
+      </tr>
+      <tr>
+          <td><code>np.random.randn(d1,d2,…)</code></td>
+          <td>标准正态</td>
+          <td><code>np.random.randn(2,3)</code></td>
+          <td><strong>不能把整体 shape 打包成元组</strong></td>
+      </tr>
+      <tr>
+          <td><code>np.random.randint(low, high, size=shape)</code></td>
+          <td>整数随机</td>
+          <td><code>np.random.randint(0, 10, size=(2,3))</code></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="212-数组修改">2.1.2 数组修改
+</h3><h4 id="2121-形状--类型">2.1.2.1 形状 &amp; 类型
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>操作</th>
+          <th>说明</th>
+          <th>⚠️ 提示</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>a.reshape(new_shape)</code></td>
+          <td>更改形状，<strong>元素总数不变</strong></td>
+          <td>多余/不足都会报错，不会自动填补</td>
+      </tr>
+      <tr>
+          <td><code>a.T</code> / <code>a.transpose()</code></td>
+          <td>转置</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>a.astype(dtype)</code> or <code>a.dtype = dtype</code></td>
+          <td>改类型</td>
+          <td>常用别名：<code>np.int_</code>, <code>np.float_</code> 等</td>
+      </tr>
+  </tbody>
+</table></div>
+<h4 id="2122-数据级改动">2.1.2.2 数据级改动
+</h4><ul>
+<li><strong>切片换序</strong>：<code>a[::-1]</code>、<code>a[:, ::-1]</code></li>
+<li><strong>合并</strong>：<code>np.concatenate([a,b], axis=…)</code></li>
+<li><strong>插入</strong>：<code>np.insert(a, index, values, axis=…)</code></li>
+</ul>
+<h3 id="213-属性查询--切片">2.1.3 属性查询 &amp; 切片
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>属性含义快速查看</strong></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>shape</code></td>
+          <td>形状 <code>(行, 列, …)</code></td>
+          <td><code>a.shape</code></td>
+      </tr>
+      <tr>
+          <td><code>dtype</code></td>
+          <td>元素类型（int32、float64…）</td>
+          <td><code>a.dtype</code></td>
+      </tr>
+      <tr>
+          <td><code>ndim</code></td>
+          <td>维度数</td>
+          <td><code>a.ndim</code></td>
+      </tr>
+      <tr>
+          <td><code>size</code></td>
+          <td>元素总数</td>
+          <td><code>a.size</code></td>
+      </tr>
+      <tr>
+          <td><code>nbytes</code></td>
+          <td>占用字节数</td>
+          <td><code>a.nbytes</code></td>
+      </tr>
+      <tr>
+          <td>itemsize</td>
+          <td>每个元素占字节</td>
+          <td>a.itemsize</td>
+      </tr>
+  </tbody>
+</table></div>
+<ul>
+<li>
+<p><strong>多维切片范式</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span><span class="p">[:,</span> <span class="n">s</span><span class="p">:</span><span class="n">e</span><span class="p">:</span><span class="n">step</span><span class="p">]</span>     <span class="c1"># 多行部分列</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>            <span class="c1"># 单个元素</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="214-逻辑运算--条件筛">2.1.4 逻辑运算 &amp; 条件筛
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">)</span>          <span class="c1"># 布尔矩阵</span>
+</span></span><span class="line"><span class="cl"><span class="n">a2</span>   <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>           <span class="c1"># ⚠️ mask 必须是 bool 同尺寸</span>
+</span></span><span class="line"><span class="cl"><span class="n">sel</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>   <span class="c1"># 三参缺一不可</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>⚠️ <strong>逻辑运算符要用</strong> <code>***\**\*&amp;\*\**\***</code> <strong>/</strong> <code>***\**\*|\*\**\***</code><strong>，并加括号</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></blockquote>
+<h3 id="215-广播-broadcasting">2.1.5 广播 (Broadcasting)
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>场景</th>
+          <th>例子</th>
+          <th>⚠️ 注意</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><em>标量</em> × <em>数组</em></td>
+          <td><code>a * 3</code></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>不同形状数组</td>
+          <td><code>(3,1)</code> × <code>(1,4)</code> → <code>(3,4)</code></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>数值陷阱</strong></td>
+          <td><code>0**0</code> 得到 <strong>1</strong></td>
+          <td><code>1/0</code> → <code>inf</code>，可 <code>np.isinf</code> 检测</td>
+      </tr>
+  </tbody>
+</table></div>
+<ul>
+<li>
+<p>向量/矩阵乘法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>    <span class="c1"># 点乘</span>
+</span></span><span class="line"><span class="cl"><span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># 叉乘</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="216-统计--聚合">2.1.6 统计 &amp; 聚合
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>函数</th>
+          <th>作用</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>a.sum(axis)</code> / <code>a.mean(axis)</code></td>
+          <td>求和 / 均值</td>
+      </tr>
+      <tr>
+          <td><code>a.min</code> / <code>a.max</code></td>
+          <td>最小 / 最大</td>
+      </tr>
+      <tr>
+          <td><code>a.var</code> / <code>a.std</code></td>
+          <td>方差 / 标准差</td>
+      </tr>
+  </tbody>
+</table></div>
+<blockquote>
+<p><strong>轴解释</strong>：<code>axis=0</code> ⇢ 按行聚合（看成“列方向”）；<code>axis=1</code> ⇢ 按列聚合。</p>
+</blockquote>
+<h3 id="217-拷贝语义">2.1.7 拷贝语义
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>方法</th>
+          <th>数据是否复制</th>
+          <th>用途</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>b = a.view()</code></td>
+          <td><strong>否</strong></td>
+          <td>轻量别名，共享底层数据</td>
+      </tr>
+      <tr>
+          <td><code>b = a.copy()</code></td>
+          <td><strong>是</strong></td>
+          <td>深拷贝，互不影响</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="218-删除--去重">2.1.8 删除 &amp; 去重
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>操作</th>
+          <th>示例</th>
+          <th>⚠️ 坑点</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>去重</td>
+          <td><code>np.unique(a)</code></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>删除</td>
+          <td><code>np.delete(a, idx, axis=None)</code></td>
+          <td>① <code>axis=None</code> → 扁平化后删② 删单元会破坏矩阵形状，结果一维</td>
+      </tr>
+  </tbody>
+</table></div>
+<h2 id="-速记清单">⚡ 速记清单
+</h2><ol>
+<li><code>**import numpy as np**</code>（别写成 <code>import np</code>）。</li>
+<li>随机数组：<code>random.random(shape)</code> 只能形状元组，<code>random.randn</code> 直接写维度。</li>
+<li>逻辑运算记得 <code>**&amp;**</code>** / <code>***\*|\****</code> + 括号**。</li>
+<li><code>np.where(cond, x, y)</code> <strong>三个参数不可少</strong>。</li>
+<li>转置 <code>a.T</code>，改形 <code>a.reshape(new_shape)</code> <strong>不改变元素总数</strong>。</li>
+<li><code>view()</code> 共享数据，<code>copy()</code> 独立数据。</li>
+<li><code>0**0 == 1</code>；<code>1/0</code> → <code>inf</code>。</li>
+<li><code>np.delete</code> 的 <code>axis</code> 表示<strong>在哪个轴上删索引</strong>，写错会降维。</li>
+</ol>
+<h2 id="22-pandas-库概览">2.2 Pandas 库概览
+</h2><blockquote>
+<p><strong>一句话记住</strong>：
+Pandas = <em>“带标签的一维 Series + 二维 DataFrame”</em> + <em>大量 SQL 风格操作</em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>          <span class="c1"># ⚠️ 别写成 import pandas as np</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></blockquote>
+<h3 id="221-读入数据">2.2.1 读入数据
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>函数</th>
+          <th>主要参数</th>
+          <th>⚠️ 坑点</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>pd.read_csv(filepath, sep=',', header='infer', names=…, index_col=…, skiprows=…)</code></td>
+          <td><code>sep</code> 分隔符<code>header</code>: 行号或 <code>Nonenames</code>: 自指定列名<code>index_col</code>: 哪列做索引<code>skiprows</code>: 跳过前几行</td>
+          <td><code>**header=True**</code> <strong>写法非法！</strong> 应写 <code>header=0</code> 或 <code>header=None</code></td>
+      </tr>
+      <tr>
+          <td>其他：<code>read_excel</code>, <code>read_sql</code>…</td>
+          <td>此处不展开</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&#34;data.csv&#34;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&#34;,&#34;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>          <span class="c1"># 预览前 4 行</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="基本信息速查">基本信息速查
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">shape</span>       <span class="c1"># (行, 列)</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">columns</span>     <span class="c1"># Index([...])</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">index</span>       <span class="c1"># RangeIndex / DatetimeIndex …</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>      <span class="c1"># 每列类型</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">size</span>        <span class="c1"># 元素总数</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="222-核心数据结构">2.2.2 核心数据结构
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>结构</th>
+          <th>创建方式</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Series</strong></td>
+          <td><code>pd.Series(list_or_dict)</code></td>
+          <td>⚠️ <strong>首字母大写</strong>；若用字典，索引跟随字典键</td>
+      </tr>
+      <tr>
+          <td><strong>DataFrame</strong></td>
+          <td><code>pd.DataFrame(dict_or_ndarray)</code></td>
+          <td>单行视作 Series，但 <code>df[['name']]</code> 仍返回 <strong>DataFrame</strong></td>
+      </tr>
+  </tbody>
+</table></div>
+<h4 id="2221-series-访问">2.2.2.1 Series 访问
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">s</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span>          <span class="c1"># 单元素</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span>              <span class="c1"># 切片</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">]]</span>        <span class="c1"># 传列表仍得到 Series</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="2222-dataframe-访问">2.2.2.2 DataFrame 访问
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>方式</th>
+          <th>示例</th>
+          <th>返回</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>按列</td>
+          <td><code>df['col']</code></td>
+          <td>Series</td>
+      </tr>
+      <tr>
+          <td>多列</td>
+          <td><code>df[['c1','c2']]</code></td>
+          <td>DataFrame</td>
+      </tr>
+      <tr>
+          <td>重排列顺序</td>
+          <td><code>df[['c3','c1','c2']]</code></td>
+          <td>New DataFrame</td>
+      </tr>
+      <tr>
+          <td><code>**.loc**</code></td>
+          <td><code>df.loc['row', 'col']</code></td>
+          <td>标签取值</td>
+      </tr>
+      <tr>
+          <td><code>**.iloc**</code></td>
+          <td><code>df.iloc[0, 1]</code></td>
+          <td>纯整数位置</td>
+      </tr>
+      <tr>
+          <td><code>**.at**</code> <strong>/</strong> <code>**.iat**</code></td>
+          <td>单元素极速定位</td>
+          <td><code>df.at['r','c']</code></td>
+      </tr>
+  </tbody>
+</table></div>
+<blockquote>
+<p>⚠️ <code>**.iloc**</code> <strong>不支持布尔 / label</strong>，只接受整数；切片右端 <strong>包含</strong>。</p>
+</blockquote>
+<h3 id="223-查询五大套路">2.2.3 查询（五大套路）
+</h3><ol>
+<li>
+<p><code>**loc**</code> — <strong>最推荐</strong>：逻辑、切片、函数一把抓</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">!=</span><span class="s1">&#39;NaN&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">18</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;20240101&#39;</span><span class="p">:</span><span class="s1">&#39;20240131&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">90</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>**iloc**</code>：纯数字行列</p>
+</li>
+<li>
+<p><code>**where**</code>：保持原形，条件不满足处填 NaN</p>
+</li>
+<li>
+<p><code>**query**</code>：SQL 风格字符串，列名可直接写</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&#34;age &gt; 18 and city == &#39;Beijing&#39;&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>布尔索引</strong>：<code>mask = (df['x']&gt;0); df[mask]</code></p>
+</li>
+</ol>
+<h3 id="224-新增--修改列">2.2.4 新增 / 修改列
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>方法</th>
+          <th>示例</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>直接赋值</td>
+          <td><code>df['new'] = df['old'] * 1.2</code></td>
+      </tr>
+      <tr>
+          <td><code>**loc**</code> <strong>写列</strong></td>
+          <td><code>df.loc[:, 'flag'] = (df['score']&gt;60)</code></td>
+      </tr>
+      <tr>
+          <td><code>str</code> 处理</td>
+          <td><code>df['city'] = df['city'].str.replace('市','')</code></td>
+      </tr>
+      <tr>
+          <td>类型转换</td>
+          <td><code>df['age'] = df['age'].astype(int)</code></td>
+      </tr>
+      <tr>
+          <td><code>**apply(func, axis)**</code></td>
+          <td>行级: <code>axis=1</code>；列级: <code>axis=0df['sum'] = df.apply(lambda r: r.a+r.b, axis=1)</code></td>
+      </tr>
+      <tr>
+          <td>多列 <code>apply</code></td>
+          <td>返回 <code>pd.Series</code> 并 <code>join</code></td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="225-统计与描述">2.2.5 统计与描述
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>            <span class="c1"># 数值列：均值、四分位…</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;col&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;col&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;col&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;col&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="c1"># 类别计数</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>相关矩阵</th>
+          <th>示例</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>协方差</td>
+          <td><code>df[['x','y']].cov()</code></td>
+      </tr>
+      <tr>
+          <td>相关系数</td>
+          <td><code>df[['x','y']].corr()</code></td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="226-缺失值处理">2.2.6 缺失值处理
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>函数</th>
+          <th>关键参数</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>isnull</code> / <code>notnull</code></td>
+          <td>-</td>
+          <td>返回布尔同维度</td>
+      </tr>
+      <tr>
+          <td><code>dropna(axis=0, how='any', inplace=False)</code></td>
+          <td><code>axis</code>: 0 行 / 1 列<code>how</code>: <code>'any'</code> 或 <code>'all'</code></td>
+          <td>删除包含空值的行/列</td>
+      </tr>
+      <tr>
+          <td><code>fillna(value=…, method=…, axis=0, inplace=False)</code></td>
+          <td><code>value</code>: 单值或列名→值字典<code>method</code>: <code>'ffill'</code> / <code>'bfill'</code></td>
+          <td>前向 / 后向填充</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="227-排序--重排">2.2.7 排序 &amp; 重排
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">,</span><span class="s1">&#39;age&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="-速记清单-1">⚡ 速记清单
+</h2><ol>
+<li><code>**read_csv**</code> <strong>参数：</strong><code>**sep**</code><strong>+</strong><code>**header**</code><strong>+</strong><code>**names**</code><strong>+</strong><code>**index_col**</code>；<code>header=True</code> 写法会炸！</li>
+<li><code>Series</code>/<code>DataFrame</code> <strong>首字母大写</strong>。</li>
+<li><code>**loc**</code> <strong>万能</strong>：标签、逻辑、函数，且可同时赋值。</li>
+<li><code>.iloc</code> <strong>只认整数位</strong>；切片右端包含。</li>
+<li>新列可直接 <code>df['new'] = …</code>；行级计算记得 <code>axis=1</code>。</li>
+<li>缺失值：<code>dropna</code> vs <code>fillna</code>，<code>method='ffill'/'bfill'</code>。</li>
+<li><code>value_counts()</code> 计类别；<code>describe()</code> 看全貌。</li>
+<li><code>sort_values</code> 支持多列 &amp; 不同升降序：<code>ascending=[…]</code>。</li>
+</ol>
+<h2 id="23-matplotlib--pyplot-速查">2.3 Matplotlib – pyplot 速查
+</h2><blockquote>
+<p><strong>核心流程</strong></p>
+<ol>
+<li><code>plt.figure()</code> 创建画布</li>
+<li><code>plt.plot()</code>／<code>plt.scatter()</code> 绘图</li>
+<li>设置标题、标签、网格、图例</li>
+<li><code>plt.savefig()</code> + <code>plt.show()</code> 输出</li>
+</ol>
+</blockquote>
+<h3 id="231-画布">2.3.1 画布
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>   <span class="c1"># 6×4 英寸，100 DPI</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>若不调用 <code>plt.figure()</code>，会默认创建一个新画布。</li>
+<li><code>fig = plt.gcf()</code> 可以获取当前 Figure 对象。</li>
+</ul>
+<h3 id="232-直线图pltplot">2.3.2 直线图：<code>plt.plot</code>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">fmt</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">         <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">         <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Series-A&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>**fmt**</code>** = 颜色 + 标记 + 线型**（顺序不限，可缺省其中任意部分）。</li>
+</ul>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>组件</th>
+          <th>代码</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>颜色</strong></td>
+          <td><code>b g r c m y k w</code></td>
+          <td>blue/green/red/cyan/magenta/yellow/black/white</td>
+      </tr>
+      <tr>
+          <td><strong>标记</strong></td>
+          <td><code>. o v ^ &lt; &gt; s * + x D</code></td>
+          <td>point/circle/tri_down/tri_up/…/square/star/plus/x/diamond</td>
+      </tr>
+      <tr>
+          <td><strong>线型</strong></td>
+          <td><code>-</code> / <code>--</code> / <code>-.</code> / <code>:</code> / <code>''</code></td>
+          <td>solid/dashed/dash-dot/dotted/none</td>
+      </tr>
+  </tbody>
+</table></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&#34;ro--&#34;</span><span class="p">)</span>    <span class="c1"># red circle + dashed line</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="s2">&#34;g^:&#34;</span><span class="p">)</span>   <span class="c1"># green triangle_up + dotted line</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="s2">&#34;k*&#34;</span><span class="p">)</span>    <span class="c1"># black star, no line</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>⚠️</p>
+<ul>
+<li>只要线条、默认蓝色：<code>&quot;-&quot;</code> 等同于 <code>&quot;b-&quot;</code></li>
+<li>只要标记、无线条：<code>&quot;o&quot;</code> 等同于 <code>&quot;bo&quot;</code></li>
+<li>tri是三角形的意思</li>
+</ul>
+</blockquote>
+<h3 id="233-散点图pltscatter">2.3.3 散点图：<code>plt.scatter</code>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">s</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span>            <span class="c1"># 点面积</span>
+</span></span><span class="line"><span class="cl">            <span class="n">c</span><span class="o">=</span><span class="s2">&#34;tomato&#34;</span><span class="p">,</span>      <span class="c1"># 颜色</span>
+</span></span><span class="line"><span class="cl">            <span class="n">marker</span><span class="o">=</span><span class="s2">&#34;^&#34;</span><span class="p">,</span>      <span class="c1"># 标记</span>
+</span></span><span class="line"><span class="cl">            <span class="n">edgecolors</span><span class="o">=</span><span class="s2">&#34;k&#34;</span><span class="p">,</span>  <span class="c1"># 边框色</span>
+</span></span><span class="line"><span class="cl">            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Points&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>若要按数值映射颜色，可传入数组给 <code>c=</code> 并指定 <code>cmap</code>。</li>
+</ul>
+<h3 id="234-注释元素">2.3.4 注释元素
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&#34;Main Title&#34;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&#34;X-Label&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&#34;Y-Label&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&#34;:&#34;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&#34;best&#34;</span><span class="p">)</span>     <span class="c1"># 显示所有带 label 的图例</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="235-保存与显示">2.3.5 保存与显示
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&#34;figure.png&#34;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&#34;tight&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>    <span class="c1"># 最后调用，否则在某些环境会清空当前画布</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="-速记清单-2">⚡ 速记清单
+</h2><ol>
+<li><code>**fmt**</code>** (<code>***\*plt.plot\****</code>)** = 颜色 + 标记 + 线型，任意组合、省略。</li>
+<li><strong>直线图</strong> 用 <code>plt.plot(x,y, fmt)</code>；<strong>散点图</strong> 用 <code>plt.scatter(x,y, s, c, marker)</code>.</li>
+<li><code>label</code> + <code>plt.legend()</code> → 自动生成图例（线对应关系）。</li>
+<li>调用 <code>plt.grid(True)</code> 加网格；透明度由 <code>alpha</code> 控制。</li>
+<li>先 <code>savefig</code>（dpi≥150），再 <code>show()</code>。</li>
+</ol>
+<h2 id="0x3-常用算法与技巧">0x3 常用算法与技巧
+</h2><p>下面汇总一些在编程竞赛与日常脚本中常见又好用的小技巧，涵盖输入输出、字符串处理、循环套路、常用库、取余妙用和文件操作。复制即可记入笔记。</p>
+<h3 id="31-输入输出-技巧">3.1 输入／输出 技巧
+</h3><ul>
+<li>
+<p><strong>批量读入多变量</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># ⚠️ eval 存在安全风险，仅限竞赛或受信数据</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>         <span class="c1"># 输入格式如：1,2,3</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>分割并转类型</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 正确写法</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>   <span class="c1"># 输入：1 2 3 → 全转为 int</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 同理：map(float, …)、map(str, …)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>字符间隔插入</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>                  <span class="c1"># e.g. &#34;12345&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>           <span class="c1"># 输出：1 2 3 4 5</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>文本倒置／整数反转</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>               <span class="c1"># 字符串倒置</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="n">rev</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>      <span class="c1"># 整数反转</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="32-字符串与编码">3.2 字符串与编码
+</h3><ul>
+<li>
+<p><strong>ASCII 码互转</strong></p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>操作</th>
+          <th>示例</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>字符 → 码点</td>
+          <td><code>ord('A')  # 65</code></td>
+      </tr>
+      <tr>
+          <td>码点 → 字符</td>
+          <td><code>chr(9731) # '☃'</code></td>
+      </tr>
+  </tbody>
+</table></div>
+</li>
+<li>
+<p><strong>常见范围</strong></p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>范围</th>
+          <th>码点区间</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>0–9</code></td>
+          <td>48 – 57</td>
+      </tr>
+      <tr>
+          <td><code>A–Z</code></td>
+          <td>65 – 90</td>
+      </tr>
+      <tr>
+          <td><code>a–z</code></td>
+          <td>97 – 122</td>
+      </tr>
+  </tbody>
+</table></div>
+</li>
+<li>
+<p><strong>切片技巧</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="s2">&#34;abcdefg&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>     <span class="c1"># 从索引 2 到 4，含头不含尾</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>     <span class="c1"># 除去最后一位</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>      <span class="c1"># 仅最后一位</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>首字母／单词大写</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">s</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>       <span class="c1"># 每个单词首字母大写</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>  <span class="c1"># 仅第一个字符大写</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>空白字符处理</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>       <span class="c1"># 去除首尾空白</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span>      <span class="c1"># 去除左侧空白</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>      <span class="c1"># 去除右侧空白</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>常用判别 / 转换</strong></p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>方法</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>s.isdigit()</code></td>
+          <td>全部为数字</td>
+      </tr>
+      <tr>
+          <td><code>s.isalpha()</code></td>
+          <td>全部为字母</td>
+      </tr>
+      <tr>
+          <td><code>s.isnumeric()</code></td>
+          <td>数字字符（含中文数字）</td>
+      </tr>
+      <tr>
+          <td><code>s.upper()</code></td>
+          <td>全部转大写</td>
+      </tr>
+      <tr>
+          <td><code>s.endswith(x)</code></td>
+          <td>是否以 x 结尾</td>
+      </tr>
+      <tr>
+          <td><code>s.startswith(x)</code></td>
+          <td>是否以 x 开头</td>
+      </tr>
+      <tr>
+          <td><code>s.count(sub)</code></td>
+          <td>子串出现次数</td>
+      </tr>
+  </tbody>
+</table></div>
+</li>
+</ul>
+<h3 id="33-循环-常见模板">3.3 循环 常见模板
+</h3><ul>
+<li>
+<p><strong>每行打印 n 个数</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">nums</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>简易素数判断</strong>（$O(\sqrt n)$）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">is_prime</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span> <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">True</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>乘法表</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="mi">9</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2">×</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">=</span><span class="si">{</span><span class="n">i</span><span class="o">*</span><span class="n">j</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>斐波那契</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 指定项数</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 指定最大值</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">fib_upto</span><span class="p">(</span><span class="n">maxv</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">a</span> <span class="o">&lt;=</span> <span class="n">maxv</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="34-取余--的妙用">3.4 取余 (%) 的妙用
+</h3><ul>
+<li>
+<p><strong>凯撒密码</strong>（字符串循环移位）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">caesar</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">shift</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="s1">&#39;a&#39;</span> <span class="o">&lt;=</span> <span class="n">ch</span> <span class="o">&lt;=</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">chr</span><span class="p">((</span><span class="nb">ord</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span><span class="o">-</span><span class="mi">97</span><span class="o">+</span><span class="n">shift</span><span class="p">)</span><span class="o">%</span><span class="mi">26</span> <span class="o">+</span> <span class="mi">97</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>星期循环</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">days</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Mon&#34;</span><span class="p">,</span><span class="s2">&#34;Tue&#34;</span><span class="p">,</span><span class="s2">&#34;Wed&#34;</span><span class="p">,</span><span class="s2">&#34;Thu&#34;</span><span class="p">,</span><span class="s2">&#34;Fri&#34;</span><span class="p">,</span><span class="s2">&#34;Sat&#34;</span><span class="p">,</span><span class="s2">&#34;Sun&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">idx</span> <span class="o">=</span> <span class="p">(</span><span class="n">idx</span> <span class="o">+</span> <span class="n">k</span><span class="p">)</span> <span class="o">%</span> <span class="mi">7</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="35-快速文件操作with-语句">3.5 快速文件操作：<code>with</code> 语句
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;file.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&#34;utf-8&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 无需手动 close()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><strong>Tips</strong>：</p>
+<ul>
+<li>常见算法尽量封装成函数，主流程清晰；</li>
+<li>注重边界条件（<code>0,1</code> 的特殊处理）；</li>
+<li>保持代码简洁，适时注释。</li>
+</ul>
+</blockquote>
+<h3 id="36-排序">3.6 排序
+</h3><ul>
+<li>
+<p><strong>列表</strong>：<code>lst.sort()</code> → 原地升序；<code>sorted(lst, reverse=True)</code> → 新列表</p>
+</li>
+<li>
+<p><strong>字典</strong>：按值排序：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">items</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">kv</span><span class="p">:</span> <span class="n">kv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="37-常用标准库">3.7 常用标准库
+</h3><h4 id="371-datetime">3.7.1 datetime
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">datetime</span>
+</span></span><span class="line"><span class="cl"><span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">day</span> <span class="o">=</span> <span class="n">today</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">today</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">today</span><span class="o">.</span><span class="n">day</span>
+</span></span><span class="line"><span class="cl"><span class="n">weekday</span> <span class="o">=</span> <span class="n">today</span><span class="o">.</span><span class="n">weekday</span><span class="p">()</span>         <span class="c1"># 0=Mon … 6=Sun</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p><strong>闰年判断</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">is_leap</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="n">y</span><span class="o">%</span><span class="mi">4</span><span class="o">==</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">y</span><span class="o">%</span><span class="mi">100</span><span class="o">!=</span><span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">y</span><span class="o">%</span><span class="mi">400</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h4 id="372-random">3.7.2 random
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">random</span>
+</span></span><span class="line"><span class="cl"><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">r1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>        <span class="c1"># 包括两端</span>
+</span></span><span class="line"><span class="cl"><span class="n">r2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>              <span class="c1"># [0,1)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="heading">
+</h3><h3 id="38-常见英文单词月份--星期">3.8 常见英文单词：月份 &amp; 星期
+</h3><h4 id="月份months">月份（Months）
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>序号</th>
+          <th>全名</th>
+          <th>缩写</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>January</td>
+          <td>Jan</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>February</td>
+          <td>Feb</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>March</td>
+          <td>Mar</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>April</td>
+          <td>Apr</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>May</td>
+          <td>May</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>June</td>
+          <td>Jun</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>July</td>
+          <td>Jul</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>August</td>
+          <td>Aug</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>September</td>
+          <td>Sep</td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td>October</td>
+          <td>Oct</td>
+      </tr>
+      <tr>
+          <td>11</td>
+          <td>November</td>
+          <td>Nov</td>
+      </tr>
+      <tr>
+          <td>12</td>
+          <td>December</td>
+          <td>Dec</td>
+      </tr>
+  </tbody>
+</table></div>
+<h4 id="星期weekdays">星期（Weekdays）
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>序号</th>
+          <th>全名</th>
+          <th>缩写</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>Monday</td>
+          <td>Mon</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Tuesday</td>
+          <td>Tue</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Wednesday</td>
+          <td>Wed</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>Thursday</td>
+          <td>Thu</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>Friday</td>
+          <td>Fri</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>Saturday</td>
+          <td>Sat</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>Sunday</td>
+          <td>Sun</td>
+      </tr>
+  </tbody>
+</table></div>
+<blockquote>
+<p>⚠️ <strong>Tip</strong>：</p>
+<ul>
+<li>Python 中可用 <code>datetime</code> 模块获取当前月/星期，并通过以上列表做映射。</li>
+<li>处理日期字符串时，经常需要识别或输出这些全称/缩写。</li>
+</ul>
+</blockquote>
+<h3 id="heading-1">
+</h3>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 May 17, 2025 14:17 CST
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "blog-kingbatsoft-top" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2017 - 
+        
+        2025 Kingbatsoft
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<p align="center"><a href = "https://icp.gov.moe/?keyword=20249008"><font color="pink">萌ICP备20249008号</font></a> <a href="https://ipw.cn/ipv6webcheck/?site=ipw.cn" title="本站支持IPv6访问" target='_blank'><img style='display:inline-block;vertical-align:middle' alt="本站支持IPv6访问" src="https://static.ipw.cn/icon/ipv6-s1.svg"></a></p>
+    </body>
+</html>
