@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>暑假划水 · 鸽博客面板</title>
+  <style>
+    :root{
+      --bg: #0f1222;
+      --card: #171a2b;
+      --text: #e8ecff;
+      --muted: #a8b0d6;
+      --accent: #7bc9ff;   /* 更夏天的配色：海蓝 */
+      --ok: #46d19e;       /* 薄荷绿 */
+      --warn: #ffd27a;     /* 日落黄 */
+      --danger:#ff6b6b;
+      --shadow: 0 10px 24px rgba(0,0,0,.35);
+      --radius: 14px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f6f8ff; --card:#ffffff; --text:#1f2335; --muted:#596194; --accent:#24a1ff; --ok:#18be8a; --warn:#ffbf44; --danger:#e15757; --shadow:0 8px 22px rgba(16,37,91,.12); }
+    }
+    *{ box-sizing: border-box; }
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 80% -10%, #1a2050 0%, transparent 60%),
+        linear-gradient(180deg, #0f1222 0%, #0f1222 40%, #10253a 100%); /* 海+晚霞 */
+      min-height:100svh; overflow-x:hidden;
+    }
+    header{
+      max-width:1100px; margin: clamp(16px, 3vw, 32px) auto 0; padding: 0 16px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    }
+    .brand{ display:flex; align-items:center; gap:12px; }
+    .logo{
+      width:42px; height:42px; border-radius:10px;
+      background: conic-gradient(from 200deg, #7bc9ff, #46d19e, #ffd27a, #7bc9ff);
+      filter: blur(.3px) saturate(1.1);
+      position:relative; box-shadow: var(--shadow);
+    }
+    .brand h1{ margin:0; font-size:clamp(20px, 2.6vw, 28px); letter-spacing:.3px; }
+    .tagline{ color:var(--muted); font-size:14px; }
+    .actions{ display:flex; gap:10px; flex-wrap:wrap; }
+    button{
+      appearance:none; border:none; padding:10px 14px; border-radius:12px; cursor:pointer; font-weight:600;
+      background:linear-gradient(180deg, #2a2f55, #1a1e37); color:#e9edff; box-shadow: var(--shadow);
+    }
+    button.secondary{ background:#212540; color:var(--muted); }
+    button.success{ background: linear-gradient(180deg, #2a4f43, #153a2f); color:#d9ffef; }
+    button.warning{ background: linear-gradient(180deg, #5b3f17, #422d11); color:#ffe7b6; }
+    button:active{ transform: translateY(1px); }
+
+    main{ max-width:1100px; margin: 18px auto 60px; padding: 0 16px; }
+    .grid{ display:grid; gap:16px; grid-template-columns: repeat(12, 1fr); }
+    .card{ grid-column: span 12; border-radius: var(--radius); background: linear-gradient(180deg, rgba(255,255,255,.04), transparent 20%), var(--card); box-shadow: var(--shadow); padding:16px; }
+    @media (min-width: 760px){
+      .span-6{ grid-column: span 6; }
+      .span-4{ grid-column: span 4; }
+      .span-8{ grid-column: span 8; }
+      .span-3{ grid-column: span 3; }
+    }
+    h2{ margin:0 0 8px; font-size:18px; }
+    .muted{ color:var(--muted); }
+    .big{ font-size: clamp(28px, 6vw, 46px); font-weight:800; letter-spacing: .2px; }
+    .sub{ font-size: 14px; color:var(--muted); }
+
+    .bar{ width:100%; height:14px; background:rgba(255,255,255,.06); border-radius:999px; overflow:hidden; }
+    .bar > .fill{ height:100%; width:0%; background: linear-gradient(90deg, var(--accent), var(--ok)); transition: width .6s cubic-bezier(.2,.7,.2,1); }
+    .legend{ display:flex; justify-content:space-between; font-size:12px; color:var(--muted); margin-top:6px; }
+
+    .sea { position:relative; overflow:hidden; border-radius: var(--radius); min-height:110px; }
+    .wave{
+      position:absolute; left:-10%; right:-10%; height:100%; top:0;
+      background:
+        radial-gradient(160px 20px at 10% 20%, rgba(255,255,255,.07) 30%, transparent 30%) repeat-x,
+        radial-gradient(120px 16px at 20% 60%, rgba(255,255,255,.05) 30%, transparent 30%) repeat-x;
+      background-size: 340px 120px, 280px 120px;
+      animation: drift 18s linear infinite; filter: blur(.2px);
+    }
+    @keyframes drift{ to{ transform: translateX(20%);} }
+    .fish{ position:absolute; font-size:22px; opacity:.9; animation: swim 12s linear infinite; }
+    .fish:nth-child(2){ animation-duration: 16s; font-size:20px; top:52%; }
+    .fish:nth-child(3){ animation-duration: 20s; font-size:18px; top:22%; }
+    @keyframes swim {
+      0%{ transform: translateX(-20%) translateY(0) rotate(0deg); left:-60px; top:65%;}
+      50%{ transform: translateX(60vw) translateY(-10px) rotate(2deg); }
+      100%{ transform: translateX(110vw) translateY(0) rotate(0deg); }
+    }
+
+    body.panic main, body.panic .tagline{ filter: blur(0.2px) grayscale(1) brightness(.9); }
+    #panicCover{
+      position:fixed; inset: 16px; border-radius: 16px; background: var(--card); box-shadow: var(--shadow);
+      display:none; z-index:9999; padding:18px; overflow:auto;
+    }
+    body.panic #panicCover{ display:block; }
+    .kpi-title{ margin:0 0 12px; font-weight:800; letter-spacing:.3px; }
+    .kpi-grid{ display:grid; grid-template-columns: repeat(12, 1fr); gap:12px; }
+    .kpi{ grid-column: span 6; background: rgba(255,255,255,.04); border-radius:12px; padding:12px; }
+    .skeleton{ height:10px; border-radius:8px; background: linear-gradient(90deg, rgba(255,255,255,.08), rgba(255,255,255,.18), rgba(255,255,255,.08)); animation: pulse 1.4s ease-in-out infinite; }
+    .skeleton.big{ height:160px; }
+    @keyframes pulse{ 50%{ filter: brightness(1.25);} }
+
+    .row{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+    .mono{ font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+    .pill{ padding:6px 10px; border-radius:99px; background: rgba(255,255,255,.06); font-size:12px; color:var(--muted); }
+    .stars{ font-size:20px; letter-spacing:2px; }
+    .list{ margin:8px 0 0; padding-left:18px; color:var(--muted); }
+    footer{ color:var(--muted); text-align:center; font-size:12px; margin: 24px 0 40px; }
+
+    .linklike{ cursor:pointer; text-decoration: underline dotted; text-underline-offset: 3px; }
+
+    /* 表单微样式 */
+    input[type="date"]{
+      appearance: none; border: none; background: rgba(255,255,255,.06); color: var(--text);
+      padding:6px 10px; border-radius:10px; font-size:12px; box-shadow: var(--shadow) inset 0 0 0 rgba(0,0,0,0);
+    }
+    label{ font-size:12px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <h1>暑假划水 <span class="pill">咕咕咕</span></h1>
+        <div class="tagline">摸的是心态，鸽的是更新；开学完蛋辣。</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="grid">
+      <!-- 倒计时：距离开学 -->
+      <article class="card span-6" aria-live="polite">
+        <h2>距离开学 / 返校</h2>
+        <div class="big mono" id="offClock">--:--:--</div>
+        <div class="sub" id="offHint">计算中…</div>
+
+        <div class="row" style="margin-top:10px;">
+          <span class="pill">暑假：<span id="vacRange" class="mono">--</span></span>
+          <span class="pill">今天：<span id="todayStr"></span></span>
+        </div>
+
+        <div class="row" style="margin-top:10px;">
+          <label>起：</label><input type="date" id="startDate">
+          <label>止：</label><input type="date" id="endDate">
+          <span class="pill">自动保存</span>
+        </div>
+      </article>
+
+      <!-- 进度条：暑假进度 -->
+      <article class="card span-6">
+        <h2>暑假进度</h2>
+        <div class="bar" aria-label="暑假进度">
+          <div class="fill" id="progressFill" style="width:0%"></div>
+        </div>
+        <div class="legend">
+          <span>开始 <span id="startStr" class="mono">--</span></span>
+          <span id="percentStr">0%</span>
+          <span>开学 <span id="endStr" class="mono">--</span></span>
+        </div>
+        <ul class="list">
+          <li>已摸：<span id="elapsedStr" class="mono">0 天</span></li>
+          <li>今日鸽博客：<span id="countStr" class="mono">0 次</span></li>
+        </ul>
+      </article>
+
+      <!-- 小海 -->
+      <article class="card span-12 sea" aria-hidden="true">
+        <div class="wave"></div>
+        <div class="fish">🐟</div>
+        <div class="fish">🐠</div>
+        <div class="fish">🐡</div>
+      </article>
+
+      <!-- 鸽力指数 -->
+      <article class="card span-4">
+        <h2>今日鸽力指数</h2>
+        <div class="stars" id="starStr">☆☆☆☆☆</div>
+        <div class="sub" id="indexText">加载中…</div>
+      </article>
+
+      <!-- 理由 -->
+      <article class="card span-8">
+        <h2>咕咕合理化生成器 <span class="muted">(点击按钮或按 E)</span></h2>
+        <div id="excuse" style="font-size:16px; line-height:1.7; margin-top:6px;">今天不更，也得有理有据。（并不</div>
+      </article>
+
+      <!-- 小贴士 -->
+      <article class="card span-12">
+        <h2>暑假摸鱼不翻车 · 三原则</h2>
+        <ul class="list">
+          <li>先完成<strong>最小可交付</strong>（一段代码/一小节草稿），再安心放空；</li>
+          <li>把“摸鱼”包装成<strong>注意力恢复</strong>（它确实是科学的 micro-break）；</li>
+          <li>留痕迹：记录下一步 TODO，<span class="linklike" id="quickTodo">快速生成 3 个博客题目</span>。 //Todo</li>
+          <li>丸辣忘记删注释辣</li>
+        </ul>
+        <div id="todoArea" class="muted" style="margin-top:10px; display:none;"></div>
+      </article>
+    </section>
+  </main>
+
+
+  <script>
+    // ======== 可自定义暑假起止（默认：6月15日 ~ 9月1日）========
+    const nowY = new Date().getFullYear();
+    const DEFAULT_START = new Date(nowY, 5, 15); // 6/15
+    const DEFAULT_END   = new Date(nowY, 8, 1, 9, 0, 0); // 9/1 09:00 开学集合
+    // ==========================================================
+
+    const $ = s => document.querySelector(s);
+    const offClock = $('#offClock');
+    const offHint = $('#offHint');
+    const todayStr = $('#todayStr');
+    const vacRange = $('#vacRange');
+    const startStr = $('#startStr');
+    const endStr = $('#endStr');
+    const percentStr = $('#percentStr');
+    const elapsedStr = $('#elapsedStr');
+    const progressFill = $('#progressFill');
+    const starStr = $('#starStr');
+    const indexText = $('#indexText');
+    const excuseBox = $('#excuse');
+    const excuseBtn = $('#excuseBtn');
+    const countBtn = $('#countBtn');
+    const panicBtn = $('#panicBtn');
+    const countStr = $('#countStr');
+    const quickTodo = $('#quickTodo');
+    const todoArea = $('#todoArea');
+    const startDateIpt = $('#startDate');
+    const endDateIpt = $('#endDate');
+
+    function pad(n){ return String(n).padStart(2,'0'); }
+    function fmtDateYMD(d){ return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`; }
+    function parseDateInput(v){ const [y,m,day]=v.split('-').map(Number); return new Date(y, m-1, day); }
+    function clamp(v,min,max){ return Math.min(Math.max(v,min),max); }
+
+    // localStorage helpers
+    const LS_START = 'summer-start';
+    const LS_END   = 'summer-end';
+    const LS_COUNT_PREFIX = 'pigeon-count-';
+
+    function loadDate(key, fallback){
+      try{
+        const v = localStorage.getItem(key);
+        return v ? new Date(v) : fallback;
+      }catch{ return fallback; }
+    }
+    function saveDate(key, d){
+      try{ localStorage.setItem(key, d.toISOString()); }catch{}
+    }
+
+    let summerStart = loadDate(LS_START, DEFAULT_START);
+    let summerEnd   = loadDate(LS_END, DEFAULT_END);
+
+    // Init date inputs
+    startDateIpt.value = fmtDateYMD(summerStart);
+    endDateIpt.value   = fmtDateYMD(summerEnd);
+    startDateIpt.addEventListener('change', ()=>{
+      summerStart = parseDateInput(startDateIpt.value);
+      saveDate(LS_START, summerStart);
+      tick(true);
+    });
+    endDateIpt.addEventListener('change', ()=>{
+      summerEnd = parseDateInput(endDateIpt.value);
+      // 默认把开学集合设在 09:00 更真实
+      summerEnd.setHours(9,0,0,0);
+      saveDate(LS_END, summerEnd);
+      tick(true);
+    });
+
+    function updateBasics(){
+      const now = new Date();
+      todayStr.textContent = `${fmtDateYMD(now)} · ${['周日','周一','周二','周三','周四','周五','周六'][now.getDay()]}`;
+      vacRange.textContent = `${fmtDateYMD(summerStart)} — ${fmtDateYMD(summerEnd)}`;
+      startStr.textContent = fmtDateYMD(summerStart);
+      endStr.textContent   = fmtDateYMD(summerEnd);
+    }
+
+    function timeFmt(ms){
+      if(ms < 0) ms = 0;
+      const s = Math.floor(ms/1000);
+      const h = Math.floor(s/3600);
+      const m = Math.floor((s%3600)/60);
+      const sec = s%60;
+      return `${pad(h)}:${pad(m)}:${pad(sec)}`;
+    }
+
+    function updateCountdown(){
+      const now = new Date();
+      if(now < summerStart){
+        offClock.textContent = timeFmt(summerEnd - now);
+        offHint.textContent = `暑假还没开始，先憋着：距离开学也还有 ${timeFmt(summerEnd - now)}。`;
+        updateProgress(0, now);
+        return;
+      }
+      if(now >= summerStart && now <= summerEnd){
+        offClock.textContent = timeFmt(summerEnd - now);
+        const dayIdx = Math.floor((now - summerStart)/86400000) + 1;
+        offHint.textContent = `暑假第 ${dayIdx} 天`;
+        const ratio = (now - summerStart) / (summerEnd - summerStart);
+        updateProgress(ratio, now);
+      }else{
+        offClock.textContent = '暑假结束';
+        offHint.textContent = '补考要完蛋辣QAQ';
+        updateProgress(1, now);
+      }
+    }
+
+    function updateProgress(ratio, now){
+      const pct = Math.round(clamp(ratio, 0, 1) * 100);
+      progressFill.style.width = pct + '%';
+      percentStr.textContent = pct + '%';
+
+      let days = 0;
+      if (now < summerStart) days = 0;
+      else if (now > summerEnd) days = Math.max(0, Math.round((summerEnd - summerStart)/86400000));
+      else days = Math.round((now - summerStart)/86400000);
+      elapsedStr.textContent = `${days} 天`;
+    }
+
+    // 鸽力指数：周五/周末5星，周三周四4星，其它3星
+    function updateIndex(){
+      const now = new Date();
+      const dow = now.getDay();
+      const map = {0:5,6:5,1:3,2:3,3:4,4:4,5:5};
+      const stars = map[dow] || 3;
+      starStr.textContent = '★★★★★'.slice(0, stars) + '☆☆☆☆☆'.slice(stars);
+      indexText.textContent =
+        (dow===5 || dow===6 || dow===0) ? '周末：大摸特摸！摸他个昏天黑地。' :
+        (dow===3 || dow===4) ? '周中，我还摸，那咋啦' :
+        '前半周，前几天必须摸，因为前几天不摸后半周就得少摸了';
+    }
+
+    // 鸽理由库（暑假&博客向）
+    const excuses = [
+      '正在积累素材，攒到一篇更扎实的长文（不是偷懒，是蓄力）。',
+      '做可复用笔记模版，先把结构想清楚再写就快了。',
+      '今天主打「输入」：刷论文/读书做摘录，输出延后到明天。',
+      '等待灵感的临界点，过早动笔容易写废稿（真理）。',
+      '优化博客构建速度，CI 跑完再更（CI：我背锅）。',
+      '保护手腕与颈椎，安排 20-20-20 视休，不是摸，是保养。',
+      '外出采风，素材要新鲜，键盘先放一放。',
+      '把上一篇的反馈都看完再更，避免犯同样的错。',
+      '学习新排版风格，等统一设计语言后一起更新。',
+      '在做题纲树，把三段式/五段式拆清楚再写更快。',
+      '先修 bug 再写博客，稳定 > 速度（请相信我）。',
+      '为开学预热：今天先做课程/实验环境整理，文章明天再发。'
+    ];
+    function newExcuse(){
+      const s = excuses[Math.floor(Math.random()*excuses.length)];
+      excuseBox.textContent = '✅ ' + s;
+    }
+
+    // 鸽次数计数（按日期）
+    function countKey(){
+      const d = new Date();
+      return `${LS_COUNT_PREFIX}${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+    }
+    function loadCount(){
+      try{ return Number(localStorage.getItem(countKey())||0); }catch{ return 0; }
+    }
+    function saveCount(n){
+      try{ localStorage.setItem(countKey(), String(n)); }catch{}
+    }
+    function updateCountView(){ countStr.textContent = loadCount() + ' 次'; }
+    function addCount(){
+      const n = loadCount() + 1;
+      saveCount(n);
+      updateCountView();
+      countBtn.textContent = `+1 已鸽 (${n})`;
+      setTimeout(()=> countBtn.textContent = '+1 鸽一次', 900);
+    }
+
+    // 快速博客题目
+    function genTodos(){
+      const topics = [
+        '暑期项目复盘：从立 Flag 到 倒Flag',
+        '我用的 3 个高效读书笔记模版（这里写不下，以后再写）',
+        '一周一更失败记：如何把失败经验变成流程'
+      ];
+      const html = `
+        <div>复制即用的题目备选：</div>
+        <ul class="list">
+          <li>✍️ ${topics[0]}</li>
+          <li>✍️ ${topics[1]}</li>
+          <li>✍️ ${topics[2]}</li>
+        </ul>`;
+      todoArea.innerHTML = html;
+      todoArea.style.display = 'block';
+    }
+
+
+    // 键盘绑定
+    document.addEventListener('keydown', (e)=>{
+      if(e.key==='e' || e.key==='E'){ newExcuse(); }
+      if(e.key==='Escape'){ togglePanic(); }
+      if(e.key==='+'){ addCount(); }
+    });
+
+    function tick(forceBasics=false){
+      if(forceBasics) updateBasics();
+      updateCountdown();
+      updateIndex();
+    }
+
+    // 启动
+    updateBasics();
+    updateCountView();
+    newExcuse();
+    tick(true);
+    setInterval(tick, 1000);
+  </script>
+
+  <footer>© 2025 夏 · 适度摸鱼，开学不慌。</footer>
+</body>
+</html>

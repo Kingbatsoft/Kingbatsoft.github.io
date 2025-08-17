@@ -7,7 +7,35 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Kingbatsoft</copyright>
-        <lastBuildDate>Fri, 30 May 2025 17:08:32 +0800</lastBuildDate><atom:link href="https://blog.kingbatsoft.top/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 17 Aug 2025 20:33:33 +0800</lastBuildDate><atom:link href="https://blog.kingbatsoft.top/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>暑假狠狠摸鱼！</title>
+        <link>https://blog.kingbatsoft.top/p/bewatermyfriend/</link>
+        <pubDate>Sun, 17 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.kingbatsoft.top/p/bewatermyfriend/</guid>
+        <description>&lt;p&gt;&lt;del&gt;&lt;em&gt;天天摸鱼！&lt;/em&gt;&lt;/del&gt;&lt;/p&gt;
+&lt;style&gt;
+  .gomoku-container {
+    position: relative;
+    width: 100%;
+    padding-top: 80%;
+  }
+  .gomoku-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+&lt;/style&gt;
+&lt;div class=&#34;gomoku-container&#34;&gt;
+  &lt;iframe src=&#34;./fish.html&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;a href=&#34;./fish.html&#34;&gt;移动端访问这里&lt;/a&gt;
+</description>
+        </item>
+        <item>
         <title>CTF_show Web SQL注入writeup WEB171-WEB180</title>
         <link>https://blog.kingbatsoft.top/p/ctfshow_sql_inject_write_up_1/</link>
         <pubDate>Fri, 30 May 2025 00:00:00 +0000</pubDate>
@@ -3013,7 +3041,7 @@ Pandas = &lt;em&gt;“带标签的一维 Series + 二维 DataFrame”&lt;/em&gt;
 &lt;/h3&gt;</description>
         </item>
         <item>
-        <title>CTF_show Web 文件包含writeup WEB78-WEB1</title>
+        <title>CTF_show Web 文件包含writeup WEB78-WEB81</title>
         <link>https://blog.kingbatsoft.top/p/ctfshow_web_fileinclude_write_up/</link>
         <pubDate>Tue, 13 May 2025 00:00:00 +0000</pubDate>
         
